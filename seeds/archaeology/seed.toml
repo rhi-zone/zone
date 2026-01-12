@@ -1,0 +1,6 @@
+name = "archaeology"
+description = "Lift a legacy game"
+
+[variables]
+name = { default = "" }
+version = { default = "0.1.0" }

@@ -1,0 +1,11 @@
+[project]
+name = "{{name}}"
+version = "{{version}}"
+
+[siphon]
+source = "./dump/game.exe"
+strategy = "gms2"
+assets = "./assets/raw"
+
+[dew]
+pipeline = "src/pipelines/assets.dew"

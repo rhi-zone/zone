@@ -1,0 +1,3 @@
+[project]
+name = "{{name}}"
+version = "{{version}}"

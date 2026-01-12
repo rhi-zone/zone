@@ -1,0 +1,6 @@
+name = "creation"
+description = "New project from scratch"
+
+[variables]
+name = { default = "" }
+version = { default = "0.1.0" }

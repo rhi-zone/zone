@@ -1,0 +1,6 @@
+name = "lab"
+description = "Full ecosystem sandbox"
+
+[variables]
+name = { default = "" }
+version = { default = "0.1.0" }
