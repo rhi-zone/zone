@@ -14,3 +14,6 @@ docs/.vitepress/dist/
 .idea/
 .vscode/
 *.swp
+
+# Spore
+.spore/
