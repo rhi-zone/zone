@@ -55,6 +55,16 @@ Each seed has:
 nix develop        # Enter dev shell
 ```
 
+### Running Lua projects
+
+Each project is self-contained. Run from within the project directory:
+
+```bash
+cd agent
+spore init          # First time only - creates .spore/config.toml
+spore run .
+```
+
 ## Core Rules
 
 **Note things down immediately:**

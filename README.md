@@ -26,9 +26,12 @@ flora/
 
 ### Running projects via spore
 
+Each Lua project is self-contained in its own directory. To run a project:
+
 ```bash
-# Run the agent
-spore flora/agent --task "Your task here"
+cd agent
+spore init          # First time only - creates .spore/config.toml
+spore run .
 ```
 
 ### Scaffolding new projects
