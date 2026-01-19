@@ -1837,6 +1837,38 @@ If good design is invisible:
 
 If you're copying something good, you probably don't know what makes it good. The parts you notice aren't the parts that matter. Be suspicious of your own understanding.
 
+**But also: are we copying the right thing?**
+
+Two failure modes:
+1. Copy good design badly (miss the invisible substance)
+2. Copy mediocre design faithfully (perpetuate the problems)
+
+WIMP might be the second. It was genuinely innovative in the 1970s-80s. But we have 50 years of progress since then. Why are we still defaulting to it?
+
+WIMP problems that persist:
+- Menu hunting (where's that option?)
+- Deep hierarchies (Settings → Advanced → More → ...)
+- File dialogs (universally hated)
+- Modal confusion (which window is active?)
+- Window management (still unsolved)
+
+People copy WIMP because it's familiar, not because it's optimal. "Nobody got fired for buying IBM" energy.
+
+**Better prior art exists.** Domain-specific tools that figured out better patterns:
+
+| Tool | What it does well |
+|------|------------------|
+| **Aseprite** | Pixel art editor. Beloved. Keyboard-driven, contextual tools, workflow-aware. |
+| **RPG in a Box** | Game creation. Accessible, visual scripting, immediate feedback. |
+| **Blender** (modern) | Reinvented itself. Context-sensitive UI, pie menus, modal but learnable. |
+| **Command palettes** | Ctrl+K everywhere. Searchable actions, no menu hunting. |
+| **Vim/Emacs** | Modal editing. Steep learning curve but efficient once learned. |
+| **VSCode** | Not purely WIMP. Command palette, keybindings, panels, extensions. Hybrid. |
+
+Even VSCode - mainstream as it gets - isn't purely WIMP. It's a hybrid that borrows from terminal editors, command palettes, extensibility models. The successful modern tools are quietly moving beyond WIMP even while wearing its skin.
+
+50 years of scattered progress. Not in mainstream OS design, but in specific tools that cared enough to try. Worth mining for patterns.
+
 **What's actually interesting right now?**
 
 Hard to say. Depends on mood, energy, what's frustrating at the moment. The honest answer: probably whatever's in front of you when you sit down to code.
