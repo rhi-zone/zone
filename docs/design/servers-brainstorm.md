@@ -121,6 +121,22 @@ Actual line counts:
 
 Most are **under 100 lines**. Many under 20. This is the power of good composition - when you have solid libraries, useful tools are tiny.
 
+The underlying libraries are also small:
+```
+~/git/lua/lib/http/
+  client.lua     17 lines
+  server.lua     33 lines
+  serverx.lua    67 lines
+  format.lua    133 lines
+  status.lua    146 lines (HTTP status codes)
+  ─────────────────────────
+  Total:        442 lines for entire HTTP library
+```
+
+Which builds on luajitsocket (~1k lines) for platform-agnostic sockets. But that's amortized over every protocol that uses sockets.
+
+**Fractal composition:** each layer is small, they compose together.
+
 **The goal isn't impressive LOC counts. It's having things to reach for and combine.**
 
 This is what the minimal entity substrate enables:
