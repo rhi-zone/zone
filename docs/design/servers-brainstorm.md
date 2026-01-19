@@ -110,7 +110,16 @@ repl.lua, replx.lua - REPL tools
 serve*.lua         - various servers
 ```
 
-Most under 5k lines. Each does one thing. Compose from shared libraries in the same repo.
+Actual line counts:
+```
+6 lines    args.lua
+12 lines   grep.lua
+18 lines   mud_client.lua
+34 lines   find.lua
+57 lines   http_static.lua
+```
+
+Most are **under 100 lines**. Many under 20. This is the power of good composition - when you have solid libraries, useful tools are tiny.
 
 **The goal isn't impressive LOC counts. It's having things to reach for and combine.**
 
