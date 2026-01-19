@@ -1,0 +1,19 @@
+# Iris: Agent-authored insights from coding sessions
+
+[project]
+entry = "init.lua"
+
+[plugins]
+llm = true
+sessions = true
+
+[sandbox]
+require_builtins = true
+require_project = true
+
+# Capabilities - injected as caps.{plugin}.{name}
+[caps.sessions]
+project = {}  # No special config needed
+
+[caps.llm]
+default = {}  # Uses default provider from environment

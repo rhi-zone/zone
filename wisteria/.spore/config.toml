@@ -1,0 +1,8 @@
+# spore configuration
+
+[project]
+entry = "init.lua"
+
+[integrations]
+llm = true
+moss = false

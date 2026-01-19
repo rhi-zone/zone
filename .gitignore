@@ -15,5 +15,7 @@ docs/.vitepress/dist/
 .vscode/
 *.swp
 
-# Spore
-.spore/
+# Spore - ignore runtime/cache but keep config
+.spore/plugins/
+.spore/cache/
+.spore/*.log
