@@ -532,6 +532,30 @@ The "paradigm" is the graph, not the rendering. WIMP is one graph shape (hierarc
 
 **Implication**: Canopy isn't "the UI" - it's *a* projection. The interaction graph lives in the backend (MOO verbs, entity affordances). Frontends just render it.
 
+**Reality check: what do common tasks look like today?**
+
+Trying to avoid bias - some things are easy:
+| Task | Experience |
+|------|------------|
+| Open browser | Fine |
+| Watch video | Fine |
+| Send message | Fine (if app already set up) |
+
+But then...
+| Task | Experience |
+|------|------------|
+| Install software (Windows) | Store? .exe? .msi? Admin prompt? Where'd it go? |
+| Find file you saved "somewhere" | Good luck |
+| Change default app | Settings → Apps → Default apps → scroll → hope |
+| Connect printer | Prayer-based computing |
+| Uninstall cleanly | Registry ghosts forever |
+| Transfer files between devices | AirDrop (Apple) / ??? (everyone else) |
+| Set up new device | Hours of "just one more thing" |
+| Manage notifications | Per-app, per-site, per-OS, good luck |
+| Back up data | Do you? Really? |
+
+50 years of WIMP and "install software" is still a mess. The interaction graph is implicit, inconsistent, varies by app, varies by OS. No wonder people just use web apps for everything.
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
