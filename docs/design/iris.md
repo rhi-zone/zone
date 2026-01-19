@@ -182,11 +182,13 @@ What iris explicitly should NOT be:
 
 Decisions deferred until we have real usage data:
 
-1. **Truncation strategy**: When sessions exceed context limits, what do we prioritize keeping? Options: user messages (intent), tool calls (actions), tool results (outcomes), errors (learnings). Need to test what produces best insights.
+1. **Multi-stage seems right**: Two arguments converge here:
+   - *Segmentation over truncation*: Don't cut content, segment it. Human/algo deciding what to drop is MORE lossy than letting LLM see everything. Input tokens cheap, output expensive.
+   - *More thinking*: LLMs have fixed reasoning budget per output token. More stages = more total reasoning.
 
-2. **Single vs multi-stage**: Current impl is single LLM call. But: LLMs have a fixed "thinking budget" per token - more stages = more total reasoning. ablogger uses multi-stage (per-theme → synthesis). Worth testing both approaches.
+   Both argue for: segment → per-segment observations → synthesize. Test to confirm.
 
-3. **Default feature flags**: Modules exist for history/split/cluster/temporal. Should some be on by default? Low cost if toggleable.
+2. **Default feature flags**: Modules exist for history/split/cluster/temporal. Should some be on by default? Low cost if toggleable.
 
 ## Implementation Status
 
