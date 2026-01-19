@@ -958,6 +958,21 @@ Platforms destroyed that. Everything's in the feed. Anyone can find anything. "D
 
 The small web / federation / Discord servers - maybe they're recreating that isolation? Private by default. You have to be invited or seek it out. The trolls don't find you because the algorithm isn't pointing them at you.
 
+**But is "don't feed the trolls" / isolation a real solution? Or a bandaid?**
+
+Hiding doesn't fix the underlying problem:
+- The trolls still exist
+- The platform dynamics that enable them still exist
+- You're just... not in their path
+
+It means creative communities are forever confined to small hidden corners. Can never grow without attracting the bad actors. "Success" becomes dangerous.
+
+Maybe that's fine? Small is good anyway (three people and their dog). But it's a constraint imposed by hostile actors, not chosen freely.
+
+No good answer here. Moderation is exhausting and doesn't scale. Isolation works but limits reach. Platform-level fixes don't happen because engagement (including toxic engagement) is profitable.
+
+The honest take: there might not be a solution. Just trade-offs. Hide and be safe but small. Grow and face the horde. Pick your poison.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
