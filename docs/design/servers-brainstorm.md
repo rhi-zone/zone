@@ -648,6 +648,22 @@ The pattern: **LLM-assisted lets you explore domains you don't have deep experti
 
 Whether this produces *good* code or just *working* code is an open question.
 
+**On "LLMs are just text predictors":**
+
+Common dismissal: "I'm so smart, I learned LLMs are 'just' text predictors, they can't make anything new."
+
+Okay but... moss exists. 90k lines. It works.
+
+"They're just reproducing if-statements they've seen before." Sure. But:
+- Humans also don't create from nothing - we remix prior knowledge
+- "New" is novel *combinations*, not ex nihilo creation
+- Evolution is "just" random mutation + selection - yet here we are
+- The "just" is doing a lot of heavy lifting in that dismissal
+
+What matters: **does the thing work?** Not "is it philosophically novel?"
+
+The dismissive framing mistakes *mechanism* for *capability*. Yes, it's "just" predicting tokens. And brains are "just" neurons firing. So what?
+
 **But:** the same is true for "naturally programmed" codebases. Arguably even *more* true:
 - Tech debt accumulates over time
 - "The way we've always done it" calcifies
