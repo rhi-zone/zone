@@ -985,6 +985,10 @@ This connects to everything:
 - "Just write a character card" hides format knowledge, LLM quirks, prompt engineering...
 - Low barriers should be *real* low barriers, not "just" hiding the cliff
 
+---
+
+**Prior art collection moved to [prior-art.md](./prior-art.md)** - a living document of things worth knowing about.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
