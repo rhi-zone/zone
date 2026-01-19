@@ -1125,6 +1125,48 @@ The real constraint isn't "can you build a general substrate" - it's "can you ex
 
 But you can build a good substrate, use it yourself, let others use it if they want. It doesn't have to win. It just has to exist and be useful.
 
+---
+
+**Why is software so big?**
+
+10k LOC. 100k. 1 million. 10 million. *What do you mean?*
+
+grep.lua is 12 lines. The entire HTTP library is 442 lines. Uxn is intentionally tiny. LuaJIT is ~100k lines for an *entire VM with JIT*. So software *can* be small. Why isn't it?
+
+Possible reasons:
+
+| Reason | What it means |
+|--------|--------------|
+| **Accidental complexity** | Cruft, legacy code, workarounds nobody removed |
+| **Essential complexity** | The problem is genuinely hard (rare, but real) |
+| **Boilerplate** | Languages/frameworks that require verbosity |
+| **Edge cases** | Handling every possible situation, even rare ones |
+| **Dependencies** | Pull in 10k LOC library for one function |
+| **Abstraction layers** | Each layer adds code, often more than it saves |
+| **"Enterprise" patterns** | Over-engineering for hypothetical future needs |
+| **Nobody deletes code** | Only add, never remove. Fear of breaking things |
+| **Multiple platforms** | Code for every OS/browser/config permutation |
+| **Defensive programming** | Check everything everywhere, trust nothing |
+| **Tests** | Good, but adds LOC (not a bad reason though) |
+| **NIH** | Reinventing what already exists in dependencies |
+| **Job security** | More code = more indispensable (cynical but real) |
+
+The Lua monorepo is small because:
+- LuaJIT is a good substrate (small, fast, embeddable)
+- Intentional constraint (keep things small)
+- One person's taste (no design-by-committee bloat)
+- No backwards compatibility burden (can just change things)
+- Composition over extension (small pieces that snap together)
+
+**The uncomfortable question**: is most software big because it *needs* to be, or because the incentives reward bigness?
+
+- More code = more "work done" = more justification for headcount
+- Frameworks sell complexity as features
+- Nobody gets fired for adding code, sometimes fired for deleting it
+- Big codebases create moats (job security, vendor lock-in)
+
+Maybe most software is big because *small doesn't pay*.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
