@@ -1932,6 +1932,18 @@ Not "LLM replaces expert" - but "LLM as reasoning partner with broad (if shallow
 
 The document we're building right now is the output. Whether it's *good* is a different question - but the process is: guided reasoning over latent knowledge → explicit documentation.
 
+**And honestly: doesn't have to be good. Just better than nothing.**
+
+The bar isn't "definitive guide to interaction design." It's "captures something useful that wouldn't exist otherwise."
+
+This connects to earlier themes:
+- Constraints lower the quality bar
+- "Good enough" is okay
+- Done > perfect
+- Three people and their dog
+
+If this doc helps one person think through design better - or helps future-us remember why - it's already better than nothing. The perfect is enemy of the good. The good is enemy of "exists at all."
+
 **Maybe the honest answer:**
 
 1. Accept that most things will be mediocre (including your own work)
