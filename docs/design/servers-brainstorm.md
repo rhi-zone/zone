@@ -70,6 +70,14 @@ Why not pandoc? Opus 4.5 pointed out it's not perfect. Also: missing a binary is
 
 Why ooxml? Because it doesn't exist in Rust. Genuine gap.
 
+And while building ooxml, invented *more* work:
+- Language-agnostic fixtures
+- Machine-readable specs for OOXML
+- Because MS Office has enjoyed its dominance for too long
+- Making OOXML easier to implement helps everyone, not just Rust
+
+This is "scope creep that's actually good" - while solving immediate problem, notice meta-problem that would help the whole ecosystem.
+
 ---
 
 ## Backpropagating Insights
