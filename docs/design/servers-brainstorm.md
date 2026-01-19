@@ -944,6 +944,10 @@ What's clear:
 
 Not taking a strong stance. Just noting: the tooling conversation happens in this context. "LLMs help you iterate on character cards" coexists with "LLMs let corps fire writers." Both true. Uncomfortable.
 
+A little sad that the vocal sides are so polarized. "AI will save everything" vs "AI is theft and destruction." But there are plenty of people with nuanced takes - pointing out specific harms without condemning the whole technology, or acknowledging benefits without ignoring costs. They just don't get the engagement that hot takes do.
+
+The nuanced position is boring: "some uses good, some uses bad, depends on context, we should think carefully." Doesn't fit in a tweet. Doesn't generate outrage. Probably closer to true.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
