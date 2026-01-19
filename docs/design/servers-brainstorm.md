@@ -409,7 +409,36 @@ Possible answers (guesses, being realistic):
 ### More Pragmatism
 
 **What do I really want out of this?**
-- TODO: Actually answer this honestly
+
+Value proposition by bucket:
+
+| Bucket | Projects | Value for Humans | Value for AI Agents |
+|--------|----------|-----------------|---------------------|
+| Code understanding | moss, reed, liana | Don't read everything, query structure | Same, but with token limits |
+| Format/data wrangling | cambium, reed | Don't hunt for converters | Reliable transformations |
+| Creative/procedural | resin, dew, frond | Composable media generation | Could generate assets |
+| Runtime/execution | spore, pith | Unified runtime, universal interfaces | Stable execution environment |
+| Worlds/persistence | lotus, hypha | Persistent state, programmable | Context injection, not chat logs |
+| UI/control | canopy | Universal client for anything | Could be controlled structurally |
+| Preservation | siphon | Save dying software | Extract structure from legacy |
+| Scaffolding | nursery, flora | Bootstrap projects fast | Consistent project structure |
+
+**What haven't we thought of?**
+
+1. **Composition effects** - What happens when moss + spore + canopy combine? Or liana + cambium + reed?
+
+2. **Template for LLM-era development** - The ecosystem itself demonstrates "how to build ambitious things with AI assistance"
+
+3. **Education/teaching** - Structured code intelligence could help people learn codebases
+
+4. **The meta-play** - Building tools that help build tools. moss helps build moss.
+
+**Core value - what do I actually care about?**
+- Personal tooling? ("I want these things to exist for me")
+- Proving a point? ("This approach works")
+- Creative outlet?
+- Something else?
+- TODO: Answer honestly
 
 **If the AI bubble bursts and LLMs disappear, what are we left with?**
 
@@ -430,10 +459,192 @@ Exception: iris (and similar "AI-native" tools) would lose core functionality.
 
 ---
 
+## Prioritization Analysis
+
+Which project first? Think in terms of ROI and dependencies.
+
+### Dependency Graph
+
+```
+          ┌────────────────────────────────────────┐
+          │              canopy (UI)               │
+          └───────────┬─────────────┬──────────────┘
+                      │             │
+       ┌──────────────┴──────┐      │
+       ▼                     ▼      ▼
+   ┌───────┐            ┌───────┐ ┌───────┐
+   │ spore │◄───────────│  MOO  │ │ other │
+   └───┬───┘            └───┬───┘ └───────┘
+       │                    │
+       ▼                    ▼
+   ┌───────┐            ┌───────┐
+   │ pith  │            │ libsql│
+   └───────┘            └───────┘
+```
+
+- **canopy** needs something to connect to
+- **MOO** needs spore (Lua runtime) + libsql (storage)
+- **spore** needs pith primitives
+- **pith** is foundational
+
+### Project ROI Estimates
+
+| Project | Effort | Immediate Value | Enables Other Work |
+|---------|--------|-----------------|-------------------|
+| pith-fs | Low | File watching, indexing | FS service, canopy |
+| pith-sql | Low | SQLite bindings | Notes, MOO |
+| MOO core | High | Programmable objects | Notes-on-MOO, FS-on-MOO |
+| Notes standalone | Medium | Usable notes app | Nothing else |
+| FS standalone | Medium | Usable file browser | Nothing else |
+
+**Observation**: pith-* primitives have high ROI - low effort, enable everything else.
+
+### Minimal Viable Compositions
+
+What's the smallest useful combination?
+
+**Option A: pith + canopy**
+```
+canopy ←→ pith-fs
+```
+- A file browser. Useful but not novel.
+
+**Option B: spore + pith + canopy**
+```
+canopy ←→ spore ←→ pith-{fs,sql}
+         ↑
+      Lua apps
+```
+- Scriptable file browser / notes. Getting interesting.
+
+**Option C: MOO + canopy**
+```
+canopy ←→ MOO ←→ libsql
+         ↑
+    TS verbs (via reed)
+```
+- Programmable objects with UI. The full vision (but more work).
+
+### What Would You Use Daily?
+
+Honest question: which of these would actually get used?
+
+| Tool | Would use daily? | Why / why not? |
+|------|------------------|----------------|
+| File browser (canopy + pith-fs) | Maybe | Already have good file browsers |
+| Notes (standalone) | Maybe | Already have Obsidian |
+| MOO (programmable objects) | ? | Depends on what apps exist |
+| MOO + AI context injection | Yes | Original itch - Tavern cards |
+
+The MOO + AI context is the unique value. Everything else has strong competitors.
+
+**Implication**: Maybe start with MOO core, not the "safe" primitives?
+
+---
+
+## Minimal MOO
+
+If MOO is the unique value, what's the smallest MOO that demonstrates it?
+
+### Core Entities
+
+```lua
+-- Everything is an entity
+entity = {
+  id = 123,
+  parent = 1,        -- inheritance
+  props = { ... },   -- key-value
+  verbs = { ... },   -- callable code
+}
+```
+
+### Minimal Verbs
+
+```lua
+-- Movement
+entity:move(target)
+
+-- Speech
+entity:say(message)
+
+-- Inspection
+entity:look()
+entity:examine(target)
+
+-- Modification
+entity:set(key, value)
+entity:get(key)
+```
+
+### Minimal World
+
+```
+                ┌─────────────────┐
+                │   Root (#0)     │
+                └────────┬────────┘
+         ┌───────────────┼───────────────┐
+         ▼               ▼               ▼
+    ┌─────────┐    ┌──────────┐    ┌─────────┐
+    │ Player  │    │   Room   │    │  Thing  │
+    │  (#1)   │    │   (#2)   │    │  (#3)   │
+    └─────────┘    └──────────┘    └─────────┘
+```
+
+### Minimal AI Context
+
+What does "AI context injection" actually look like?
+
+```lua
+-- Given a player entity, produce LLM context
+function make_context(player)
+  local room = player:location()
+  local contents = room:contents()
+
+  return {
+    location = room:describe(),
+    present = map(contents, function(e) return e:describe() end),
+    inventory = map(player:contents(), function(e) return e:describe() end),
+    recent_events = get_recent_events(player),
+  }
+end
+```
+
+Output (structured, for injection):
+```
+WORLD STATE:
+You are in: Kitchen - A warm room with copper pots hanging from hooks.
+Present: Alice (sitting, holding coffee), Table (oak, four chairs), Window (open, morning light)
+Your inventory: phone, keys
+Recent: [5m ago] Alice entered from the garden.
+---
+CONVERSATION:
+...
+```
+
+This is the core insight: **structured world state becomes LLM context**.
+
+---
+
 ## Next Steps
 
-1. Decide: Start with MOO core, or a concrete use case (notes/fs)?
-2. If MOO: Sketch object model, prototype storage
-3. If notes/fs: Decide standalone vs on-MOO
-4. Pick protocol (probably HTTP/JSON to start)
-5. Connect to canopy for UI testing
+### Immediate (pick one)
+
+1. **MOO prototype**: Minimal entity system in Lua/spore
+   - Storage: libsql
+   - No verbs yet, just entities + props
+   - Test: Can canopy display entity tree?
+
+2. **pith-fs**: File watching primitive
+   - Rust, exposes via spore plugin
+   - Test: Can Lua script react to file changes?
+
+3. **Context injection POC**: Skip MOO, test the core hypothesis
+   - Hardcode some "world state" JSON
+   - Inject into LLM context manually
+   - Test: Does this actually improve Tavern-style interactions?
+
+### Questions to Answer
+
+- Is context injection the actual value? (Test with POC before building MOO)
+- Do I want to build MOO again, or was lotus enough exploration?
+- What's the minimal thing that would actually get used?
