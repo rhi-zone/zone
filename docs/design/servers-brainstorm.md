@@ -367,11 +367,17 @@ Possible answers (guesses, being realistic):
 
 1. **LLM-assisted development** - Can write more code faster. Moss itself helps write moss.
 
-   Concrete example: **Moss**
+   Concrete examples:
+
+   **Moss** (code intelligence)
    - 90k lines of Rust, 119k total
-   - Started: December 17, 2025
-   - One month later: functional code intelligence tool
-   - Traditional estimate: "23.49 months with 15.47 people" (scc)
+   - Started: December 17, 2025 → functional in ~1 month
+   - Traditional estimate: "23.49 months with 15.47 people"
+
+   **burn-models** (ML inference)
+   - 44k lines of Rust (rest is tokenizer vocab)
+   - January 5–10, 2026 → functional in **5 days**
+   - Traditional estimate: "21.63 months with 13.52 people"
 
    Pre-LLM, this would be years of solo work. Now it's weeks.
 
