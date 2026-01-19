@@ -1261,6 +1261,38 @@ This reframes "platforms are bad for attention" into something deeper: **platfor
 
 The "doomscroll trance" isn't just addiction - it's surrendering your cognitive agency to an algorithm.
 
+**But it's not all black and white.**
+
+Two framings:
+- "It's just the algorithm bucketing you" - categorizing based on your behavior, showing you more of what you clicked
+- "The algorithm reinforces your biases to unhealthy levels" - amplification loop that takes mild tendencies → extremes
+
+Both are true. It's a **feedback loop**, not pure top-down control:
+
+```
+You have existing interests/biases
+         ↓
+Algorithm detects them from behavior
+         ↓
+Shows you more of what you engaged with
+         ↓
+Your tendencies get reinforced
+         ↓
+Algorithm detects stronger signal
+         ↓
+Shows you even more extreme versions
+         ↓
+Repeat until radicalized / addicted / trapped
+```
+
+The algorithm isn't choosing your thoughts arbitrarily - it's amplifying whatever you already are. That's arguably *worse*. It takes your mild curiosity about X and turns it into obsession. It takes your slight irritation at Y and turns it into rage.
+
+Radicalization pipelines work exactly this way. You click one "interesting" video, algorithm notices, feeds you more, you go deeper, it goes deeper with you. The extremism was "in you" the whole time - the algorithm just found it and amplified it.
+
+**This is more insidious than pure control.** You can't blame "the algorithm made me think this" - it just showed you things you engaged with. But you also can't claim full agency - the amplification was engineered.
+
+It's a collaboration between your existing tendencies and a system designed to maximize engagement by exploiting them.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
