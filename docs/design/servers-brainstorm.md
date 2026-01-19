@@ -909,6 +909,27 @@ This is why templates feel hollow - they're someone else's fragment, not yours. 
 
 Maybe the through-line isn't "MOO" or "web" or any specific domain. It's: **make the first creative step trivially easy across all domains, then let people compose upward.**
 
+**Prior art that gets this right: Mario Maker, Dreams**
+
+Both let you start with something immediately playable/real, then build from there. Low floor, high ceiling. Your creation, not a template.
+
+**Personal example: SillyTavern character cards**
+
+Writing character cards is a form of creative output that works this way:
+- Don't follow rigid formats (no W++, ew)
+- Intentionally "break the mold" - write as journal entries, voice notes, Obsidian fragments, pieces of a character's life
+- Not trying to be a Great Writer - just conveying a vibe
+- The cards end up relatively "complete" - and when run through an LLM, they convey the intended vibe
+- LLMs can help flesh things out: "write me an intro message," "suggest a direction," or just interact with the card to figure out why it feels off
+
+This is the pattern:
+- **Start with fragments** (not a complete story, just pieces)
+- **They're immediately "real"** (you can chat with the character)
+- **Iterate by interaction** (talk to it, see what's off, adjust)
+- **Tools assist, not replace** (LLM helps, but the vibe is yours)
+
+No blank page. No rigid template. Fragments that accumulate into something with a *feel*.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
