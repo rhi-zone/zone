@@ -610,6 +610,32 @@ This is the interaction graph becoming explicit. WIMP hides commands in menus. C
 - No persistent state (can't "save this sequence of commands")
 - No context-awareness (same commands everywhere, not object-dependent)
 
+**MOO verbs as "command palettes taken further"?**
+
+| Feature | Command Palette | MOO Verbs |
+|---------|----------------|-----------|
+| Queryable | Yes (fuzzy search) | Yes (`examine object`) |
+| Bindable | Yes (keybindings) | Possible |
+| Scriptable | Limited | Yes (verbs are code) |
+| Context-aware | No (global list) | Yes (verbs on objects) |
+| Cross-app | No | Yes (same MOO everywhere) |
+| Persistent | Yes (verbs saved in DB) |
+
+**But: MOO isn't the only way. Tradeoffs:**
+- MOO requires buying into the object model (everything is an entity)
+- Learning curve to write verbs
+- Single-server traditionally (distribution is hard)
+- Text-centric heritage (GUIs are bolted on)
+- "Everything is an object" can be forced/awkward for some domains
+
+Other approaches to explicit interaction graphs:
+- **Datalog/query-based** - affordances as facts, query what's possible
+- **Capability-based** - tokens define what you can do
+- **Intent-based** - declare what you want, system figures out how
+- **Reactive/stream-based** - subscribe to affordance changes
+
+Don't marry MOO. It's *one* approach to making interaction explicit.
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
