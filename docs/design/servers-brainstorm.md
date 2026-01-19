@@ -565,6 +565,14 @@ But then...
 
 The web won partly because "installing things" is broken. Fix installation and the equation changes.
 
+**But**: web apps still use WIMP-esque paradigms. The web solved *deployment*, not *interaction design*.
+- Same buttons, forms, menus - just in a browser
+- Still implicit interaction graph
+- Still varies by app
+- Still not queryable or composable
+
+Nothing stops us from making web apps with better interaction models. The transport is orthogonal to the paradigm.
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
