@@ -556,6 +556,15 @@ But then...
 
 50 years of WIMP and "install software" is still a mess. The interaction graph is implicit, inconsistent, varies by app, varies by OS. No wonder people just use web apps for everything.
 
+**Counterpoints**:
+- Web apps' advantage: barrier to entry. No install, just visit URL. That's real value.
+- Nix + comma (nix-shell wrapper) *can* partly ease installation on Linux
+  - `comma ripgrep` just works, no "install" step
+  - Declarative, reproducible, no system pollution
+  - But: learning curve, not mainstream
+
+The web won partly because "installing things" is broken. Fix installation and the equation changes.
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
