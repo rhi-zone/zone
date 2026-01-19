@@ -1435,7 +1435,33 @@ If you build good substrate, others build the communities. You don't have to do 
 
 These are tools. People use tools to make things. You don't have to build the things - just make the tools good.
 
+**But: you still need to build high enough up the stack.**
+
+"Just build substrate" fails if the substrate is too obscure. Nobody's going to build on a stack that 0 people and 1 LLM know.
+
+| Level | Example | Problem |
+|-------|---------|---------|
+| Too low | "Here's a VM bytecode spec" | Who's going to write a compiler for this? |
+| Still too low | "Here's a Lua runtime" | Cool, now what do I do with it? |
+| Usable | "Here's a MOO you can talk to via Discord" | Oh, I can try this right now |
+| Reference impl | "Here's an example world with inventory, rooms, NPCs" | Oh, I see what's possible |
+| Destination | "Here's a community, come join" | Now you're running a platform |
+
+The balance:
+- **Too low**: nobody uses it (obscure, no clear value)
+- **Just right**: usable + demonstrable + extensible
+- **Too high**: you're doing social labor
+
+You need to build high enough that:
+1. People can try it immediately
+2. They can see what's possible
+3. But they can still build their own thing on top
+
+**Reference implementations matter.** Not "the" community - but "a" demo that shows what the tools can do. Example worlds, example apps, example integrations. Enough to understand, not enough to be the destination.
+
 **The hope:** someone uses spore + MOO to build a community. Someone uses resin to make procedural art. Someone uses moss to understand their codebase. You enabled it without running it.
+
+**The realistic version:** we build the reference implementations ourselves, use them ourselves, and if others find them useful, great. If not, we still have tools we use.
 
 **How do you fight it?**
 
