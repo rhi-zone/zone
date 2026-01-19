@@ -1211,6 +1211,12 @@ The lesson: architectural decisions matter more than micro-optimizations. A smar
 
 (Vue considered "Vapor mode" - compile-away like Svelte - but it became low priority. Why? Because Vue's reactivity is already good enough that the gains would be marginal. Good architecture upfront = less heroics needed later.)
 
+Notably: Vue's reactivity (`@vue/reactivity`) is **completely separate** from the web framework. You can use it standalone. The primitives are decoupled from the application.
+
+This is good decomposition - the substrate (reactivity) is independent of the layer on top (web components). React doesn't have this. React's model is inseparable from React.
+
+The pattern again: **good primitives, loosely coupled, compose upward.**
+
 **Other examples**:
 - Moment.js (~300KB) vs day.js (~2KB)
 - Lodash (~70KB) vs native JS + tiny helpers
