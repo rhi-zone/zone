@@ -1185,6 +1185,55 @@ Or: **invent a new thing.** What if "general social" *did* have artifacts? What 
 
 No idea what that would look like. But maybe that's the actual missing piece.
 
+**MOO is arguably that.**
+
+Social interaction that produces artifacts:
+- You're not posting - you're building objects, rooms, worlds
+- Conversations happen *in* a persistent space you created together
+- The social activity *is* the creation
+- Your "profile" isn't a bio - it's your room, your objects, your verbs
+
+Instead of "here's what I'm thinking" (ephemeral post), it's "here's a thing I made" (persistent artifact). The social graph becomes a world graph.
+
+Maybe that's why MOO feels relevant to this whole conversation - it's "general social" with artifacts baked in.
+
+---
+
+**Tangent: what even is creativity?**
+
+A tutor once said (paraphrased): "Creativity is the ability to make connections between seemingly unrelated things."
+
+But... isn't that just thinking? Forming thoughts? Making associations?
+
+And isn't that also what LLM attention does - finding relevant connections between tokens, weighing which parts of the context matter for the next prediction?
+
+Obviously oversimplified. But the question stands:
+
+| Process | What it does |
+|---------|-------------|
+| Creativity | Connect unrelated things → novel output |
+| Thinking | Connect concepts → coherent thought |
+| Memory | Connect cue → stored information |
+| LLM attention | Connect tokens → predicted continuation |
+
+If creativity is "just" connection-making... then:
+- It's not magic, it's a process
+- Tools that help make connections could assist creativity
+- The "creative spark" might be: *which* connections you make, not *that* you make them
+- Novelty comes from *unexpected* connections (obvious ones aren't creative)
+
+This connects (heh) to the "fragments that accumulate" idea. Creativity isn't ex nihilo - it's connecting existing pieces in new ways. The more pieces you have access to, the more potential connections. The better your tools for surfacing unexpected connections, the more "creative" the output.
+
+**Implication for tools:**
+
+If creativity is connection-making, then tools should:
+- Surface unexpected relationships (not just obvious ones)
+- Let you accumulate fragments (more raw material = more possible connections)
+- Make it easy to juxtapose things (put A next to B, see what happens)
+- Not force linearity (thoughts aren't linear, connections are graphs)
+
+This is why wikis/zettelkasten/graph notes appeal - they're connection-surfacing tools. Links are explicit connections. Backlinks reveal implicit ones.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
