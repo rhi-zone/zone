@@ -50,6 +50,16 @@ Things worth knowing about, learning from, or just appreciating.
 | [Oberon](https://en.wikipedia.org/wiki/Oberon_(operating_system)) | Wirth's OS | Simple, integrated, inspectable |
 | [Lua](https://www.lua.org/) | Minimal scripting language | Small, readable, embeddable. 12-line grep possible |
 
+## Creative Constraints / Code Art
+
+| Name | What it is | Why it matters |
+|------|-----------|----------------|
+| [Shadertoy](https://www.shadertoy.com/) | Shader art community | GPU programming accessible, instant feedback, thriving scene |
+| [Dwitter](https://www.dwitter.net/) | JS art in 140 characters | Extreme constraint breeds creativity. Community still active |
+| [PICO-8](https://www.lexaloffle.com/pico-8.php) | Fantasy console | Intentional limits (128x128, 16 colors) → focused creativity |
+| [TIC-80](https://tic80.com/) | Open source fantasy console | Same energy, different tradeoffs |
+| Demoscene | Real-time graphics art | Decades of constraint-driven innovation |
+
 ## Philosophy / Writing
 
 | Name | What it is | Why it matters |
