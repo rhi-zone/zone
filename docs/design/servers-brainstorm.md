@@ -1348,6 +1348,40 @@ This doesn't eliminate recommendation algorithms - it changes the power dynamic.
 
 Can you make navigation as low-effort as scrolling? Or is the effort inherent to agency?
 
+**Wait: the feed doesn't have to be linear.**
+
+We've been treating "feed" and "linear" as synonymous. But what if the feed showed multiple options at once?
+
+**Pinterest does this.** Grid of pins, not a single stream. You see many items simultaneously, click what catches your eye. Still algorithmic, still low effort (just look), but with visible branching.
+
+| Feed type | Effort | Agency |
+|-----------|--------|--------|
+| Linear (TikTok, Twitter, Instagram) | Zero | None - accept sequence |
+| Grid (Pinterest) | Low (just look + click) | Some - choose from visible options |
+| Navigation (profile-hopping) | Active | High - but effortful |
+
+A non-linear feed could get **both**: low effort consumption + visible choices. The algorithm still recommends, but you see multiple recommendations at once and pick.
+
+```
+Linear:     [A] → [B] → [C] → [D]  (one at a time, scroll to reveal)
+
+Grid:       [A] [B] [C]
+            [D] [E] [F]            (all visible, click to choose)
+            [G] [H] [I]
+```
+
+Pinterest is... not great for various reasons. But the *interface pattern* - showing options simultaneously instead of sequentially - might be underexplored.
+
+**Why don't more feeds do this?**
+
+Possible reasons:
+- Linear is simpler to implement
+- Linear maximizes scroll-time (engagement metric)
+- Grid requires more screen real estate / doesn't work on mobile as well?
+- Linear creates "just one more" psychology (sunk cost, variable reward per scroll)
+
+The linear feed might be deliberately chosen *because* it's more controlling, not despite it.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
