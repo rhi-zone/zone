@@ -781,6 +781,28 @@ Maybe the reason things don't take off is brutal economics:
 
 This is depressing but probably true. Rhizome doesn't have corporation funding. So: either be impossibly better, or don't compete head-on?
 
+**First-mover advantage: what succeeded primarily because it got there first?**
+
+| Software | First-mover element | Would it win today? |
+|----------|--------------------|--------------------|
+| QWERTY | First popular typewriter layout | Demonstrably not optimal (Dvorak exists) |
+| Excel | First killer spreadsheet on PC | Maybe? But VisiCalc/Lotus 1-2-3 came first |
+| Windows | First "good enough" PC GUI for masses | Debatable - was it the best, or just pre-installed? |
+| Word | First "good enough" word processor with network effects | Probably not on merit alone |
+| Photoshop | First professional image editor | Has genuine technical depth, but also 30yr lock-in |
+| JavaScript | First browser scripting language | Definitely not - it's famously flawed, but it's *everywhere* |
+| x86 | First popular PC architecture | ARM is eating it now that the moat weakened |
+| PDF | First universal document format | Genuine value, but also "just send me a PDF" inertia |
+
+The pattern: **technical merit gets you in the door, but staying power is often lock-in**.
+
+- File format lock-in (Word docs, Photoshop files)
+- Ecosystem lock-in (Windows apps, JS libraries)
+- Muscle memory lock-in (QWERTY, vim bindings)
+- "It's what everyone uses" lock-in (Excel, PDF)
+
+**Implication for Rhizome**: Don't compete where lock-in is strongest. Find the gaps where there's no incumbent, or where the incumbent's lock-in is weakest.
+
 **But wait - things that DID take off without corp funding:**
 
 | Project | Creator(s) | Why it worked |
