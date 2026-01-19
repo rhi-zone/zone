@@ -1234,6 +1234,33 @@ If creativity is connection-making, then tools should:
 
 This is why wikis/zettelkasten/graph notes appeal - they're connection-surfacing tools. Links are explicit connections. Backlinks reveal implicit ones.
 
+**Feeds are linear. You know what that means?**
+
+**The platform controls what you think.**
+
+If creativity/thinking is connection-making, and connections depend on what's adjacent in your mind, then:
+- Feed shows you A, then B, then C (in that order)
+- Your brain connects A→B→C
+- The *platform chose that sequence*
+- Therefore: the platform is shaping which connections you make
+
+This isn't just "engagement optimization." It's **cognitive control**. The algorithm decides what thoughts enter your mind, in what order, creating what associations.
+
+| Interface | Who controls sequence? | Who makes connections? |
+|-----------|----------------------|----------------------|
+| Algorithmic feed | Platform | You, but with platform-chosen inputs |
+| Chronological feed | Time (random-ish) | You, with semi-random inputs |
+| Graph/wiki | You | You, with self-chosen paths |
+| MOO/exploration | You | You, by moving through space |
+
+Linear feeds are the most controlled. You scroll down. One thing after another. No choice in sequence. The platform picks what goes next based on what will keep you scrolling.
+
+Non-linear tools (wikis, MOO, spatial interfaces) give you agency. You choose what to look at next. You make your own paths. The connections are *yours*.
+
+This reframes "platforms are bad for attention" into something deeper: **platforms are bad for cognition**. They're not just wasting your time - they're shaping your thought patterns by controlling your input stream.
+
+The "doomscroll trance" isn't just addiction - it's surrendering your cognitive agency to an algorithm.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
