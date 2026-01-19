@@ -820,6 +820,8 @@ Customer base: three people and their dog.
 
 **But that's fine.** These are explored because they're *interesting*, not because they're marketable. The goal is understanding, not adoption.
 
+**Nuance**: They all *have* value propositions - otherwise why start? But enough to be a moat / stand out from competition? Probably not. Though honestly, small niches are often enough. Don't gotta disrupt.
+
 **But wait - things that DID take off without corp funding:**
 
 | Project | Creator(s) | Why it worked |
