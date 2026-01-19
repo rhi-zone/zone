@@ -489,6 +489,18 @@ Counter-arguments:
 
 **Unresolved**: Is there a way to make programmable systems *actually* simple, not just LLM-assisted? Or is complexity irreducible and the best we can do is better interfaces to it?
 
+**Other experiments in "making programming easier":**
+
+| Project | Approach | Status |
+|---------|----------|--------|
+| **Hazel** | Typed holes, structure editing, live programming | Research, active |
+| **Synquid** | Synthesis from refinement types (write types → code generated) | Research |
+| **Sketch** | Program synthesis from specs | Research |
+| **Codeium/Copilot** | LLM autocomplete | Commercial, widespread |
+| **Snap!/Scratch** | Visual blocks | Educational |
+
+So many experiments. Some research, some commercial. None has "won" for general-purpose accessible programming. The search continues.
+
 **This is a failure.** Not a technical impossibility. A collective failure of imagination or will.
 
 Is this something rhizome should care about? "Anyone can make interactive things" as a goal?
