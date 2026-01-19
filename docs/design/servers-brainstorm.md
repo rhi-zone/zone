@@ -189,6 +189,7 @@ The tradeoff was "text is universal" but the cost is "text is hostile to non-pro
 - Cells can have **rich text** - technically - but good luck editing it in the formula bar
   - Conventional method: type → apply formatting → remember what you did → type next section → apply different formatting → repeat
   - A careful dance for something that should be trivial
+  - (Arguably some people *like* the complexity - job security for the office Excel wizard)
 - People build Cthulhu-like spreads of references for tracking things Excel was never made for.
 - Sticky headers help, but then there's another table floating to the right...
 - "It should be in its own sheet" but:
