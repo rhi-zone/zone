@@ -1865,7 +1865,7 @@ People copy WIMP because it's familiar, not because it's optimal. "Nobody got fi
 | **Vim/Emacs** | Modal editing. Steep learning curve but efficient once learned. |
 | **VSCode** | Not purely WIMP. Command palette, keybindings, **tiling panel manager**, extensions. Hybrid. |
 
-Note: **modality** shows up in multiple of these (RPG in a Box, Blender, Vim). Modal gets a bad rap from WIMP's "modal confusion" (which dialog is active?) but **task-based modality** can reduce clutter - only show tools relevant to current task. The key is making modes discoverable and switching easy.
+Note: **modality** shows up in multiple of these (RPG in a Box, Blender, Vim - and VSCode too! Editing vs debugging vs git vs search are different modes with different tools/affordances). Modal gets a bad rap from WIMP's "modal confusion" (which dialog is active?) but **task-based modality** can reduce clutter - only show tools relevant to current task. The key is making modes discoverable and switching easy.
 
 Even VSCode - mainstream as it gets - isn't purely WIMP. It's a hybrid that borrows from terminal editors, command palettes, extensibility models. And notably: **VSCode is a tiling panel manager**. Split editors horizontally/vertically, dock panels, sidebars. No floating window chaos - it's all spatial organization within one frame. That's not WIMP, that's tiling WM energy.
 
