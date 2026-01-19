@@ -930,6 +930,20 @@ This is the pattern:
 
 No blank page. No rigid template. Fragments that accumulate into something with a *feel*.
 
+**Tangent: the NN elephant in the room**
+
+Common angle: "neural networks bad, steals jobs." And honestly? Valid concern. Malicious actors do what they do. Artists getting ripped off. Content farms. Deepfakes. Real harms.
+
+But: are NNs (image diffusion, LLMs, etc.) a *net* negative? Who knows. Genuinely unclear.
+
+What's clear:
+- They *can* be tools that lower creative barriers (character cards, iteration, "what's off?")
+- They *can* be tools that replace creative labor (content farms, "good enough" slop)
+- The same technology enables both
+- The outcome depends on who's using it and how
+
+Not taking a strong stance. Just noting: the tooling conversation happens in this context. "LLMs help you iterate on character cards" coexists with "LLMs let corps fire writers." Both true. Uncomfortable.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
