@@ -107,7 +107,7 @@ Existing partial solutions:
 | Solution | What it does | What it lacks |
 |----------|-------------|---------------|
 | Lorebooks (ccv2) | Static knowledge injection | No state, no logic |
-| SillyTavern injection | Text at arbitrary points | Manual, no persistence |
+| SillyTavern extended lorebooks | Injection at arbitrary points | Still no logic, no persistence |
 | Exotic plugin combos | Hacky state tracking | Fragile, not composable |
 
 The gap: **programmable logic + persistence + structured state**. Can't do inventories. Can't "select 2 things from bag" without exotic plugin combinations.
