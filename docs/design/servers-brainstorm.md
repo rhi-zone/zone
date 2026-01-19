@@ -849,6 +849,16 @@ The creative weirdos aren't gone. They're just... marginalized? Siloed? Talked a
 
 Maybe the question isn't "how do we scale the spirit" but "why did the spirit get pushed to the margins, and can it reclaim some territory without becoming what it replaced?"
 
+**The real problem isn't being marginalized. It's discoverability.**
+
+Fine with staying niche. But: people can spend their *entire lives* without knowing these communities exist. Without knowing this was something they could *participate* in. Not just consume - create, contribute, belong.
+
+The early web had webrings, directories, "links" pages. You'd stumble onto things. Discovery was built into browsing.
+
+Now? Algorithms surface what optimizes engagement. The weird creative corners don't optimize for engagement. So they stay invisible. Someone who would *love* SCP or IF or MOOs or Neocities might never encounter them.
+
+It's not that the spirit needs to go mainstream. It's that the *path* to finding it got paved over.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
