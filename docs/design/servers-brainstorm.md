@@ -508,7 +508,29 @@ Maybe the core value is: **make things findable and structured so you don't have
 - Problems: discoverability (menu hunting), mouse dependency (RSI, accessibility), window management (still unsolved), file dialogs (universally hated), deep hierarchies, modality confusion
 - Touch/voice/VR emerged but WIMP still dominates desktop
 - We're still doing "rectangles on screen, click on things"
-- **Question**: What would a better paradigm look like? Is canopy exploring this, or just another WIMP app?
+
+**It's not the UI, it's the interaction graph**:
+- Lotus was frontend-agnostic: web, Discord, TUI, CLI
+- Same model, different projections
+- The question isn't "what pixels" but "what's the shape of the affordances"
+  - When can you act?
+  - Where are actions available?
+  - What actions exist?
+  - How do you discover them?
+  - How do they compose?
+
+Different frontends, same interaction graph:
+| Frontend | Projection of affordances |
+|----------|--------------------------|
+| Web | Buttons, forms, clicks |
+| Discord | Threads, reactions, slash commands |
+| TUI | Keys, modes, status lines |
+| CLI | Commands, flags, pipes |
+| MOO/text | Verbs, objects, natural language |
+
+The "paradigm" is the graph, not the rendering. WIMP is one graph shape (hierarchical menus, modal dialogs). MOO is another (objects with verbs, contextual commands).
+
+**Implication**: Canopy isn't "the UI" - it's *a* projection. The interaction graph lives in the backend (MOO verbs, entity affordances). Frontends just render it.
 
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
