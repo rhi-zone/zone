@@ -123,6 +123,31 @@ The views are projections. The substrate is one thing.
 
 **This is simpler.** One substrate, multiple views. Not three apps pretending to be different things.
 
+### The Maximally Minimal Entity
+
+```typescript
+Entity = { id: unique } & Record<string, unknown>
+```
+
+That's it. An entity is just an ID plus arbitrary key-value pairs.
+
+- Tags? `{ id, tags: ["foo", "bar"] }`
+- Verbs? `{ id, verbs: { look: "..." } }`
+- Relations? `{ id, parent: other_id, children: [...] }`
+- Note content? `{ id, content: "..." }`
+- File data? `{ id, blob: binary, path: "/..." }`
+
+Everything is just properties. The "schema" is conventions about property names. Views interpret conventions.
+
+**Is this too minimal?** Maybe. You might want:
+- Indexed properties (for fast queries)
+- Reserved properties (id, created_at, updated_at)
+- Type hints (for validation)
+
+But: **start minimal, add structure only when needed.**
+
+This is simpler than MOO. MOO has opinions about rooms, containment, verbs. This has no opinions. It's just... things with properties.
+
 ---
 
 ## Overview
