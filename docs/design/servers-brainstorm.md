@@ -86,6 +86,25 @@ This is "scope creep that's actually good" - while solving immediate problem, no
 
 But: partial solutions have value. "Can read/write basic docx" beats "nothing exists." The machine-readable specs might help someone else finish what you can't.
 
+**What's actually wanted:**
+
+Velocity is cool, but at the end of the day: **want to finally just *have* something usable.**
+
+Favorite projects are ones where you can go: "take this, and this, and this, voila - it works!"
+
+Example: `~/git/lua/cli/` - personal Lua "everything repo"
+- Some are placeholders for things I'd really like
+- But most: composed in less than a day from other parts of the repo itself
+- Small pieces that combine into working tools
+
+**The goal isn't impressive LOC counts. It's having things to reach for and combine.**
+
+This is what the minimal entity substrate enables:
+- Small pieces (just `{ id } & Record<string, unknown>`)
+- Conventions (property names everyone understands)
+- Views (interpret conventions into useful interfaces)
+- Compose in a day, not a month
+
 ---
 
 ## Backpropagating Insights
