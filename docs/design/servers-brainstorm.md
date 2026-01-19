@@ -590,6 +590,26 @@ The pattern: power requires learning, but also: maybe the interaction model itse
 - Negative results are still results
 - "This is hard because X" is valuable knowledge
 
+**Command palettes: a partial solution that exists**:
+- Wonderful invention, frustratingly slow adoption
+- Makes the interaction graph *queryable* (fuzzy search what you want)
+- VSCode: can bind to commands *arbitrarily* - commands are first-class!
+- Not perfect, but way better than menu hunting
+
+Why this matters:
+- Commands exist as data, not just UI elements
+- You can search them (discoverability)
+- You can bind them (programmability)
+- You can script them (composability)
+
+This is the interaction graph becoming explicit. WIMP hides commands in menus. Command palettes surface them.
+
+**What's missing from command palettes?**
+- Still app-specific (each app has its own palette)
+- No cross-app composition
+- No persistent state (can't "save this sequence of commands")
+- No context-awareness (same commands everywhere, not object-dependent)
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
