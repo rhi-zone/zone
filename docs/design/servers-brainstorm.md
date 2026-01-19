@@ -1195,6 +1195,20 @@ Oh, and React is now slow enough that it needs **its own compiler** (React Compi
 
 Meanwhile Preact just... runs fast because it's small. No compiler needed.
 
+Actually, it's not just size - it's **architecture**. React's model is "re-run the entire function every render." That's fundamentally wasteful. The compiler exists to work around a bad architectural decision.
+
+Compare:
+| Approach | How it works | Efficiency |
+|----------|-------------|------------|
+| React | Re-run everything, diff virtual DOM | O(tree size) every render |
+| Vue | Fine-grained reactivity, track dependencies | Only update what changed |
+| Solid | Signals, no virtual DOM | Only run code that depends on changed signals |
+| Svelte | Compile away the framework | Minimal runtime, surgical updates |
+
+Vue is bigger than Preact but still fast because the *model* is smarter. React is big AND uses a slow model. Worst of both worlds, "fixed" with a compiler.
+
+The lesson: architectural decisions matter more than micro-optimizations. A smart small thing beats a dumb big thing with a compiler bolted on.
+
 **Other examples**:
 - Moment.js (~300KB) vs day.js (~2KB)
 - Lodash (~70KB) vs native JS + tiny helpers
