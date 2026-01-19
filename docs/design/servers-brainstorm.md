@@ -1703,6 +1703,45 @@ That's "view source → learn" for procedural media. Different domain, same prin
 
 "Source" is a file-based concept. Maybe the better question is: **how do you make systems inspectable?** Source is one answer. Live objects are another. Programmable worlds are another. Node graphs are another.
 
+**On "graphs are clunky" - are they though?**
+
+Structured non-linear = graphs. And graph tools are clunky. But is that innate?
+
+Why graphs feel clunky:
+- Visual complexity (hairball)
+- Layout is hard
+- No natural navigation order
+- Doesn't scale
+- Fiddly to edit
+
+But wait:
+- The web is a graph. We browse it fine.
+- MOO is a graph (rooms + exits). Doesn't feel clunky.
+- File trees are graphs. We manage.
+- Obsidian link-following = fine. Obsidian graph view = hairball.
+
+The pattern: **graphs are clunky when you visualize them globally. Local navigation works.**
+
+And not just one node at a time - 2-3 levels of expansion, dynamic expand/collapse. File browsers do this. IDE call trees. Mind maps. Obsidian local graph. You see your neighborhood, expand what interests you, collapse what doesn't.
+
+What doesn't work: "here's the whole graph, force-directed layout, good luck."
+
+**The real issue: affordances.**
+
+Graph tools dump nodes on screen and hope you figure it out. No clear affordances for:
+- What's expandable?
+- How do I navigate?
+- What actions exist here?
+- How do I filter/focus?
+
+The *data* is a graph. The *interaction* (what can I do, how do I discover it) is the problem.
+
+MOO solves this: verbs are explicit (`look`, `examine`, `go north`). Commands are discoverable (`help`, `@commands`). The world is a graph but the interaction affordances are clear.
+
+Command palettes solve this: Ctrl+K surfaces the interaction graph, makes it searchable. Not "hunt through menus."
+
+**Graphs aren't innately clunky. Graph tools just don't try on affordances/discoverability.**
+
 **What's actually interesting right now?**
 
 Hard to say. Depends on mood, energy, what's frustrating at the moment. The honest answer: probably whatever's in front of you when you sit down to code.
