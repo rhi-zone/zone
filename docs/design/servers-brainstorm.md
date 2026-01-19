@@ -934,11 +934,17 @@ Now: you see polished content everywhere. Professional YouTubers. Viral TikToks.
 
 Then you try to make something and it's... not that. Of course it's not. But the comparison is internalized. "This isn't good enough to share."
 
-The bar isn't real. It's a collective hallucination created by:
+The bar is *partly* a collective hallucination created by:
 - Algorithmic feeds showing only hits
 - Survivorship bias (you don't see the 99% that flopped)
 - Professionalization of everything
 - "Content creator" as job title
+
+But also: **some people are just unnecessarily harsh.** The bar is sometimes enforced by real humans being mean. Gatekeeping. "Your art is bad." "This is amateur." "Why did you even post this."
+
+That's harder to fight. It's not just internalized comparison - it's actual cruelty. And one harsh comment can undo a hundred kind ones.
+
+Communities matter here. Some spaces are supportive. Some are brutal. Choosing where to share is part of the battle.
 
 **How do you fight it?**
 
