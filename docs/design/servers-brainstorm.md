@@ -394,9 +394,21 @@ Instead: professional developers vs everyone else. The gap widened, not narrowed
 **Why?**
 - Apple killed it (business reasons)
 - Web won, but web is for *consuming* not *creating*
+  - The early web was for creating! GeoCities, personal pages, view source → learn
+  - Where did it go? Platforms ate it. Now you post *on* Facebook, not *on your site*
 - "Real programming" gatekeeping?
 - No financial incentive (users as creators don't pay subscription fees?)
 - Complexity creep (modern apps are too complex to build simply?)
+
+**The adoption cliff**:
+Maybe the reason things don't take off is brutal economics:
+- You need to be **nigh-impossibly better** to overcome switching costs
+- OR you need **corporation-level funding** for distribution/marketing
+- "Slightly better" or even "significantly better" isn't enough
+- Network effects protect incumbents
+- "Good enough" wins over "great but different"
+
+This is depressing but probably true. Rhizome doesn't have corporation funding. So: either be impossibly better, or don't compete head-on?
 
 **This is a failure.** Not a technical impossibility. A collective failure of imagination or will.
 
