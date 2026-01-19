@@ -158,6 +158,28 @@ Every required field constrains what entities can be. `{ id, parent, children, v
 
 `{ id } & Record<string, unknown>` has no constraints. Anything can be anything. Add structure through conventions, not requirements.
 
+### Why doesn't this exist already?
+
+One reason: **we don't have common conventions**.
+
+"But we have JSON!" Yes, JSON is the *format*. But:
+- Is it `name` or `title`?
+- Is it `description` or `desc` or `summary`?
+- Is it `tags` or `labels` or `categories`?
+- Is it `parent` or `parent_id` or `parentId`?
+- Is it `created_at` or `createdAt` or `created` or `timestamp`?
+
+Everyone invents their own property names. Every app, every API, every database. JSON solved the syntax, not the semantics.
+
+HTTP existed before REST conventions. JSON exists without property conventions.
+
+**Maybe what's needed isn't a new format, but conventions:**
+- schema.org tried this (for SEO mostly)
+- JSON-LD tried this (linked data)
+- ActivityPub has conventions (for federation)
+
+None became universal for "entities in general." The convention problem is unsolved.
+
 ---
 
 ## Overview
