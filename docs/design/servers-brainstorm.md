@@ -31,6 +31,21 @@ Not mutually exclusive - could have standalone notes server AND notes-as-MOO-app
 
 The MOO versions aren't wrappers around standalone versions. They're different paradigms that happen to solve similar problems. MOO-native apps are toys/demos/explorations.
 
+## Where Things Live
+
+**pith** = Stdlib. Stable interfaces, WASI foundation, seldom changes. "What are the primitives?"
+
+**flora** = Full-stack apps composing rhizome libraries. "What can we build with them?"
+
+Flora already contains:
+- **iris** - Session analysis (uses spore + sessions + llm)
+- **wisteria** - Autonomous tasks (uses spore + moss)
+
+Flora could contain:
+- **MOO** - Programmable objects (uses pith-sql, pith-fs, spore, reed)
+- **Notes** - Knowledge base (uses pith-sql, maybe spore)
+- **FS service** - File operations (uses pith-fs, pith-sql)
+
 ## Architecture (Common)
 
 ```
