@@ -1863,9 +1863,11 @@ People copy WIMP because it's familiar, not because it's optimal. "Nobody got fi
 | **Blender** (modern) | Reinvented itself. Context-sensitive UI, pie menus, modal but learnable. |
 | **Command palettes** | Ctrl+K everywhere. Searchable actions, no menu hunting. |
 | **Vim/Emacs** | Modal editing. Steep learning curve but efficient once learned. |
-| **VSCode** | Not purely WIMP. Command palette, keybindings, panels, extensions. Hybrid. |
+| **VSCode** | Not purely WIMP. Command palette, keybindings, **tiling panel manager**, extensions. Hybrid. |
 
-Even VSCode - mainstream as it gets - isn't purely WIMP. It's a hybrid that borrows from terminal editors, command palettes, extensibility models. The successful modern tools are quietly moving beyond WIMP even while wearing its skin.
+Even VSCode - mainstream as it gets - isn't purely WIMP. It's a hybrid that borrows from terminal editors, command palettes, extensibility models. And notably: **VSCode is a tiling panel manager**. Split editors horizontally/vertically, dock panels, sidebars. No floating window chaos - it's all spatial organization within one frame. That's not WIMP, that's tiling WM energy.
+
+The successful modern tools are quietly moving beyond WIMP even while wearing its skin.
 
 50 years of scattered progress. Not in mainstream OS design, but in specific tools that cared enough to try. Worth mining for patterns.
 
