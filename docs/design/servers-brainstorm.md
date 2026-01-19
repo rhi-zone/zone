@@ -822,6 +822,10 @@ Customer base: three people and their dog.
 
 **Nuance**: They all *have* value propositions - otherwise why start? But enough to be a moat / stand out from competition? Probably not. Though honestly, small niches are often enough. Don't gotta disrupt.
 
+**Contradiction**: We've identified *tons* of software with room to improve (Excel, multi-app workflows, settings sprawl, interaction paradigms...). But is that why we're here? To fix those things? Or to explore interesting ideas that happen to touch on them?
+
+The honest answer: mostly exploration. If improvement falls out of it, bonus. But "Excel is bad" isn't the *motivation* - it's an *observation* that informs the exploration.
+
 **But wait - things that DID take off without corp funding:**
 
 | Project | Creator(s) | Why it worked |
