@@ -1955,6 +1955,60 @@ If this doc helps one person think through design better - or helps future-us re
 
 "Doing well" may never be easy. But it can be practiced. And the trying matters.
 
+---
+
+## What Makes Interaction Actually Good?
+
+Let's think harder. Earlier I praised command palettes. But...
+
+**Command palettes are a crutch.**
+
+They're "discoverable" in that you can search for anything. But they're also:
+- A dumping ground for everything
+- Not contextual (same palette everywhere)
+- Require knowing what you're looking for (or guessing keywords)
+- Don't show what's relevant *right now*
+
+Command palette = "we don't have a place for this, so put it in the giant bag of every other action."
+
+**Hierarchy of discoverability:**
+
+| Tier | What it looks like | Why |
+|------|-------------------|-----|
+| **Best** | Affordances so clear you don't need to search | Things are where you expect. Actions visible on relevant objects. |
+| **Good** | Contextual actions | Right-click, hover reveals, actions appear near what they affect |
+| **Okay** | Organized menus | At least categorized. Can browse if you don't know the term. |
+| **Crutch** | Command palette | You can find it *if* you know what to search. Better than nothing. |
+| **Bad** | Hidden/undiscoverable | Keyboard shortcuts with no hint. "Just know" the magic incantation. |
+
+Command palettes are Tier 4 - better than hidden, worse than contextual.
+
+**What would actually good look like?**
+
+- Actions appear *on* the thing they affect (not in a global menu)
+- Context determines what's available (not everything everywhere)
+- Common actions are visible; rare ones are tucked but findable
+- You can *see* what's possible without searching
+- Spatial: things near each other are related
+
+**Example: MOO verbs**
+
+In a MOO, verbs are on objects. You examine the apple, see it has `eat`, `throw`, `peel`. Actions are discoverable *in context*. You don't search a global list of every verb - you look at the thing.
+
+Compare to: "open command palette, type 'eat', hope it exists."
+
+**Example: direct manipulation**
+
+Drag file to folder = move. Obvious. Spatial. No search required.
+
+Compare to: "open command palette, type 'move file', get dialog, pick destination."
+
+**The problem with command palettes:**
+
+They're universal solvent. Everything dissolves into "type keywords, find action." But universality is also flattening - you lose context, spatial relationships, object-action binding.
+
+They're a fallback for when you *don't* have better organization. Not a goal.
+
 **What's actually interesting right now?**
 
 Hard to say. Depends on mood, energy, what's frustrating at the moment. The honest answer: probably whatever's in front of you when you sit down to code.
