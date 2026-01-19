@@ -634,6 +634,13 @@ This is the interaction graph becoming explicit. WIMP hides commands in menus. C
 - Web especially needs structured data to render progressively
 - Text is one projection; structure is the source of truth
 
+**Tangent (but related)**: Reed has no text representation. Why?
+- Invalid syntax is a *failure mode that doesn't need to exist*
+- If you work with structure directly, there's no "parse error"
+- Text-based languages: string → parse → AST → compile
+- Structure-first: AST is the artifact, text is optional projection
+- (Everything is a tradeoff - text is human-writable, debuggable, diffable)
+
 Other approaches to explicit interaction graphs:
 - **Datalog/query-based** - affordances as facts, query what's possible
 - **Capability-based** - tokens define what you can do
