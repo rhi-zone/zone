@@ -400,6 +400,12 @@ Possible answers (guesses, being realistic):
 
 4. **Personal itch** - Not trying to be a company. Solving own problems.
 
+5. **Why do this at all?**
+   - Because I can. The barrier is low enough now.
+   - The alternative is N failed prototypes over years of free time.
+   - Frontier LLMs have absurd generalist + limited specialist knowledge.
+   - They're complementary to humans, not replacements - good at different things.
+
 ---
 
 ## Next Steps
