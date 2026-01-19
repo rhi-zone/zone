@@ -320,6 +320,61 @@ Everything is a file. Network-transparent filesystem. Simple protocol.
 
 ---
 
+## Reality Check: Why Doesn't This Exist?
+
+Skeptical question: If "structure for agents" is such a good idea, surely someone's done it?
+
+### Prior Art (it partially exists)
+
+| Problem | Existing solution |
+|---------|------------------|
+| API specs | [APIs-guru/openapi-directory](https://github.com/APIs-guru/openapi-directory) - 2000+ OpenAPI specs |
+| Universal primitives | WASI - already standardized |
+| Structured parsing | Tree-sitter - 100+ grammars |
+| Code intelligence | LSP - protocol exists |
+| Structured notes | Obsidian, Notion, Roam |
+| Programmable objects | LambdaMOO - 30+ years old |
+
+### So What's Actually Novel?
+
+Possible answers (guesses, being realistic):
+
+1. **Pieces exist, not unified** - Tree-sitter exists, LSP exists, but "moss" combines them differently. OpenAPI directory exists, but "liana" does codegen. The *composition* might be novel.
+
+2. **"Agent" framing is new** - Pre-LLM, "make things structured for agents" wasn't compelling. Now that AI agents are real, the framing matters more.
+
+3. **Not commercial** - Infrastructure plays, hard to monetize. Big companies don't build this; hobbyists do.
+
+4. **Integration is the hard part** - Making an OpenAPI directory is easy. Making it *actually composable* with code intelligence, format conversion, programmable objects, etc. is the real work.
+
+5. **NIH syndrome** - Everyone builds their own slightly different version. No unified ecosystem.
+
+### Why This Is Hard
+
+1. **Scope creep** - Look at the project list. Each one is ambitious on its own.
+
+2. **Massive LOC** - Moss alone is substantial. Multiply by 14 projects.
+
+3. **Years of work (pre-vibe-coding)** - Before LLM-assisted development, this would be years of solo work with no clear payoff.
+
+4. **No clear commercial usecase** - Hard to pitch "structured interfaces for agents" to investors.
+
+5. **Chicken-and-egg** - Need critical mass of integrations to be useful, but can't get adoption without being useful first.
+
+6. **Moving targets** - APIs change, specs evolve, languages update. Maintenance burden compounds.
+
+### What Makes It Viable Now?
+
+1. **LLM-assisted development** - Can write more code faster. Moss itself helps write moss.
+
+2. **AI agents are real** - The "agent" usecase now has concrete demand (Claude Code, etc.)
+
+3. **Decomposition** - Not one monolith (lotus learned this). Independent pieces that compose.
+
+4. **Personal itch** - Not trying to be a company. Solving own problems.
+
+---
+
 ## Next Steps
 
 1. Decide: Start with MOO core, or a concrete use case (notes/fs)?
