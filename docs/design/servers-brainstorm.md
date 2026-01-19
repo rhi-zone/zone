@@ -973,6 +973,30 @@ No good answer here. Moderation is exhausting and doesn't scale. Isolation works
 
 The honest take: there might not be a solution. Just trade-offs. Hide and be safe but small. Grow and face the horde. Pick your poison.
 
+**Deeper question: are humans naturally like that? Or is there an underlying problem?**
+
+Is cruelty online just... human nature? Or is it created/amplified by something?
+
+Arguments for "it's environmental":
+- Anonymity + audience + no consequences = permission to be cruel
+- Screens dehumanize - you're not hurting a person, you're typing at text
+- Platforms reward engagement, including negative engagement
+- Hurt people hurt people - lots of people are miserable and it leaks out
+- Boredom, lack of meaning, misdirected frustration
+- Tribal dynamics amplified by algorithms (us vs them)
+- Context collapse - you say something to friends, strangers attack
+
+Arguments for "some of it is just people":
+- Some percentage of people are genuinely cruel
+- Trolling existed before the internet (just more local)
+- Even in small communities, there's sometimes That Person
+
+Probably both. Some people are just mean. But the environment takes normal human variance and amplifies the worst parts. A person who'd be mildly unpleasant IRL becomes relentless when there's no face, no consequences, and an audience.
+
+**Maybe the answer isn't "fix humans" but "don't build environments that reward cruelty."** Platforms *could* deprioritize toxic engagement. They choose not to because it's profitable.
+
+The problem might not be human nature. It might be capitalism optimizing for engagement at any cost.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
