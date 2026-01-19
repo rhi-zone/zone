@@ -1590,76 +1590,48 @@ The 20% that remains: determined bad actors, novel attacks, edge cases. That sti
 
 After all this philosophy - what's the concrete thing?
 
-**The thesis so far:**
-- Build substrate, not platform (but high enough up the stack to be usable)
-- MOO = "social with artifacts" (the missing thing)
-- Self-moderating through structure (capabilities, limited blast radius)
-- Reference implementations matter (not THE destination, but A demo)
-- Discord as entry point (meet people where they are)
+**Important: Rhizome is not MOO-specific. At all.**
 
-**What already exists:**
-- spore - Lua runtime with plugins
-- wisteria - task execution
-- iris - session analysis
-- moss - code intelligence
-- Flora seeds, docs, scaffolding
+Lotus was one project that got grandfathered in, then discarded - because it's essentially just SQL with a ~50 line schema. Not worth maintaining as a separate thing.
 
-**What's missing for MOO:**
-- Entity system (objects, props, verbs)
-- Persistence (libsql)
-- Capability system (permissions)
-- Discord frontend (or other entry points)
-- Example world (reference implementation)
+Rhizome is a diverse ecosystem:
+- **moss** - code intelligence
+- **spore** - Lua runtime with plugins
+- **resin** - procedural media (textures, audio, meshes)
+- **cambium** - type-driven conversion pipelines
+- **liana** - API binding generation
+- **reed** - source-to-source translation
+- **frond** - game primitives
+- **hypha** - federation protocol
+- etc.
 
-**Not necessarily a MOO.**
+None of these are MOO. MOO was explored, mostly discarded.
 
-MOO is one model. It's appealing (objects, verbs, rooms, persistence). But it's not the only way to do "social with artifacts." Don't get too attached.
+**The discussion above was about "social with artifacts" as a concept.** That's interesting! But it doesn't mean Rhizome = MOO. It means: if we wanted to build something in that space, what would it look like?
 
-Other shapes this could take:
-- Wiki-like (pages, links, edits)
-- Graph-based (nodes, edges, properties)
-- Card-based (SillyTavern-ish - characters, worlds, items as cards)
-- Hybrid (entities that can be any of the above)
+**So what actually gets built?**
 
-The core value is: **persistent structured state you can interact with**. MOO is one way to structure that. Not the only way.
+The honest answer: whatever's interesting and useful. Current active things:
+- **spore** - Lua runtime, actively used
+- **wisteria** - task execution
+- **iris** - session analysis
+- **moss** - code intelligence
+- **Flora** - this repo, seeds, docs
 
-**On frontends: Discord is actually MORE complex, not less.**
+**What's actually missing / wanted?**
 
-Original lotus plan: server core, multiple thin frontends. That's cleaner.
+This is the real question. Not "what's missing for MOO" but "what would be useful?"
 
-Discord complications:
-- Per-channel state associations (which channel maps to which location?)
-- Different mapping strategies (one channel = one variable location vs one channel per room)
-- Bot has to proxy/sudo for all users connected through it
-- Discord API quirks, rate limits, permissions
-- Can't do rich interactions (buttons/modals only go so far)
+Some possibilities from this conversation:
+- Tools for non-linear exploration (breaking feed linearity)
+- Self-moderating systems (capabilities, limited blast radius)
+- "Social with artifacts" substrate (if that direction is pursued)
+- Better creative tools (low floor, high ceiling)
+- Connection-surfacing tools (creativity as connection-making)
 
-A simple server with HTTP API + basic web client might actually be *simpler* than Discord-first.
+But also just: the existing projects need work. moss needs polish. spore needs features. resin needs... everything.
 
-```
-Web/CLI ←→ HTTP API ←→ core ←→ libsql
-                ↓
-           Lua scripts
-```
-
-Discord can be *a* frontend later. Not necessarily the first one.
-
-**What's the actual minimal thing?**
-
-1. **Persistent structured state** - entities with properties, stored in libsql
-2. **Operations on state** - create, read, update, delete, plus custom operations
-3. **Some kind of scripting** - Lua for extensibility
-4. **Some kind of interface** - CLI? Web? Doesn't have to be fancy.
-
-First milestone: "I can create a thing, give it properties, save it, retrieve it, run a script that modifies it."
-
-That's not MOO-specific. It's just... persistent programmable objects. The MOO-ness (rooms, containment, verbs-on-objects) can come later if it makes sense.
-
-**What NOT to build (yet):**
-- Perfect moderation (structure first, polish later)
-- Scale (three people and their dog)
-- Everything (scope creep is death)
-- Discord (unless we decide it's actually simpler)
+**The question remains genuinely open: what to build?**
 
 **How do you fight it?**
 
