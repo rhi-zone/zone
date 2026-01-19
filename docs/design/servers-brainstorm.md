@@ -816,6 +816,31 @@ Importantly: made *during* the "platforms ate everything" era. The IF community 
 
 Maybe it's romanticized. Probably. But the romanticism points at something real that got lost.
 
+**The core questions:**
+
+1. **Why did it disappear?**
+   - Convenience won. Platforms are *easier*. One login, one interface, audience built-in.
+   - Network effects. Your friends are on Facebook, not on your RSS reader.
+   - Mobile. Apps, not URLs. Walled gardens by default.
+   - Money. Ad-driven attention economy rewards engagement, not exploration.
+   - Discovery died. Without curation (webrings, directories), how do you find the weird stuff?
+   - Professionalization. "Your site looks amateur" became an insult, not a badge of authenticity.
+
+2. **Can we bring it back?**
+   - The spirit never fully died (nightfall.city, IF community, neocities, small web movement)
+   - But "back" to what? The conditions that created it (scarcity, novelty, no incumbents) can't be recreated
+   - Maybe the question is: can we create *new* spaces with that spirit, not resurrect the old ones?
+
+3. **How?**
+   - **Don't compete with platforms on their terms** - they win on convenience, audience, network effects
+   - **Offer something platforms can't** - ownership, weirdness, depth, persistence, *yours*
+   - **Lower the floor** - Discord bots, not new apps to download
+   - **Raise the ceiling** - programmable, not just templates
+   - **Connect the islands** - federation, discovery, webrings-but-modern
+   - **Make creation the point** - not consumption with a "post" button
+
+   Open question: is this even possible at scale? Or is "small and intentional" the only way it works?
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
