@@ -1299,24 +1299,17 @@ Linear feeds are effective *for algorithms*. But what if you break the linearity
 
 **Case study: Pixiv recommendations**
 
-When you click an artist, Pixiv suggests multiple other artists. When you follow one, it gets replaced with more artists in a similar direction.
+When you click an artist, Pixiv suggests multiple other artists in a modal. Follow one, and just that slot gets replaced - the other options remain.
 
 ```
 Linear feed:     A → B → C → D → E (no choice, just scroll)
 
-Pixiv style:     A → [B, C, D]
-                      ↓ (you pick C)
-                     [E, F, G]
-                      ↓ (you pick F)
-                     [H, I, J]
-                      ...
+Pixiv style:     [B, C, D, E, F] (multiple directions at once)
+                  ↓ (follow C, just C replaced)
+                 [B, G, D, E, F] (other options still there)
 ```
 
-Key differences:
-- **Multiple options at once** - you see branches, not a single stream
-- **You choose direction** - agency at each step
-- **Algorithm responds to choices** - but you steered it there
-- **Tree/graph, not line** - exploration has shape
+The key value: **multiple directions exist simultaneously**. You're choosing from a set, not accepting a sequence. Even without dramatic branching, seeing options = agency.
 
 The algorithm still recommends. But you're navigating, not being conveyed. The control dynamic shifts.
 
