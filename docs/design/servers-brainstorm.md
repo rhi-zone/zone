@@ -434,11 +434,37 @@ Value proposition by bucket:
 4. **The meta-play** - Building tools that help build tools. moss helps build moss.
 
 **Core value - what do I actually care about?**
-- Personal tooling? ("I want these things to exist for me")
-- Proving a point? ("This approach works")
-- Creative outlet?
-- Something else?
-- TODO: Answer honestly
+
+Honest answers (partial, can't think of everything at once):
+
+1. **I like making general frameworks** - I'm terrible at making anything specific. The general-purpose thing is genuinely appealing, not just cope.
+
+2. **Lotus/MOO**: SillyTavern sucks. I've wanted inventory management since the AI Dungeon days—literally years ago. On paper it's a trivial, basic feature. In practice, no one's built it properly because chat apps treat world state as an afterthought.
+
+3. **Notes**: I don't use note-taking apps. Why? Laziness + unclear value.
+   - It's *effort* to reach over to a note-taking app
+   - What do they offer? Structure? What's the right structure?
+   - I have a 'notes' DM in Discord (others have notes servers). Mostly ephemeral stuff.
+   - **The real problem**: If I have a video/website/TV series on the tip of my tongue, how do I find it? I can't. The memory exists but there's no retrieval path.
+
+4. **FS**: I don't use a file browser. What's the value over terminal? Is there even one?
+   - Folders suck for organization
+   - How do you find things in `homework/math1001/month/day/whatever`?
+   - Hierarchies are arbitrary and break down
+
+5. **NNs are flawed approximators**: They're excellent at approximation but WHY are we encoding world knowledge as opaque weights that cost time to train?
+   - In what world will "skibidi rizz" be useful for reasoning?
+   - World knowledge should be *structured and queryable*, not baked into weights
+   - This is the "Structure for Agents" thesis: don't make agents interpret, give them structure
+
+**Synthesis**:
+- The common thread is **retrieval and structure**
+- Notes problem = can't retrieve fuzzy memories
+- FS problem = can't navigate arbitrary hierarchies
+- MOO problem = can't inject world state into chat
+- NN skepticism = world knowledge shouldn't be opaque
+
+Maybe the core value is: **make things findable and structured so you don't have to hold everything in your head**
 
 **If the AI bubble bursts and LLMs disappear, what are we left with?**
 
