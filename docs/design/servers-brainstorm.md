@@ -467,6 +467,8 @@ Whether this produces *good* code or just *working* code is an open question.
 - Humans make the same mistakes repeatedly
 - Organic growth → inconsistent architecture
 - LLM-assisted might actually avoid some tech debt by not knowing the baggage
+- Rapid iteration + no consumers = "just refactor without deprecation"
+- No API stability guarantees yet = freedom to get it right
 
 The bar isn't "is this perfect?" - it's "is this better than the alternative?"
 
