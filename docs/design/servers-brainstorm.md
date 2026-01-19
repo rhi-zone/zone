@@ -410,6 +410,26 @@ Maybe the reason things don't take off is brutal economics:
 
 This is depressing but probably true. Rhizome doesn't have corporation funding. So: either be impossibly better, or don't compete head-on?
 
+**But wait - things that DID take off without corp funding:**
+
+| Project | Creator(s) | Why it worked |
+|---------|-----------|---------------|
+| Linux | Torvalds | Free Unix for PC, ideological momentum, filled real gap |
+| Git | Torvalds | Scratched own itch (kernel dev), became essential |
+| QEMU/TCC | Bellard | Single genius, infrastructure niches |
+| FFmpeg | Bellard + community | Everyone needs media handling, became indispensable |
+| LuaJIT | Mike Pall | Single genius, insane performance, filled real need |
+
+Common threads:
+- **Infrastructure, not end-user apps** - They enable other things
+- **Filled genuine gaps** - Not "slightly better", but "this didn't exist / was unaffordable"
+- **Became dependencies** - Hard to NOT use them once established
+- **Scratched own itch** - Built for themselves first
+- **Single genius or tiny team** - Not committees
+- **Technically extraordinary** - Not just good, but "how did one person do this?"
+
+Maybe the pattern: **build infrastructure that becomes indispensable**, not apps that compete for users.
+
 **This is a failure.** Not a technical impossibility. A collective failure of imagination or will.
 
 Is this something rhizome should care about? "Anyone can make interactive things" as a goal?
