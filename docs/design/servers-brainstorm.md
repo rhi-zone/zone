@@ -1652,6 +1652,37 @@ But also just: the existing projects need work. moss needs polish. spore needs f
 
 MOO is *one* of these. Not the only one. Each is a rabbit hole.
 
+**On the MOO-ish thing specifically:**
+
+It's not a new primitive - it's a full-stack app that *composes* Rhizome primitives:
+- Uses **spore** (Lua runtime)
+- Uses **pith** via spore-pith (capability interfaces)
+- Uses **reed** (if translation needed)
+- Lives in **flora** (apps that demonstrate the ecosystem)
+
+This is the right framing. Flora is where apps go - things built *on* the ecosystem, not new fundamentals. The MOO-ish thing belongs there precisely because it's not a primitive.
+
+**On "view source → learn" - is "source" even the right concept?**
+
+Early web: view source, see HTML. That worked.
+
+But other systems did this differently:
+- **Smalltalk/Pharo**: No "source" - everything is live objects. Inspect anything while it's running. No separation between code and runtime.
+- **LambdaMOO**: @examine objects, @list verbs. The world is the source. You read it by being in it.
+- **Resonite**: Live inspection of world objects (to some extent)
+
+The thing we actually want might not be "source" but **inspectability** - seeing how things work *while they're working*.
+
+| Paradigm | How you learn |
+|----------|--------------|
+| Files + source | Read static text, imagine execution |
+| Smalltalk | Inspect live objects, send messages, see what happens |
+| MOO | Examine objects in-world, read verbs, modify and see |
+| Web (old) | View source, copy, modify |
+| Web (2026) | lol good luck, it's minified webpack |
+
+"Source" is a file-based concept. Maybe the better question is: **how do you make systems inspectable?** Source is one answer. Live objects are another. Programmable worlds are another.
+
 **What's actually interesting right now?**
 
 Hard to say. Depends on mood, energy, what's frustrating at the moment. The honest answer: probably whatever's in front of you when you sit down to code.
