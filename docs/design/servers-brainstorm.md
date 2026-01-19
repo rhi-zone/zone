@@ -1390,6 +1390,53 @@ Possible reasons:
 
 The linear feed might be deliberately chosen *because* it's more controlling, not despite it.
 
+---
+
+## Back to Reality: What Can We Actually Do?
+
+We've been on tangents about platforms, feeds, agency, creativity. But practically: if we don't want the headache of funding, building a platform, curating a community... what's left?
+
+**What we're NOT doing:**
+- Raising money (VC expectations, growth pressure)
+- Building a platform (users, moderation, scale)
+- Curating community (endless social labor)
+- Competing with incumbents (they have billions)
+
+**What we CAN do:**
+
+| Approach | What it means | Examples |
+|----------|--------------|----------|
+| **Build substrates** | Tools others build on, not destinations | Rhizome projects - moss, spore, resin |
+| **Make things** | Lead by example, create artifacts | Character cards, worlds, tools |
+| **Document ideas** | Write it down, let others find it | This brainstorm doc |
+| **Open source everything** | Others can build on it | GitHub, permissive licenses |
+| **Contribute to existing spaces** | Don't reinvent, participate | SCP, AO3, wikis, existing MOOs |
+| **Small tools, big composability** | Unix philosophy | grep.lua is 12 lines |
+
+**The Rhizome thesis: build substrate, not platform.**
+
+Don't try to be the destination. Be the infrastructure. Let others build the destinations on top.
+
+- Minecraft isn't a platform - it's a substrate. Servers are the destinations.
+- SCP wiki isn't a platform - the wiki software is substrate, the content is destination.
+- AO3 isn't trying to be a social network - it's an archive. Infrastructure for fic.
+
+If you build good substrate, others build the communities. You don't have to do the social labor.
+
+**Concretely for Rhizome:**
+
+| Project | Substrate for what? |
+|---------|-------------------|
+| moss | Code understanding |
+| spore | Lua runtime with integrations |
+| MOO/lotus | Programmable persistent worlds |
+| resin | Procedural media generation |
+| cambium | Format conversion pipelines |
+
+These are tools. People use tools to make things. You don't have to build the things - just make the tools good.
+
+**The hope:** someone uses spore + MOO to build a community. Someone uses resin to make procedural art. Someone uses moss to understand their codebase. You enabled it without running it.
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
