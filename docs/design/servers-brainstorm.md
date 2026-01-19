@@ -1642,7 +1642,7 @@ But also just: the existing projects need work. moss needs polish. spore needs f
 | **Procedural media** | Expert tools only (Houdini, etc.) | resin - composable, accessible |
 | **Federation that works** | Matrix has issues, ActivityPub is limited | hypha - authoritative handoff |
 | **API bindings** | Write boilerplate or hope a lib exists | liana - generate from specs |
-| **Non-linear interfaces** | Everything is feeds | ??? - barely explored |
+| **Non-linear interfaces** | Everything is feeds | Canvas tools exist (Excalidraw, tldraw, Notion canvas, yourworldoftext). Structured non-linear less explored |
 | **Creative tools** | Either toy (Scratch) or expert (Blender) | Low floor, high ceiling, missing middle |
 | **Understandable software** | Can't read what you use | 100 Rabbits philosophy, Lua repo energy |
 | **Local-first** | Cloud dependency, no ownership | CRDTs exist, adoption lagging |
