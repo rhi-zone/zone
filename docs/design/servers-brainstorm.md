@@ -31,6 +31,19 @@ So it doesn't hurt to sit down and just... plan. Refine. Question assumptions. B
 
 This document is that: thinking before doing. Not because doing is bad, but because doing *the wrong thing* is expensive.
 
+**But also: some things exist just because they're neat.**
+
+Example: resin (procgen primitives).
+- Has a bit of everything: textures, audio, meshes, noise, etc.
+- Intended to be living/comprehensive
+- First-class WGSL/GLSL compilation
+- Fully serializable graphs
+- Extensibility first-class
+
+Do I plan to use it? Not really - averse to gamedev, ideas require too much investment to validate. But resin is *neat*. It's neat to have all these primitives in one place, properly designed.
+
+Not everything needs immediate personal utility. Sometimes "this should exist, so I'll make it exist" is enough.
+
 ---
 
 ## Backpropagating Insights
