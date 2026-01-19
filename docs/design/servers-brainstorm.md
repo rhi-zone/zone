@@ -185,6 +185,8 @@ The tradeoff was "text is universal" but the cost is "text is hostile to non-pro
 - Freeform grid. Why? Now tables can be *anywhere*.
 - "Why is the table here and not there?"
 - Dollar sign syntax for absolute references (`$A$1`). Two different syntaxes.
+  - (Not even counting R1C1 notation - who even uses that?)
+- Cells can have **rich text** - technically - but good luck editing it in the formula bar
 - People build Cthulhu-like spreads of references for tracking things Excel was never made for.
 - Sticky headers help, but then there's another table floating to the right...
 - "It should be in its own sheet" but:
