@@ -1311,6 +1311,12 @@ Pixiv style:     [B, C, D, E, F] (multiple directions at once)
 
 The key value: **multiple directions exist simultaneously**. You're choosing from a set, not accepting a sequence. Even without dramatic branching, seeing options = agency.
 
+**To be fair: X/Twitter does this too** - three "who to follow" suggestions, different per profile. You can rabbit-hole through them and end up navigating a closed-ish social circle of artists. Hopping from profile to profile, following the graph of who-knows-who.
+
+That's not the algorithmic feed - that's **graph exploration**. The feed is linear, but profile-hopping is navigating a social graph. Same platform, different modes, different agency levels.
+
+Maybe the insight isn't "Pixiv good, Twitter bad" but: **graph navigation exists alongside feeds, and it's more agentic**. The recommendations are still algorithmic, but you're traversing a network, not being conveyed down a stream.
+
 The algorithm still recommends. But you're navigating, not being conveyed. The control dynamic shifts.
 
 | Model | Who steers? | User agency |
