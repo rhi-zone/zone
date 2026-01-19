@@ -341,6 +341,34 @@ Modern notes with linking. Block-based or page-based. Graph structure.
 ### Plan 9 / 9P
 Everything is a file. Network-transparent filesystem. Simple protocol.
 
+### Things That Dared To Be Different
+
+Prior art not because they're all good or relevant, but because they tried something other than the mainstream.
+
+| System | What's Different | Status |
+|--------|-----------------|--------|
+| **Plan 9** | Everything is a file, network-transparent FS, simple protocol | Influential but niche |
+| **Oberon** | Tiled text UI, no hidden state, everything visible | Academic, preserved |
+| **Smalltalk/Pharo** | Live object system, image-based, everything is an object | Active (Pharo), influential |
+| **Arcan** (letoram) | Rethinking display server from scratch, scriptable compositor | Active, ambitious |
+| **Uxn/Varvara** (100 Rabbits) | Minimal VM, personal computing, off-grid capable | Active, intentionally constrained |
+| **Lisp Machines** | Hardware + OS built around one paradigm | Dead, influential |
+| **HyperCard** | Anyone can build interactive things, low floor | Dead, mourned |
+
+Common threads:
+- **Coherence**: One paradigm carried through (files, objects, text, images)
+- **Simplicity**: Fewer concepts, more orthogonal
+- **Introspection**: System can examine/modify itself
+- **Different tradeoffs**: Sacrificed mainstream compatibility for internal consistency
+
+Why they didn't win:
+- Network effects (everyone else uses X)
+- Ecosystem (where are the apps?)
+- "Good enough" incumbents
+- Sometimes: genuinely worse at common tasks
+
+But: they proved *alternatives exist*. The current way isn't the only way.
+
 ---
 
 ## Reality Check: Why Doesn't This Exist?
