@@ -406,6 +406,28 @@ Possible answers (guesses, being realistic):
    - Frontier LLMs have absurd generalist + limited specialist knowledge.
    - They're complementary to humans, not replacements - good at different things.
 
+### More Pragmatism
+
+**What do I really want out of this?**
+- TODO: Actually answer this honestly
+
+**If the AI bubble bursts and LLMs disappear, what are we left with?**
+
+| Project | LLM-dependent? | Residual value |
+|---------|---------------|----------------|
+| moss | No | Tree-sitter based code intelligence still works |
+| pith | No | Universal interfaces, useful regardless |
+| reed | No | Transpiler, works without LLMs |
+| spore | Partially | Lua runtime works; LLM plugin less useful |
+| lotus/MOO | No | Programmable objects, still works |
+| liana | No | API codegen, useful regardless |
+| cambium | No | Format conversion, still works |
+| iris | Yes | Session analysis needs LLMs |
+
+Most of the ecosystem is **LLM-assisted in construction, not LLM-dependent in operation**. The code exists and works. LLMs were the means, not the purpose.
+
+Exception: iris (and similar "AI-native" tools) would lose core functionality.
+
 ---
 
 ## Next Steps
