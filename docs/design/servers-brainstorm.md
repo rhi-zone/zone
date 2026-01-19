@@ -493,6 +493,15 @@ Counter-arguments:
 - "People can't learn" is a cop-out - people learn hard things all the time
 - The problem might be teaching, not learning capacity
 
+**Hotter take: every programming language sucks. All of them.**
+- Not "teaching is bad" - the *languages themselves* are bad
+- Every language is a pile of tradeoffs and historical accidents
+- Syntax errors, type errors, null pointers, async hell, dependency hell
+- Even "good" languages have foot-guns and gotchas
+- We've been doing this for 70 years and it still sucks
+- Maybe programming is just *hard* and we haven't found the right abstractions yet
+- Or maybe text-as-code is fundamentally limited (see: reed's "no syntax errors" philosophy)
+
 **Unresolved**: Is there a way to make programmable systems *actually* simple, not just LLM-assisted? Or is complexity irreducible and the best we can do is better interfaces to it?
 
 **Other experiments in "making programming easier":**
