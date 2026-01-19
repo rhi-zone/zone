@@ -269,8 +269,13 @@ Configurable patterns to extract specific sentiments/patterns:
 - Learning moments - "I didn't realize...", "I learned..."
 - Blockers encountered - tool failures, missing context
 - Successful patterns - approaches that worked well
+- Q&A pairs - user questions + agent answers/suggestions (for FAQs/docs)
+- Decisions made - architectural choices, trade-offs discussed
 
-Could feed into improvement tracking over time.
+Could feed into:
+- Improvement tracking over time
+- Auto-generated FAQ/documentation
+- Pattern libraries for future sessions
 
 ## Open Questions
 
