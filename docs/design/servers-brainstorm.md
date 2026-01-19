@@ -381,6 +381,7 @@ And in 39 years, where did its paradigm go? **Nowhere.**
 |---------|-----------|----------------------|
 | Flash | Multimedia authoring | Dead, was proprietary, web-only |
 | Scratch | Visual programming for kids | "For kids" - ceiling too low |
+| **Snap!** | Scratch + macros, first-class functions | Actually good! High ceiling. But niche, academic |
 | PowerPoint | Slides with interactions | Seriously? |
 | No-code tools | Bubble, Webflow, etc. | Vendor-locked, web-only, limited |
 | Notion | Blocks + databases | Closer, but not programmable |
