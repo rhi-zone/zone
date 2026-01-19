@@ -501,6 +501,19 @@ Counter-arguments:
 - We've been doing this for 70 years and it still sucks
 - Maybe programming is just *hard* and we haven't found the right abstractions yet
 - Or maybe text-as-code is fundamentally limited (see: reed's "no syntax errors" philosophy)
+  - But: visual/structure editors have existed forever. They haven't "won" either.
+
+**Essential vs accidental complexity:**
+- Some complexity is inherent to the problem domain (essential)
+- Some is caused by bad tools/languages (accidental)
+- Fred Brooks' "No Silver Bullet" (1986) - still relevant 40 years later
+
+**Counterpoint: abstraction (potentially recursive)**
+- You can't eliminate essential complexity, but you can *layer* it
+- Build abstractions, hide details behind interfaces
+- Work at the right level for the task
+- Yes, abstraction is limited. But everything is a tradeoff.
+- The question: what are the *right* abstractions? We clearly haven't found them yet.
 
 **Unresolved**: Is there a way to make programmable systems *actually* simple, not just LLM-assisted? Or is complexity irreducible and the best we can do is better interfaces to it?
 
