@@ -1075,7 +1075,29 @@ What they're NOT:
 
 **The Rhizome question**: what if the substrate was general? What if the domains could connect? What if the silo walls came down?
 
-Not "one tool to rule them all" - that's impossible. But maybe: shared primitives, interoperable formats, composition across domains?
+Not "one tool to rule them all" - that's hubris. But maybe: shared primitives, interoperable formats, composition across domains?
+
+**Honest assessment: many of these tools are... questionable.**
+
+| Tool | The good | The wtf |
+|------|----------|---------|
+| Twine | Low floor, IF accessible | Not extensible, save dialog is blech |
+| RPG Maker | Huge community | It's just JSON + interpreter + awful settings UI. Why is it this big? |
+| Ren'Py | Visual novels accessible | What even is that DSL |
+| Game Maker | Actually quite decent | Proprietary, pricing changes |
+| PuzzleScript | Elegant constraints | Very limited (by design, but still) |
+
+These succeeded despite their flaws. The bar isn't as high as it seems? Or: filling a niche matters more than polish?
+
+**Better substrates for games exist:**
+
+- **Godot** - open source, general purpose, actually well-designed
+- **Bevy** - ECS architecture, Rust, hyper-modular
+- Both could be "substrate for multiple genres" rather than genre-specific tools
+
+The pattern: well-designed general substrates (Godot, Bevy) vs poorly-designed niche tools (RPG Maker, Ren'Py). The niche tools won on accessibility/community, not on technical merit.
+
+**Implication for Rhizome**: Maybe the goal isn't "better than Twine at IF" but "general substrate that makes Twine-like-things easy to build on top." Don't compete with the niches - be the layer they could build on.
 
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
