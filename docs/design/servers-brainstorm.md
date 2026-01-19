@@ -92,10 +92,25 @@ Velocity is cool, but at the end of the day: **want to finally just *have* somet
 
 Favorite projects are ones where you can go: "take this, and this, and this, voila - it works!"
 
-Example: `~/git/lua/cli/` - personal Lua "everything repo"
+Example: `~/git/lua/cli/` (public: github.com/pterror/lua)
 - Some are placeholders for things I'd really like
 - But most: composed in less than a day from other parts of the repo itself
 - Small pieces that combine into working tools
+
+Sample of what's there:
+```
+cloc.lua (7k)      - count lines of code
+dns_lookup.lua     - DNS queries
+find.lua, grep.lua - file search
+fs_watch.lua       - file watching
+http_static.lua    - static file server
+lua2js.lua         - transpiler
+mud_client.lua     - MUD client (!)
+repl.lua, replx.lua - REPL tools
+serve*.lua         - various servers
+```
+
+Most under 5k lines. Each does one thing. Compose from shared libraries in the same repo.
 
 **The goal isn't impressive LOC counts. It's having things to reach for and combine.**
 
