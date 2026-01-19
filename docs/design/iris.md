@@ -284,6 +284,33 @@ Could feed into:
 - Pattern libraries for future sessions
 - Correctness evaluation - was the agent right? (via user feedback or later verification)
 
+## Future Directions
+
+### Output Formats
+- Structured JSON for programmatic consumption
+- RSS/Atom feed generation directly
+- Frontmatter for static site generators (publish date, tags, author)
+
+### Multi-Agent Perspective
+- Cross-agent comparison (Claude vs Gemini on same task)
+- "Voice" that acknowledges being one of many agents
+- Aggregating insights from different agents working on same codebase
+
+### Integration Points
+- Git hook to auto-run after commits
+- CI job that generates weekly digest
+- MCP server so other agents can query iris
+
+### Memory / Knowledge Base
+- Queryable knowledge base from past sessions
+- "What did we learn about authentication in this project?"
+- Vector embeddings of past insights for retrieval (spore-embed?)
+
+### Meta-Analysis
+- How has the agent's understanding evolved over time?
+- Recurring themes - what topics keep coming up?
+- Productivity patterns - time of day/week analysis
+
 ## Open Questions
 
 - Where does the agent draft live before publishing? PR-based review? Staging area?
