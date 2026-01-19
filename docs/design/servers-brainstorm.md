@@ -841,6 +841,14 @@ Maybe it's romanticized. Probably. But the romanticism points at something real 
 
    Open question: is this even possible at scale? Or is "small and intentional" the only way it works?
 
+**But also**: Little corners exist - SCP, AO3, Tumblr, Neocities. They're *thriving* in their way. But can we make them *big* corners?
+
+Not trying to be a platform. But it's genuinely sad that the spirit became so niche. "Tumblr user" is talked about like some exotic species, despite that exotic species being the source of like half of all internet culture (4chan is the other half, somehow).
+
+The creative weirdos aren't gone. They're just... marginalized? Siloed? Talked about like they're a curiosity rather than the actual engine of anything interesting online.
+
+Maybe the question isn't "how do we scale the spirit" but "why did the spirit get pushed to the margins, and can it reclaim some territory without becoming what it replaced?"
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
