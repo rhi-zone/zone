@@ -44,6 +44,17 @@ Do I plan to use it? Not really - averse to gamedev, ideas require too much inve
 
 Not everything needs immediate personal utility. Sometimes "this should exist, so I'll make it exist" is enough.
 
+**Multiple motivations at once:**
+
+| Motivation | Example |
+|-----------|---------|
+| Scratch own itch | MOO - want inventory in Tavern cards |
+| Should exist | resin - procgen primitives should be comprehensive |
+| Spun out of need | burn-models - conceptualized for lotus image-gen plugin |
+| What if? | The whole ecosystem - what if we could subsume all interaction? |
+
+Things don't have single reasons. burn-models was practical (need image gen), but learning happened along the way. The motivations stack.
+
 ---
 
 ## Backpropagating Insights
