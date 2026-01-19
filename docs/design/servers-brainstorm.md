@@ -502,6 +502,14 @@ Maybe the core value is: **make things findable and structured so you don't have
 - Also: NIH to understand things deeply (you learn by building)
 - This explains the ecosystem scope: not hubris, but exploration
 
+**Interaction paradigms have stagnated**:
+- WIMP (Windows, Icons, Menus, Pointer) - Xerox PARC 1970s, Mac 1984
+- 50+ years of the same paradigm. Is it flawless?
+- Problems: discoverability (menu hunting), mouse dependency (RSI, accessibility), window management (still unsolved), file dialogs (universally hated), deep hierarchies, modality confusion
+- Touch/voice/VR emerged but WIMP still dominates desktop
+- We're still doing "rectangles on screen, click on things"
+- **Question**: What would a better paradigm look like? Is canopy exploring this, or just another WIMP app?
+
 **Vibe-coding style**:
 - "Holding reins loosely" - but *not* zero technical knowledge (contrast with "pure vibe coders")
 - Background: years of golfing, language design/impl (not compilers), frontend, Rust for AoC
