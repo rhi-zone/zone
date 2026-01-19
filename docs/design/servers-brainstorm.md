@@ -913,6 +913,19 @@ Maybe the through-line isn't "MOO" or "web" or any specific domain. It's: **make
 
 Both let you start with something immediately playable/real, then build from there. Low floor, high ceiling. Your creation, not a template.
 
+**Constraints don't just "force cleverness" - they lower the quality bar.**
+
+The way constraints work isn't only "limitation breeds creativity." It's also: **if you're restricted, you're not expected to do as well.** That's accessibility.
+
+- Dwitter: 140 characters? No one expects a masterpiece. Permission to be small.
+- PICO-8: 128x128, 16 colors? Of course it's chunky. That's fine.
+- Pixel art: The *actual* skill ceiling is absurdly high, but the *perceived* bar is "it's just pixels"
+- Bytebeat: One line of math? Cool if it makes any interesting sound at all.
+
+This removes the "blank canvas terror" in a different way. Not "here's a fragment to start from" but "here's a constraint that makes imperfection acceptable."
+
+Both approaches work. Fragments lower the starting barrier. Constraints lower the quality expectation. Either way: you get to make something without the pressure of it being Good.
+
 **Personal example: SillyTavern character cards**
 
 Writing character cards is a form of creative output that works this way:
