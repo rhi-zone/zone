@@ -101,6 +101,17 @@ Problems with chat-log-only context:
 - **No persistent state**: Clothing, inventory, location not tracked
 - **No descriptions**: Things in the world aren't properly described
 
+This is a **known problem**. Smaller models especially struggle tracking outfit, pose, location.
+
+Existing partial solutions:
+| Solution | What it does | What it lacks |
+|----------|-------------|---------------|
+| Lorebooks (ccv2) | Static knowledge injection | No state, no logic |
+| SillyTavern injection | Text at arbitrary points | Manual, no persistence |
+| Exotic plugin combos | Hacky state tracking | Fragile, not composable |
+
+The gap: **programmable logic + persistence + structured state**. Can't do inventories. Can't "select 2 things from bag" without exotic plugin combinations.
+
 What MOO solves - inject **world state** as context, not just chat:
 ```
 You are in [Room: Kitchen].
