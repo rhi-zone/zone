@@ -948,6 +948,25 @@ A little sad that the vocal sides are so polarized. "AI will save everything" vs
 
 The nuanced position is boring: "some uses good, some uses bad, depends on context, we should think carefully." Doesn't fit in a tweet. Doesn't generate outrage. Probably closer to true.
 
+---
+
+**General stance: build up abstractions.**
+
+But the question remains: *which* abstractions? That's the hard part. Wrong abstractions are worse than no abstractions.
+
+**Hacker culture is cool.** One advantage of the Lua repo: everything's small. Anyone could, if they wanted, *just look at it*. grep.lua is 12 lines. The HTTP library is 442 lines total. No magic. No "trust the framework." You can read it.
+
+This is a form of accessibility that gets overlooked:
+- Not just "easy to use" but "easy to understand"
+- Not just "low barrier to start" but "low barrier to inspect"
+- View source → learn → make your own (the early web energy)
+
+Big frameworks are powerful but opaque. Small pieces are limited but transparent. The Lua repo optimizes for transparency. Anyone can become a contributor because anyone can read it.
+
+**Open question**: can you have both? Powerful abstractions that are also transparent? Or is there a fundamental tradeoff?
+
+Maybe the answer is: **layers of small transparent pieces**, where each layer is understandable on its own. You don't need to understand all 442 lines to use the HTTP client - just the 17 lines of client.lua. But if you want to go deeper, you can.
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
