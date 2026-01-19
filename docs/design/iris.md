@@ -304,7 +304,15 @@ Could feed into:
 ### Memory / Knowledge Base
 - Queryable knowledge base from past sessions
 - "What did we learn about authentication in this project?"
-- Vector embeddings of past insights for retrieval (spore-embed?)
+- Full RAG: embeddings for retrieval, full text for answers
+- Flat storage (insights are cross-cutting, don't fit neat hierarchies):
+  ```
+  .iris/
+    history.json
+    insights/*.md     # flat, named by slug/hash
+    index.db          # embeddings for discovery
+  ```
+- spore-embed + spore-libsql for vector search
 
 ### Meta-Analysis
 - How has the agent's understanding evolved over time?
