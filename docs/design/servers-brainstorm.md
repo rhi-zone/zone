@@ -180,6 +180,13 @@ HTTP existed before REST conventions. JSON exists without property conventions.
 
 None became universal for "entities in general." The convention problem is unsolved.
 
+**But: these are valuable prior art!** They represent years of iteration from many people (and yes, some bureaucracy). Don't reinvent from scratch - learn from what they figured out:
+- schema.org: rich vocabulary for describing things
+- JSON-LD: linking/context mechanisms
+- ActivityPub: conventions for actors, activities, objects
+
+Maybe rhizome conventions should borrow heavily rather than invent.
+
 ---
 
 ## Overview
