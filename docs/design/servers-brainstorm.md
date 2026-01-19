@@ -801,7 +801,7 @@ The pattern: **technical merit gets you in the door, but staying power is often 
 - Muscle memory lock-in (QWERTY, vim bindings)
 - "It's what everyone uses" lock-in (Excel, PDF)
 
-**Implication for Rhizome**: Don't compete where lock-in is strongest. Find the gaps where there's no incumbent, or where the incumbent's lock-in is weakest.
+**Implication for Rhizome**: Doesn't matter. We're not here to compete or make money. We're here to explore. If something useful falls out of it, great. If not, we learned something.
 
 **But wait - things that DID take off without corp funding:**
 
