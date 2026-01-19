@@ -837,12 +837,11 @@ Trying to articulate it honestly:
 3. **Composition** - The joy of small pieces that snap together. `grep.lua` is 12 lines because the libraries exist. That feeling of "take this + this + this = working thing."
 
 4. **Scratching itches** - MOO exists because of wanting inventory in Tavern cards. Rescribe exists because pandoc isn't perfect. Real needs, even if niche.
+   - Parallel MOO motivation: **collaborative worldbuilding**. ChatMUD gave a taste of this. Exploring things other people built. Creating in the same universe. Being able to interact with *and* create things in a shared persistent world. SillyTavern doesn't have this. Most AI RP sites have multiplayer maybe, but that's not the same thing. Multiplayer is playing together. Collaborative worldbuilding is *building* together, and then the builds persist for others to discover.
 
-5. **Collaborative worldbuilding** - ChatMUD gave a taste of this. Exploring things other people built. Creating in the same universe. Being able to interact with *and* create things in a shared persistent world. SillyTavern doesn't have this. Most AI RP sites have multiplayer maybe, but that's not the same thing. Multiplayer is playing together. Collaborative worldbuilding is *building* together, and then the builds persist for others to discover.
+5. **"Should exist"** - Some things just *should* exist and don't. So make them exist.
 
-6. **"Should exist"** - Some things just *should* exist and don't. So make them exist.
-
-7. **The moonshot** - Subsume all computer interaction. Absurd, probably impossible, but it's the north star that gives direction.
+6. **The moonshot** - Subsume all computer interaction. Absurd, probably impossible, but it's the north star that gives direction.
 
 None of these are "make money" or "get users" or "beat the competition." They're all intrinsic.
 
