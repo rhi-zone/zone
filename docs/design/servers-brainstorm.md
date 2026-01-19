@@ -92,6 +92,36 @@ Lua (executes on spore with native plugin capabilities)
 
 A standalone persistent programmable object database. Other projects could build on it, or not.
 
+### Original Motivation
+
+The itch: Tavern/SillyTavern ccv2 character cards are limited by **linear conversational history**.
+
+Problems with chat-log-only context:
+- **Amnesia**: Context falls off, character "forgets" things
+- **No persistent state**: Clothing, inventory, location not tracked
+- **No descriptions**: Things in the world aren't properly described
+
+What MOO solves - inject **world state** as context, not just chat:
+```
+You are in [Room: Kitchen].
+You see: [Table], [Chair], [Alice (wearing: sundress, holding: coffee cup)].
+Your inventory: [keys, phone].
+Recent events: [Alice entered 5 minutes ago].
+---
+[conversation continues here]
+```
+
+### Intentional Generalization
+
+While the origin was AI roleplay, the primitives (entities, props, verbs, persistence) were intentionally made generic. Same bones, different flesh:
+
+| Use Case | Entities | Props | Verbs |
+|----------|----------|-------|-------|
+| AI roleplay | Characters, rooms, items | Clothing, inventory, mood | say, move, take |
+| Kanban | Boards, columns, cards | Status, assignee, due date | move, archive |
+| MUD | Rooms, NPCs, items | Health, stats, descriptions | look, fight, talk |
+| Wiki | Pages, links | Content, tags, backlinks | edit, link, search |
+
 ### What Made MOO Interesting
 
 1. **Everything is an object**: Rooms, players, items, even verbs
