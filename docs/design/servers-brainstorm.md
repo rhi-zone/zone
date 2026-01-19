@@ -191,21 +191,48 @@ Or project-specific names (more flowers).
 ### Lotus (~/git/lotus) - Decomposed
 Was a MOO-style monolith. Removed from ecosystem and decomposed into parts.
 
-**Has comprehensive docs** at `~/git/lotus/docs/` - worth carefully evaluating for lessons learned.
+**Has comprehensive docs** at `~/git/lotus/docs/` - carefully evaluated, insights below.
 
 Decomposed into:
 - **pith** - Capability-based interface libraries (fs, sql, http, etc.)
 - **spore** - Lua runtime with plugin system
 - **reed** - TS → IR → Lua compiler
 
-Key lessons (not implementation details, lotus had churn):
-- Capability-based security works well
-- TS → IR → Lua is a good stack
-- Prototype inheritance is useful for entities
-- JSON props = no schema migrations
-- Monolith bad, composition good
+#### Lotus Vision (4 Pillars)
+1. **Deep Simulation** - Entity system, scripting, persistence (MUD/game roots)
+2. **AI-Native** - Context injection for LLMs, NPC agency, memory systems
+3. **Ubiquitous Access** - Headless, API-first, multi-platform (web, tui, discord)
+4. **Knowledge/Productivity** - Graph structure, vector search, programmable workflows
 
-**Lotus layering** (good):
+#### Technical Decisions (from rust-port.md)
+| Decision | Choice | Why |
+|----------|--------|-----|
+| Execution | LuaJIT | Tracing JIT, table shape optimization, FFI, 500KB, iOS-compatible |
+| Plugins | Dynamic libs | Need full system access; WASM too restrictive |
+| Plugin interface | Native Lua C API | No serialization overhead, can return userdata |
+| Binary format | Cap'n Proto | Cross-language, zerocopy, schema evolution |
+| TS parsing | tree-sitter | Fast, Rust-native, no Node dependency |
+
+**Trust model**: Scripts sandboxed (IR restricted), plugins trusted (installed by admin).
+
+#### Challenges & Mitigations
+- **Performance** → JIT compilation
+- **Schemaless querying** → Hybrid ECS (structured for hot paths, JSON for flex)
+- **AI context costs** → Caching static context, RAG for retrieval
+- **Frontend fragmentation** → Headless core, leverage existing ecosystems
+
+#### Capability System Insights
+- Unforgeable tokens, not role-based
+- Minting (create new), delegation (restricted copy), transfer (change owner)
+- Wildcards for admin, scoped params for users
+- "Possession proves authorization"
+
+#### Automation Patterns
+- Bots = entities + scheduled verbs
+- Triggers: `on_enter`, `on_leave`, etc.
+- Examples: janitor bot, greeter, kanban column auto-archive
+
+#### Lotus Layering (good)
 ```
 App logic (notes: backlinks, search, linking)
     ↓ built on
@@ -214,7 +241,7 @@ Primitives (fs, sql, etc.)
 Plugins
 ```
 
-**The monolith trap** (bad): The app logic layer *had* to be MOO objects. MOO was the only host → everything depended on MOO → monolith.
+**The monolith trap** (bad): App logic *had* to be MOO objects → MOO became the only host → monolith.
 
 **Decomposed philosophy**: Keep the layering, remove the host requirement:
 ```
