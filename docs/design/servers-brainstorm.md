@@ -1101,6 +1101,33 @@ Wanting a better world ≠ making "destroy the current world" your strategy. You
 
 Is it delusional? More like... a hope that doesn't need to be the plan. Build the thing. Let people find it. If platforms shrink someday, great. If not, the thing still exists.
 
+**But wait. We already know it's possible.**
+
+This isn't theoretical. Massive successes exist that aren't traditional platforms:
+
+| Thing | Scale | What it is | Why it's not a platform |
+|-------|-------|-----------|------------------------|
+| **Minecraft** | 300M+ copies sold | Creative sandbox, servers | You buy it once. Servers are independent. No feed, no algorithm. |
+| **SCP Foundation** | Millions of readers, thousands of authors | Collaborative horror wiki | Wiki, not platform. No engagement metrics. People create because they want to. |
+| **Terraria** | 50M+ copies | Co-op building/survival | Same energy as Minecraft. Shared progress, persistent worlds. |
+| **Co-op games generally** | Huge | Playing together | Not competing for attention. Shared goals. |
+| **AO3** | 12M+ works | Fanfiction archive | Non-profit, community-run. No ads, no algorithm. Thriving. |
+
+These aren't niche. Minecraft is one of the best-selling games *ever*. SCP is a cultural phenomenon. AO3 won a Hugo Award.
+
+**What do they have in common?**
+
+- **Not ad-driven** - no incentive to maximize engagement
+- **Creation is the point** - not consumption with a "post" button
+- **Ownership** - you own what you make (or it's creative commons)
+- **No algorithmic feed** - you find things by exploring, not by being fed
+- **Community, not audience** - you're *with* people, not performing *for* them
+- **Persistence** - things you build stay. Servers have history. Wikis accumulate.
+
+The model works. At scale. Without toxic engagement dynamics. It's not wishful thinking - **it already happened.**
+
+The question shifts from "is this possible?" to "what made these work, and can we learn from them?"
+
 **How do you fight it?**
 
 - **Intentional constraints** - gives permission to be limited
