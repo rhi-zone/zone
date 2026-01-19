@@ -887,6 +887,28 @@ The goal: low floor (start fast) + high ceiling (grow into complexity) + *owners
 
 The 12-line grep.lua energy, but for world-building. Compose small pieces into something meaningful. First piece takes a minute.
 
+**Broader than web/MOO - creative output in general.**
+
+The question applies everywhere:
+
+| Domain | Current barrier | What "trivially easy start" could look like |
+|--------|----------------|---------------------------------------------|
+| Music | DAW learning curve, theory | Hum/tap something → it's a loop you can build on |
+| Visual art | Tools, technique | Describe/sketch → something exists, refine from there |
+| Writing | Blank page paralysis | Fragments that accumulate into something |
+| Games | Engines, code, assets | Describe a rule → it works, add more rules |
+| Worlds | Everything above | Describe a place/thing → it exists, build from there |
+
+The pattern: **start with something tiny that exists, not a blank canvas**.
+
+A blank canvas is terrifying. "Here's a fragment, make it yours" is approachable.
+
+This is why templates feel hollow - they're someone else's fragment, not yours. But a blank page is worse. The sweet spot: *your* tiny fragment, immediately real, with a path to grow it.
+
+**Rhizome angle**: Resin (procgen) could be "describe a texture/sound → it exists." Frond could be "describe a behavior → it works." The pattern generalizes.
+
+Maybe the through-line isn't "MOO" or "web" or any specific domain. It's: **make the first creative step trivially easy across all domains, then let people compose upward.**
+
 What it demonstrates:
 - **Text can be incredibly deep** - 4 years to build, near-inexhaustible combinations
 - **Constraints inspire innovation** - text-only forced creative mechanics
