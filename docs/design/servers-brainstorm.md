@@ -381,6 +381,14 @@ Possible answers (guesses, being realistic):
 
    Pre-LLM, this would be years of solo work. Now it's weeks.
 
+   **Caveats** (being honest):
+   - burn-models is mostly untested - "functional" is generous
+   - moss works, but value proposition for humans is unclear ("who needs a dedicated outline tool?")
+   - LOC ≠ quality, velocity ≠ correctness
+   - LLM-assisted code still needs human review, testing, iteration
+
+   The point isn't "this code is perfect" - it's "this code *exists* and can be iterated on."
+
 2. **AI agents are real** - The "agent" usecase now has concrete demand (Claude Code, etc.)
 
 3. **Decomposition** - Not one monolith (lotus learned this). Independent pieces that compose.
