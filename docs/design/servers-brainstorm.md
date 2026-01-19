@@ -664,6 +664,13 @@ What matters: **does the thing work?** Not "is it philosophically novel?"
 
 The dismissive framing mistakes *mechanism* for *capability*. Yes, it's "just" predicting tokens. And brains are "just" neurons firing. So what?
 
+**Holding both things at once:**
+- Yes, LLMs have real limitations (no persistent learning, debatable agency, hallucinations)
+- AND: this entire ecosystem exists. moss, burn-models, lotus, all of it.
+- That's not a trivial result.
+- Limitations don't erase outputs. Outputs don't erase limitations.
+- The honest position: "limited but useful" not "magic" or "useless"
+
 **But:** the same is true for "naturally programmed" codebases. Arguably even *more* true:
 - Tech debt accumulates over time
 - "The way we've always done it" calcifies
