@@ -25,6 +25,106 @@ It's absurdly ambitious. But the exploration itself is valuable, even if the des
 
 ---
 
+## Backpropagating Insights
+
+Now to ML the frick out of this and apply insights to actual architecture.
+
+### Is the ecosystem architecture still valid?
+
+Given everything above (structure, tags, hyper-modularity, fractal decomposition), does the current rhizome split make sense?
+
+Current decomposition:
+- **pith** - interfaces/stdlib
+- **spore** - Lua runtime
+- **reed** - TS → IR → Lua
+- **moss** - code intelligence
+- **flora** - apps (this repo)
+- etc.
+
+**What's good:**
+- Clear separation of concerns
+- Each piece usable independently
+- Fractal structure (same pattern inside each)
+
+**What might need rethinking:**
+- Is the boundary between pith and spore right?
+- Does reed belong as separate, or should it be part of spore?
+- Where does MOO fit? Is it flora (app) or something more fundamental?
+
+### Is MOO what we actually want?
+
+Honest question: is MOO the right model, or just the "easy path" because LambdaMOO exists?
+
+**Arguments for MOO:**
+- Proven model (30+ years)
+- Simple substrate (entities, props, verbs)
+- Already understood how it works
+- Programmable by design
+
+**Arguments against / for questioning:**
+- Are we just copying homework?
+- Is "objects with verbs" the right primitive?
+- Does the room/containment model make sense for everything?
+- Is there something simpler or more general?
+
+**Alternative primitives to consider:**
+| Primitive | What it is | Pros | Cons |
+|-----------|-----------|------|------|
+| Entities + props + verbs (MOO) | Objects with methods | Proven, intuitive | Room metaphor forced? |
+| Entities + relations (graph) | Nodes and edges | More flexible | Less intuitive? |
+| Facts + rules (datalog) | Logic programming | Very queryable | Steep learning curve |
+| Documents + links (wiki) | Pages with references | Simple | Limited programmability |
+| Capabilities + resources | Tokens that grant access | Secure by design | Abstract |
+
+Maybe MOO is right. Maybe we should prototype alternatives. **The time to question is now, before we've built it.**
+
+### Why is there a distinction between notes, fs, objects?
+
+This is the real question. If we have:
+- Objects with properties and verbs
+- Tags instead of hierarchies
+- Everything queryable
+
+Then what IS the difference between:
+- A "note" (text content, tags, links)
+- A "file" (binary content, path, metadata)
+- An "object" (properties, verbs, containment)
+
+**They're all just entities with different properties.**
+
+| "Type" | What it actually is |
+|--------|-------------------|
+| Note | Entity with `content: text`, `tags: [...]` |
+| File | Entity with `content: blob`, `path: string` (legacy compat) |
+| Object | Entity with `verbs: [...]`, `location: entity_id` |
+| Room | Entity with `contents: [entity_id, ...]` |
+| Player | Entity with `inventory: [...]`, `location: entity_id` |
+
+**The distinction is artificial.** A note IS an object. A file IS an object. The "types" are just different property shapes.
+
+**Implication:** Maybe we don't need "Notes app" and "FS app" and "MOO". We need:
+1. Entity substrate (things with properties)
+2. Standard property shapes (note-like, file-like, room-like)
+3. Views that understand those shapes (notes view, file browser view, world view)
+
+The views are projections. The substrate is one thing.
+
+```
+┌─────────────────────────────────────────────┐
+│           Entity Substrate                   │
+│  (id, properties, tags, verbs, relations)   │
+└─────────────────────────────────────────────┘
+         ↑            ↑            ↑
+    ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+    │  Notes  │  │   FS    │  │  World  │
+    │  View   │  │  View   │  │  View   │
+    └─────────┘  └─────────┘  └─────────┘
+```
+
+**This is simpler.** One substrate, multiple views. Not three apps pretending to be different things.
+
+---
+
 ## Overview
 
 Three distinct projects that could relate:
