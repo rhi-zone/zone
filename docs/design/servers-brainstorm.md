@@ -1191,6 +1191,10 @@ For most apps, Preact is fine. But React is the default because:
 
 The 3KB version exists. People choose the 40KB version anyway. Size isn't the deciding factor. Ecosystem, familiarity, and safety are.
 
+Oh, and React is now slow enough that it needs **its own compiler** (React Compiler, formerly "React Forget") just to make it perform well. The abstraction got so heavy they needed another layer of abstraction to optimize it.
+
+Meanwhile Preact just... runs fast because it's small. No compiler needed.
+
 **Other examples**:
 - Moment.js (~300KB) vs day.js (~2KB)
 - Lodash (~70KB) vs native JS + tiny helpers
