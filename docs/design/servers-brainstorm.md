@@ -444,6 +444,7 @@ LambdaMOO, ChatMUD - they exist, they're neat. But:
 | Minecraft | Kinda (redstone, mods) | Yes | Low base, high for creation |
 | VRChat | Yes (Unity/Udon) | Yes | High (Unity knowledge) |
 | Second Life | Yes (LSL) | Yes | Medium-high |
+| **Resonite** | Yes (ProtoFlux) | Yes | Medium (visual programming, in-world) |
 | Rec Room | Limited | Yes | Low |
 
 Roblox is maybe the closest to "programmable shared worlds for everyone" - and it's massive. But:
