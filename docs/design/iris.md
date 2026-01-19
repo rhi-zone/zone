@@ -263,6 +263,15 @@ Instead of outputting directly, append to a draft queue for review:
 - `.iris/queue.json` tracks pending drafts
 - Separate publish step after human review
 
+**7. Custom extractors** (future)
+Configurable patterns to extract specific sentiments/patterns:
+- "What went wrong" - user corrections, agent apologies
+- Learning moments - "I didn't realize...", "I learned..."
+- Blockers encountered - tool failures, missing context
+- Successful patterns - approaches that worked well
+
+Could feed into improvement tracking over time.
+
 ## Open Questions
 
 - Where does the agent draft live before publishing? PR-based review? Staging area?

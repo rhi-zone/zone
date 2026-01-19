@@ -10,6 +10,9 @@
 local prompts = require("iris.prompts")
 local format = require("iris.format")
 local history = require("iris.history")
+local split = require("iris.split")
+local cluster = require("iris.cluster")
+local temporal = require("iris.temporal")
 
 -- Get sessions capability (injected by spore)
 local function get_sessions()
@@ -33,17 +36,22 @@ local M = {}
 M.prompts = prompts
 M.format = format
 M.history = history
+M.split = split
+M.cluster = cluster
+M.temporal = temporal
 
 -- Generate insight from a single session
 -- Options:
 --   voice: voice profile name (default, technical, reflective)
 --   track_progress: boolean - enable history tracking for deduplication
 --   project_root: string - root for .iris/history.json (default: cwd)
+--   as_of: string (YYYY-MM-DD) - write from perspective of this date
 function M.analyze_session(session_path, opts)
     opts = opts or {}
     local voice = opts.voice or "default"
     local track = opts.track_progress
     local project_root = opts.project_root
+    local as_of_ts = opts.as_of and temporal.parse_date(opts.as_of)
     local sessions_cap = get_sessions()
     local llm_cap = get_llm()
 
@@ -54,6 +62,14 @@ function M.analyze_session(session_path, opts)
     local session, err = sessions_cap:parse(session_path)
     if not session then
         return nil, "Failed to parse session: " .. (err or "unknown error")
+    end
+
+    -- Check if session is after the as_of date
+    if as_of_ts then
+        local session_ts = temporal.session_timestamp(session)
+        if session_ts and session_ts > as_of_ts then
+            return nil, "session is after --as-of date"
+        end
     end
 
     -- Get session ID for tracking
@@ -72,6 +88,14 @@ function M.analyze_session(session_path, opts)
         max_turns = 50,  -- Limit context size
         include_thinking = false,
     })
+
+    -- Add temporal context if --as-of specified
+    if as_of_ts then
+        local temporal_context = temporal.context_for_prompt(as_of_ts)
+        if temporal_context then
+            context = temporal_context .. "\n---\n\n" .. context
+        end
+    end
 
     -- Add history context if tracking
     if state then
@@ -193,6 +217,82 @@ function M.analyze_sessions(session_paths, opts)
     }
 end
 
+-- Analyze sessions grouped by domain/theme
+-- Returns multiple insights, one per domain
+function M.analyze_by_domain(sessions, opts)
+    opts = opts or {}
+    local voice = opts.voice or "default"
+    local track = opts.track_progress
+    local project_root = opts.project_root
+    local llm_cap = get_llm()
+
+    -- Load history if tracking enabled
+    local state = track and history.load(project_root) or nil
+
+    -- Cluster sessions by domain
+    local clusters = cluster.cluster_sessions(sessions)
+
+    local results = {}
+    local all_topics = {}
+
+    for domain, domain_sessions in pairs(clusters) do
+        print(string.format("[iris] Analyzing %s domain (%d sessions)...",
+            domain, #domain_sessions))
+
+        -- Build context for this domain
+        local context = ""
+
+        -- Add history context if tracking
+        if state then
+            local history_context = history.format_for_prompt(state)
+            if history_context then
+                context = history_context .. "\n---\n\n"
+            end
+        end
+
+        -- Add domain context
+        context = context .. string.format(
+            "# Domain Focus: %s\n\nThese sessions are about %s.\n\n",
+            domain, cluster.domain_context(domain)
+        )
+
+        -- Add session summaries
+        for i, session in ipairs(domain_sessions) do
+            context = context .. string.format("## Session %d\n%s\n\n",
+                i, format.session_summary(session))
+        end
+
+        -- Build prompt
+        local system = prompts.system_prompt(prompts.SINGLE_SESSION, voice)
+
+        -- Generate insight
+        local response = llm_cap:complete(system, context)
+
+        -- Extract topics
+        local topics = history.extract_topics(response)
+        for _, t in ipairs(topics) do
+            table.insert(all_topics, t)
+        end
+
+        table.insert(results, {
+            domain = domain,
+            insight = response,
+            session_count = #domain_sessions,
+            topics = topics,
+        })
+    end
+
+    -- Update history if tracking
+    if state then
+        history.add_topics(state, all_topics)
+        history.touch(state)
+        history.save(state, project_root)
+        print("[iris] Updated history: " .. #all_topics .. " topics extracted")
+    end
+
+    return results
+end
+
 -- List available sessions
 function M.list_sessions(project_path, format_filter)
     local sessions_cap = get_sessions()
@@ -227,10 +327,20 @@ Temporal Coherence:
   --show-history      Show what topics have been covered
   --clear-history     Clear the history state
 
+Session Processing:
+  --split-sessions    Split multi-day sessions at time gaps (>4h)
+  --analyze-splits    Show where sessions would be split (dry run)
+  --cluster-domains   Group sessions by theme before analysis
+  --show-clusters     Show domain clusters (dry run)
+
+Temporal Perspective:
+  --as-of <date>      Write from perspective of a past date (YYYY-MM-DD)
+
 Examples:
   iris --recent 5 --voice technical
-  iris --recent 10 --track-progress    # Track what's been written
-  iris --multi session1.jsonl session2.jsonl
+  iris --recent 10 --track-progress
+  iris --recent 20 --cluster-domains   # Group by theme
+  iris --recent 50 --as-of 2026-01-05  # Write as if it's Jan 5th
 ]])
 end
 
@@ -279,6 +389,19 @@ local function parse_args(argv)
             opts.show_history = true
         elseif arg == "--clear-history" then
             opts.clear_history = true
+        -- Session processing options
+        elseif arg == "--split-sessions" then
+            opts.split_sessions = true
+        elseif arg == "--analyze-splits" then
+            opts.analyze_splits = true
+        elseif arg == "--cluster-domains" then
+            opts.cluster_domains = true
+        elseif arg == "--show-clusters" then
+            opts.show_clusters = true
+        -- Temporal perspective
+        elseif arg == "--as-of" then
+            i = i + 1
+            opts.as_of = argv[i]  -- YYYY-MM-DD format
         elseif not arg:match("^%-") then
             table.insert(opts.paths, arg)
         end
@@ -329,6 +452,42 @@ if cli_args then
         os.exit(0)
     end
 
+    -- Analyze splits (dry run)
+    if opts.analyze_splits and #opts.paths > 0 then
+        local sessions_cap = get_sessions()
+        for _, path in ipairs(opts.paths) do
+            local session = sessions_cap:parse(path)
+            if session then
+                print("\n" .. path .. ":")
+                local analysis = split.analyze(session)
+                print(split.format_analysis(analysis))
+            else
+                print("\n" .. path .. ": failed to parse")
+            end
+        end
+        os.exit(0)
+    end
+
+    -- Show clusters (dry run)
+    if opts.show_clusters then
+        local sessions_cap = get_sessions()
+        local available = sessions_cap:list(opts.project, opts.format_filter)
+        local count = opts.recent_count or #available
+
+        local parsed = {}
+        for i = 1, math.min(count, #available) do
+            local session = sessions_cap:parse(available[i].path)
+            if session then
+                session.path = available[i].path
+                table.insert(parsed, session)
+            end
+        end
+
+        local clusters = cluster.cluster_sessions(parsed)
+        print(cluster.format_clusters(clusters))
+        os.exit(0)
+    end
+
     -- List sessions
     if opts.list then
         local sessions_cap = get_sessions()
@@ -357,8 +516,44 @@ if cli_args then
             os.exit(1)
         end
 
-        -- Sort by mtime (most recent first) - already sorted by spore-sessions
         local count = math.min(opts.recent_count, #available)
+
+        -- Clustered analysis mode
+        if opts.cluster_domains then
+            -- Parse all sessions first
+            local parsed = {}
+            for i = 1, count do
+                local session = sessions_cap:parse(available[i].path)
+                if session then
+                    session.path = available[i].path
+                    table.insert(parsed, session)
+                end
+            end
+
+            local results = M.analyze_by_domain(parsed, opts)
+
+            -- Output all domain insights
+            local output_parts = {}
+            for _, r in ipairs(results) do
+                table.insert(output_parts, string.format("# %s\n\n%s",
+                    r.domain:gsub("^%l", string.upper), r.insight))
+            end
+            local output = table.concat(output_parts, "\n\n---\n\n")
+
+            if opts.output then
+                local f = io.open(opts.output, "w")
+                if f then
+                    f:write(output)
+                    f:close()
+                    print("[iris] Written to " .. opts.output)
+                end
+            else
+                print("\n" .. output)
+            end
+            os.exit(0)
+        end
+
+        -- Standard analysis mode
         local paths = {}
         for i = 1, count do
             table.insert(paths, available[i].path)

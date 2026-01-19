@@ -135,11 +135,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1768785304,
-        "narHash": "sha256-nDF/j18HqC2SqGgFrtYerhqFvTJDMp6lTQYz1hJJaeE=",
+        "lastModified": 1768785977,
+        "narHash": "sha256-orYq7/T9QAJX5y0f+X/SyUOmhWtTUfvBIK6OAXeNlY8=",
         "owner": "rhizome-lab",
         "repo": "spore",
-        "rev": "754a9167120749c88a67627128e307a74dd43219",
+        "rev": "be0becf36f7680f24a5a15626fe7fec28eed9135",
         "type": "github"
       },
       "original": {
