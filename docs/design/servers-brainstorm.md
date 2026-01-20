@@ -4154,3 +4154,33 @@ The "notes" framing was polluting the vision with expectations from a category t
 - Comes to you > you go to it
 
 Not a second brain. A living system.
+
+### Paper Dominance Was Lack of Choice
+
+"Paper has been dominant for millennia" - but how much of that was lack of alternatives?
+
+What did analogue interactivity look like when people could reach for it?
+- Rolodexes (indexed, random access)
+- Card catalogs (searchable)
+- Filing cabinets (categorized retrieval)
+- Commonplace books (indexed marginalia, cross-references)
+- Slide rules (interactive computation)
+- Physical dashboards, dials, gauges
+
+People reached for interactivity whenever they could. Paper was the fallback, not the preference. The "linear notes" paradigm might just be the lowest common denominator that survived digitization - not the optimal form, just the familiar one.
+
+### Dopamine Arbitrage / Attention Economy Escape
+
+Hypothesis: maybe the "notes don't work for me" thing isn't ADHD or neurodivergence. Maybe it's just... having found an environment where your brain works well.
+
+The attention economy is *designed* to exploit dopamine - infinite scroll, notifications, engagement metrics. Most people are stuck in that environment.
+
+Programming is an escape hatch. Hyperfocus is a feature, not a bug. The reward loops align with deep work instead of fighting it.
+
+"Falling out of the attention economy into Visual Studio."
+
+Maybe the question isn't "is my brain different" but "did I accidentally optimize my environment while others are stuck in environments designed to exploit them?"
+
+The "I don't use notes apps" thing might not be a quirk. It might be: "I escaped the productivity theater that compensates for attention-hostile environments, because my environment isn't attention-hostile."
+
+If your work IS the dopamine reward, you don't need elaborate capture systems to remember to do it.
