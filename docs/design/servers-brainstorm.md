@@ -4291,3 +4291,76 @@ Changed to browser model (one window, navigate in place) because "too many windo
 The spatial interface isn't a future concept. It's a past concept that got beaten out by "efficiency" and "power users."
 
 We had it. We threw it away. Now it's retro.
+
+---
+
+## Radial Menus Are Optimal
+
+Hot take: a radial menu (optionally concentric) is optimal for both mouse distance and muscle memory.
+
+### Fitts's Law
+
+Time to target = f(distance, target size)
+
+**Radial:**
+- All options equidistant from cursor
+- Pie slices have "infinite" depth (extend to screen edge)
+- Distance is minimized and uniform
+
+**Linear dropdown:**
+- Top items closer, bottom items farther
+- All items same small height
+- Distance varies, targets are constrained
+
+Radial wins on both dimensions.
+
+### Muscle Memory
+
+- Direction is more memorable than position
+- "Up-right" vs "third item down"
+- 8 directions is a natural set (cardinal + diagonal)
+- Directions are *categorical*, positions are *ordinal*
+
+### Where It Works
+
+- Blender pie menus (beloved)
+- Clip Studio Paint / Krita
+- Maya marking menus
+- Game weapon wheels
+- Mass Effect dialogue wheel
+
+### Why Didn't It Win?
+
+Not because it's worse. Because of the toolkit.
+
+**Win32 gives you:**
+- Menu bars (built-in)
+- Dropdown menus (built-in)
+- Context menus (built-in)
+- File dialogs (built-in)
+
+**Win32 doesn't give you:**
+- Radial menus (build it yourself)
+
+If the toolkit has `CreateMenu()` but not `CreateRadialMenu()`, 99% of developers use `CreateMenu()`. Not because it's better - because it's *there*.
+
+The entire Windows application ecosystem is shaped by what happened to be implemented in 1990.
+
+**Incumbency isn't just "people copied each other." It's "the platform only gave us one option and nobody questioned it."**
+
+The toolkit IS the paradigm.
+
+### "But Radial Doesn't Scale Past 8 Items"
+
+Hot take: if you have >8 most-appropriate items, interaction design is the least of your worries.
+
+The 8-item limit isn't a bug, it's a **forcing function**:
+- Curate by context (what's actually relevant HERE?)
+- Nest if needed (radial → sub-radial)
+- Reconsider the feature set (do you need 50 actions?)
+
+Linear menus "scale" to 50 items by making all 50 equally hard to find. That's not scaling, that's hiding the problem.
+
+**Radial's limit is honest.** "You get 8. Choose wisely."
+
+Linear menus let you pretend you're not making choices while actually making everything worse.
