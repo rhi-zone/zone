@@ -45,13 +45,27 @@ Extracted from servers-brainstorm.md. These are the actionable leads.
 
 ---
 
-## 3. Resin: Interaction Graph for Node Editing
+## 3. Resin: Graph Representation and Primitives
+
+**What it is:** Graph-based constructive anything toolkit. Procgen primitives.
+
+**What to build:**
+- Graph representation (the data layer)
+- Primitive definitions (noise, transforms, booleans, etc.)
+- Serializable graphs
+- Extensibility first-class
+
+**Note:** The interaction/UI side (node editing, context filtering, radial menus) is Canopy's responsibility. Resin is the data, Canopy is the projection.
+
+---
+
+## 3b. Canopy: Interaction Graph for Node Editing
 
 **The problem:** Node editors suck. Spaghetti, tedium, navigation.
 
 **The insight:** Apply the interaction graph. Don't show everything always.
 
-**What to build:**
+**What to build (in Canopy's Resin projection):**
 - Context-filtered node creation (radial menu, 8 items max)
 - What nodes are relevant NOW?
 - What connections make sense from THIS port?
@@ -148,8 +162,9 @@ Extracted from servers-brainstorm.md. These are the actionable leads.
 | 47 dependencies | Constraints as guardrails |
 | "Work" | "Play" |
 | Bootcamps | Game jams |
+| Primeagen, Low Level Learning | todepond |
 
-Both exist. Professional gets attention. Creative track is alive but niche.
+Both exist. **The problem: they share the same name.** Search "programming" and you get professional content before creative content. The namespace is polluted. Creative track is alive but buried under SEO for bootcamps and career advice.
 
 ---
 
@@ -161,6 +176,7 @@ Ordered by dependency and leverage:
 2. **Canopy primitives** - Projection building blocks
 3. **One good projection** - Prove the concept (CyberChef-style? Spatial?)
 4. **Trellis basics** - Server derive macros (unblocks Lotus networking)
-5. **Resin interaction graph** - Context-filtered node creation
+5. **Resin primitives** - Graph repr, procgen building blocks
+6. **Canopy ↔ Resin** - Node editing projection with interaction graph
 
 The dream is available. Nobody's claimed it yet.
