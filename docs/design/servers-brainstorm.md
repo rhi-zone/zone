@@ -4967,3 +4967,73 @@ Then it got stolen:
 The vocabulary didn't fail to exist. It was *taken*.
 
 We lost the word. And with it, the framing.
+
+---
+
+## On Fixing Things
+
+### "It's Impossible"
+
+The question we don't want to answer: "oh well it's impossible."
+The question we want to answer: "it's impossible. so what? we don't care. what are the holes?"
+
+That's the hacker mentality. The original one. "Can't be done" is irrelevant. "What are the obstacles, let's route around them."
+
+Torvalds made Linux. Hipp made SQLite. Notch made Minecraft. One person starts something. It catches fire or it doesn't. But the starting is one person.
+
+Linux didn't fix computing by arguing about computing. It fixed computing by being Linux.
+
+The existence is the argument.
+
+### The Root Problem
+
+Symptoms: discoverability, vocabulary, scattered tools, etc.
+
+Root problem: **There's no creative programming tool that is both accessible AND general-purpose.**
+
+|  | Accessible | General |
+|--|-----------|---------|
+| Pico-8, Scratch, etc. | Yes | No (restricted domains) |
+| Professional tools | No | Yes |
+| ??? | Yes | Yes |
+
+The creative tools are accessible BECAUSE of restrictions. But restrictions mean you hit a ceiling. Professional tools are general but not accessible for play. The gap is real.
+
+### But Don't Overgeneralize
+
+"Canopy will solve this" → No.
+
+The problem isn't one missing piece of software. It's 2026 and the entire software landscape is in disrepair. Buildings on questionable ground. Occupied for 3 weeks then abandoned. Questionable architectures. 40 years of accidental decisions treated as inevitable.
+
+Building one building doesn't make a city. Building one tool doesn't fix a broken landscape.
+
+**What actually helps:**
+- Understanding WHY things are this way (this conversation)
+- Designing alternatives, even without building
+- Documenting the diagnosis so it's not lost
+- Small experiments to test assumptions
+- NOT pretending one tool solves systemic problems
+
+### Honest Framing: What Rhizome Actually Is
+
+**Rhizome isn't:**
+- A master plan
+- A city
+- THE solution
+- A polished product
+
+**Rhizome is:**
+- "I made some stuff"
+- Hacky prototypes
+- Based on conversations (some with LLMs giving questionable ideas)
+- Experiments that might fail
+- Things built to see what happens
+
+ARPANET energy. "This technically works, we don't know if it scales, it's held together with duct tape and enthusiasm."
+
+Not "we're building the future of creative programming."
+More "we're tinkering and writing down what we learn."
+
+The original hacker spirit, actually. Before it got stolen. Just making things because you can. No grand claims. See what sticks.
+
+Maybe some of it will be useful. Maybe it won't. But the making is the point.
