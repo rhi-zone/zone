@@ -4581,3 +4581,84 @@ The sadness isn't "someone might steal it." The sadness is: nobody has built it,
 Years of work. Might never matter to anyone else.
 
 But also: **the dream is still available.** Nobody's claimed it yet.
+
+---
+
+## The Omnicompetent-ish
+
+### The Bridge Problem Revisited
+
+Building something like Canopy requires:
+- PL theory (projection/macro system)
+- Systems programming (performance)
+- Interaction design (UX)
+- Visual design (aesthetics)
+- Domain knowledge (per projection)
+- Product sense (what to build)
+- Distribution (so anyone finds it)
+
+One person can't be expert in all of those. The dream always died in this gap.
+
+### LLMs Change the Equation
+
+An LLM is trained on the sum total of documented human knowledge. MoE architectures are tens/hundreds of specialized sub-networks working together. That's structurally something humans can't be - a generalist made of specialists, all available simultaneously.
+
+Not omnitalent. **Omnicompetent-ish.** Good enough at everything to unstick you, translate between domains, fill gaps while you provide taste and direction.
+
+The ceiling moved. The dream was blocked by "requires a type of mind that doesn't exist." Now a weird approximation of that mind exists.
+
+### But Could a Human Do It?
+
+Technically possible. For someone:
+- Right genetic lottery
+- Right upbringing and education
+- Financial stability (time to learn)
+- No major life disruptions
+- Chose this problem specifically
+- Sustained drive over years
+- Didn't burn out or get comfortable
+
+Each filter removes 90%+. Stack them: one-in-billions. That person probably exists but got hit by a filter, became a specialist, gave up, or never started.
+
+LLMs sidestep the life-circumstance lottery. You don't need to have been born into the right conditions. You just need access.
+
+### What Skill Is Still Required?
+
+Honest question: can anyone with an LLM do this? What's the actual floor?
+
+**What the LLM compresses:**
+- Ecosystem research (100 hours → one question)
+- Syntax and idioms
+- Boilerplate and ceremony
+- "What's the best crate for X"
+
+**What you still need:**
+- Programming literacy (can read/write/evaluate code)
+- Architectural sense (how should things fit together)
+- Taste (is this good?)
+- Vision (what should exist?)
+- Evaluation (is this what I wanted?)
+
+The LLM is a multiplier, not a replacement. Competent generalist + LLM = can play specialist. Non-programmer + LLM = probably still stuck.
+
+### Where Does the Architecture Brain Come From?
+
+Not corporate experience. Not deep language expertise.
+
+Often: a "dinky" personal project where you figured out how things should fit together. A Lua codebase. A side project. Something small where you could experiment without stakes.
+
+That's where taste develops. The LLM doesn't give you architecture - it gives you the *language*. The architecture was already yours.
+
+Skills transfer across languages. "Built a company-sized TS codebase from scratch" means the architecture brain is trained. LLM is just the Rust adapter.
+
+### Can This Be Codified?
+
+Could you put the required judgment into a system prompt?
+
+Partially. But system prompts are incomplete heuristics. "Split files over 500 lines" applied naively to tsc's 30,000-line checker.ts would be stupid. The complexity is inherent. Splitting it wouldn't help.
+
+Real judgment knows when heuristics apply and when they don't. That's hard to codify because it requires understanding *why* the heuristic exists, not just what it says.
+
+For now, the floor is: programming literacy + taste + vision + ability to evaluate. That's lower than "3 years corporate Rust" but higher than "anyone can do this."
+
+Maybe the floor keeps dropping as models improve. Maybe not. Honest answer: we don't know yet.
