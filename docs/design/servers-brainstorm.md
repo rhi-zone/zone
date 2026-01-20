@@ -4515,22 +4515,34 @@ This is the Emacs model: Emacs doesn't decide how you edit - you define modes. S
 
 This is what Canopy was meant to be.
 
-**Lotus:** The object graph. The truth. Objects with state, behavior, connections.
+**Canopy:** User-definable views onto *anything*.
 
-**Canopy:** The projection layer. User-definable views onto the graph.
+Not just "projections onto Lotus." Projections onto:
+- Lotus object graph
+- Filesystem
+- APIs
+- Databases
+- Other apps
+- Anything with a data source
+
+**Lotus** is one source (the object graph with state, behavior, connections).
+**Canopy** is the projection layer that can sit on top of any source.
+
+But: **graph-first / interaction-graph-first** as the foundational model makes sense. Everything can be modeled as objects with connections. Start there, extend to other sources.
 
 Not "a notes app" or "a node editor" or "a file manager."
 
-A **platform for building projections** onto an object graph.
+A **platform for building projections** onto anything.
 
 - Want CyberChef-style pipelines? Build that projection.
 - Want a 2D desk with drawers? Build that projection.
 - Want spatial Finder? Build that projection.
 - Want node editor for complex parts? Build that projection.
+- Want to view your filesystem as a graph? Build that projection.
 - Don't like any of them? Build your own.
 
 The system doesn't prescribe how you see your data. It gives you:
-1. Objects (Lotus)
+1. Data sources (Lotus, filesystem, APIs, whatever)
 2. Projection primitives (Canopy)
 3. Good defaults to start
 4. The ability to define your own
