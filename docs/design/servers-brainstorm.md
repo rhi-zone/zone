@@ -2038,6 +2038,85 @@ Personalization doesn't help day-one users. Frecency is empty. Favorites are uns
 
 But honestly? Initial discoverability isn't rocket science. Just *dogfood the software*. Use it yourself. Notice what's hard to find. Surface it. The problem isn't that discoverability is hard to design - it's that developers don't actually use their own tools as real users do.
 
+**But that's not the whole story.**
+
+Dogfooding helps you find what's hard to discover. It doesn't help you realize *what shouldn't exist*.
+
+Moss had command sprawl - dozens of specialized commands. Discoverability wasn't the problem. The problem was: too many things to discover. The fix wasn't better surfacing - it was collapsing them into three primitives: view, edit, analyze. Now there's less to discover in the first place.
+
+This is "Generalize, Don't Multiply" from the Rhizome philosophy. Fewer concepts that compose > many specialized concepts that don't. Discoverability is easier when there's less to discover.
+
+**What software actually does interaction well?**
+
+| Software | What it does right | Pattern |
+|----------|-------------------|---------|
+| **Figma** | Objects are objects. Select thing, see its properties, manipulate directly. Constraints visible. Multiplayer just works. | Direct manipulation, visible state |
+| **tldraw** | Minimal tools, each obvious. Overloaded modifiers (ctrl+click, shift+drag) - you discover by accident while doing normal things. | Constraint-based simplicity, accidental discovery |
+| **Blender** (modern) | Modes are explicit and visible. Each mode has relevant tools. Consistent modifier stack pattern. (Still has discoverability issues - better than most, not solved.) | Task-based modality, composable primitives |
+| **Paint.NET** | Not trying to be Photoshop. Familiar Windows-native feel. Layers visible, tools obvious, effects organized. Less stuff = easier to discover. | Constraint by scope, platform conventions |
+| **PICO-8** | Everything fits in your head. 128x128, 16 colors, simple API. Limits are the feature. | Intentional constraint |
+| **Obsidian** | Markdown first - you already know it. Power features via plugins, not core bloat. Settings search. | Progressive disclosure, plugin architecture |
+| **Linear** | Keyboard-first but mouse-discoverable. `Cmd+K` shows everything. Shortcuts shown inline. | Dual-path interaction |
+| **Notion** | Slash commands in context. Blocks are objects with actions. Drag to rearrange. (Interaction patterns good; implementation choices bad - and no, it's not "Electron bloat." JS is fast: VSCode, tsc scaling to 100s of kLoC. Slow software is bad architecture, not bad runtime.) | Contextual actions, direct manipulation |
+| **Unity/Godot** | Inspector shows selected object's everything. Actions near targets. Scene tree = structure visible. (Still overwhelming - dozens of properties per component. But the *pattern* is right - problem is showing all 50 at once instead of mode/context filtering.) | Object-oriented interaction |
+
+**Common patterns in good software:**
+
+- **Immediate feedback** - you see results as you act (Figma, Shadertoy, tldraw)
+- **Spatial consistency** - things stay where you put them, layout is stable
+- **Undo everywhere** - confidence to experiment without fear
+- **Visible state** - current mode, selection, context always clear
+- **Actions near targets** - right-click, inspector panels, inline controls
+- **Composable primitives** - small pieces that combine (Unix pipes, Blender modifiers, Figma components)
+- **Keyboard AND mouse paths** - neither forced, both work (Linear, VSCode)
+- **Search as fallback, not primary** - good organization first, search for edge cases
+- **Accidental discovery** - modifiers on actions you're already doing (tldraw). Not ideal in theory, but works because: (a) modifiers follow conventions from other software (ctrl = constrain, shift = extend), and (b) few enough features that modifiers can cover them. Wouldn't scale to 50 modifier behaviors.
+- **Scope constraint** - just don't have that many features (Paint.NET, PICO-8). Less stuff = less to discover.
+
+**Discoverability at scale: interaction graph + modality**
+
+Maybe "discoverability doesn't scale" is wrong. The problem isn't having thousands of actions. It's *showing* thousands of actions.
+
+If you have:
+1. **Interaction graph** - all actions exist as structured, queryable data
+2. **Mode filtering** - current task/mode determines which slice is relevant
+3. **Context filtering** - selection, state, recent actions narrow further
+4. **Intelligent ordering** - not alphabetical, not arbitrary. Frecency, relevance, likelihood. Just like command palette. (But tension with grouping: frecency within categories means icons move around, breaks spatial consistency. Frecency across categories? Within? Both have tradeoffs. And sometimes grouping IS right - 6 asset upload commands under one category isn't a mistake just because frecency exists. Appropriate choices depend on context.)
+
+Then:
+- Total actions: thousands
+- Visible at any moment: 5-10
+- Full graph available via search when needed
+
+This is what Blender modes *almost* do. Edit mode shows edit tools, sculpt mode shows sculpt tools. But it's coarse - still dozens per mode. Finer-grained context filtering (what's selected, what operation is in progress) could narrow further.
+
+Unity's inspector problem isn't "50 properties exist." It's "50 properties visible at once." A mode-aware inspector that shows physics properties when you're doing physics, rendering properties when you're doing materials, etc. - same data, different projections.
+
+**Caveat: this is hypothesis, not proven.** No shipping software fully implements this pattern. Blender modes are coarse. VSCode's palette is close but still global-ish. We're reasoning from "these pieces work individually" → "combining them should work better." Maybe! Or maybe there's a reason nobody's done it. Would need to build it and see.
+
+**Deeper caveat: there's no universal recipe.** Human intuition can't be distilled into "just do X." Good design requires factoring in:
+- Gestalt patterns (how humans perceive grouping, proximity, similarity)
+- Subitizing (humans can instantly count ~4-5 things, more requires effort)
+- Icon recognizability (familiar shapes, consistent visual language)
+- Short-term memory limits (~4 chunks, not 7±2 - that's been revised)
+- Mental models (what users expect based on prior experience)
+
+These are cognitive constraints that inform design but can't be reduced to a rule. You have to understand them AND apply judgment to the specific case. The recipe is "learn the constraints, then think."
+
+That said: not pointless to write down how mental models translate to design choices. The knowledge part matters. Documenting "subitizing means toolbar groups should be ~4 items" or "gestalt proximity means related actions should be visually close" is valuable - it's just not sufficient on its own.
+
+(Partial implementation exists at $dayjob: categorization + curated category/entry order, no frecency. But - actions are modal based on registered keybinds, and component tree determines scope: deeper components add actions to the top. So there's implicit context-awareness from the hierarchy. Personal preference, unproven whether it actually helps. N=1.)
+
+**Anti-patterns in bad software:**
+
+- Hidden features only in docs/forums ("just triple-click while holding shift"). Bonus points if docs are online-only.
+- Modal confusion (which dialog is active? what mode am I in?) — though modality done right works: Kakoune's selection-first model makes state visible (you see what you're about to affect), not just a mode indicator in the status bar.
+- Actions far from targets (menu bar for thing you're manipulating)
+- Inconsistent patterns (sometimes drag works, sometimes doesn't)
+- State invisible (did it save? is it processing? what's selected?)
+- No undo, or partial undo
+- Search as primary navigation (because nothing else works)
+
 **What's actually interesting right now?**
 
 Hard to say. Depends on mood, energy, what's frustrating at the moment. The honest answer: probably whatever's in front of you when you sit down to code.
