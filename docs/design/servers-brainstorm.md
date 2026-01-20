@@ -4550,3 +4550,34 @@ The system doesn't prescribe how you see your data. It gives you:
 **This is the escape from WIMP.**
 
 Not by picking a different paradigm. By making the paradigm user-defined.
+
+---
+
+## Why Build This
+
+Some people worry about idea theft. "Someone might steal my ideas."
+
+Different mindset: **"Why doesn't this exist yet? I just want to use it."**
+
+If someone else had built user-defined bidirectional pattern-matching projections that actually work, great. I'd use it. I don't care about credit. I care about having the tool.
+
+But nobody has. The HN test: if this existed and worked well, it would have surfaced. The absence of an obvious "that project" suggests the space is still open.
+
+Ideas aren't rare. The intuitions here are 5, 7, maybe more years old. Surely others have had them too. Thousands of people, probably.
+
+**Where did they all go?**
+- Gave up (too hard)
+- Got practical (needed a job)
+- Built it, nobody noticed
+- Wrote papers nobody read
+- Burned out
+- Life happened
+- Still going, somewhere, quietly
+
+The ideas aren't the bottleneck. Completion is rare. Good completion is rarer.
+
+The sadness isn't "someone might steal it." The sadness is: nobody has built it, so if you want it, you might have to do it yourself.
+
+Years of work. Might never matter to anyone else.
+
+But also: **the dream is still available.** Nobody's claimed it yet.
