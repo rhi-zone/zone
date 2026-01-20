@@ -4008,3 +4008,149 @@ But it's a dripfeed. The intersection of "has the skill," "has the motivation," 
 SQLite exists because D. Richard Hipp cared. ffmpeg exists because obsessives cared. Most problems don't get their Hipp or their obsessive. They get abandoned side projects and half-baked enterprise solutions.
 
 The existence of good software is almost accidental - the right person happened to care about the right problem at the right time. Scale that up and you get... exactly what we have. Pockets of excellence in a sea of mediocrity.
+
+---
+
+## Evaluating the LLM-Assisted Approach
+
+Common critiques and honest responses:
+
+### "Using up compute/water"
+
+Real concern, but needs context. Compared to what? A flight? Streaming video? The moral calculus is murky. If the output is useful, arguably justified. If it's wheel-spinning, less so.
+
+Mitigation: Be intentional about what you use it for.
+
+### "Unclear benefit / too low-level"
+
+Infrastructure doesn't show immediate value. SQLite wasn't obviously useful at first either.
+
+The counterargument: are you building *toward* something, or just building? If there's a path to something you'd actually use, it's fine. Infrastructure for its own sake... maybe reconsider.
+
+### "Unclear reliability of LLM code"
+
+Valid concern. But the comparison isn't "LLM code vs careful human code." It's "LLM code with tests vs human code shipped without tests because deadline."
+
+LLMs write tests. Humans typically don't (over-generalization but true enough). LLM + tests might actually be MORE reliable than typical human code.
+
+### "LLMs hallucinate"
+
+True for facts. Less relevant for code - you can run it and see. If it compiles and tests pass, the hallucination concern is moot. The real risk is subtle bugs, not fabrication.
+
+### "Next token predictors therefore useless"
+
+Category error. Brains are "just neurons." The mechanism doesn't determine utility.
+
+But staying grounded is fair - LLMs have real limits. Better at "how to do X" than "what X should I do." Which is why taste + drive is the bottleneck, not execution.
+
+### The Trust Problem
+
+> "How do I go to someone and say 'I vibe coded a quarter million lines of Rust' without sounding like a lunatic?"
+
+You can't. The trust gap is massive.
+
+Options:
+1. **Don't chase adoption** - Build for yourself, publish for portfolio, don't expect users
+2. **Earn trust slowly** - Small useful thing → people use it → credibility → larger things
+3. **Attach to existing credibility** - Contribute to established projects, build reputation there
+4. **Radical transparency** - Code is public, tests are public, judge for yourself
+
+Preferred approach: **Build for yourself, publish for portfolio, don't chase adoption.**
+
+This sidesteps:
+- Marketing anxiety
+- Maintenance burden for strangers
+- The trust problem entirely
+- Pressure to make it "general" instead of "good for you"
+
+If it becomes genuinely useful to you, that's success. If someone else discovers it, bonus. If not, you still have a working tool.
+
+### Planning vs Building
+
+"Planning forever" might sound like a failure mode, but it's better than spending years building the wrong thing, then more years building wrong thing #2.
+
+The question is: is the planning *converging* or circling? Planning that narrows options, tests assumptions on paper, kills bad ideas early - that's cheap iteration. That's the point.
+
+---
+
+## What Do I Actually Use?
+
+Honest inventory:
+- Firefox
+- Discord (in Firefox)
+- YouTube (in Firefox)
+- VSCode
+- Ghostty (terminal)
+- Steam (occasionally)
+
+That's it. Browser, terminal, editor, games.
+
+This is intentional minimalism - preference for few tools, not missing something.
+
+### Where Does Lotus Fit?
+
+If daily life is Firefox tabs and a terminal, what's the value proposition of a "unified object graph"?
+
+Possible interpretations:
+1. **Gap (for me)** - Would use task management/etc if something good existed, but nothing does, so just... don't
+2. **Building for imaginary need** - Don't actually need this, just think it's neat
+3. **Browser IS the object graph** - Tabs are objects, bookmarks are storage, and that's actually fine
+
+### Why Not a Notes App?
+
+> "What's a notes app for? Writing down stuff I won't read?"
+
+The dirty secret: most people write notes, never read them. The value (if any) is in the writing itself - clarifying thought in the moment. The artifact is a byproduct.
+
+What IS worth storing?
+- **Things you'll actually retrieve** - Rare. Passwords, reference docs, that one command you forget.
+- **Things that act on their own** - Timers, reminders, scheduled events. They come to YOU.
+- **Things that integrate** - Not "I wrote down X" but "X connects to Y connects to Z"
+
+---
+
+## Objects, Not Documents
+
+**Hot take: Notes apps are paper skeuomorphism on the most interactive medium ever created.**
+
+Paper affordances:
+- Static
+- Linear
+- You write, it sits there
+- You have to remember it exists
+- Organization is manual
+
+What computers can do:
+- Execute
+- Respond
+- Connect
+- Trigger
+- Compute views on the fly
+- Come to you instead of waiting
+
+Notes apps: "What if paper, but on a $2000 machine?"
+
+We have the most interactive medium ever created and use it to simulate sheets of paper with text. Then we add "features" like backlinks and tags, which are just compensating for the base metaphor being wrong.
+
+**The right question isn't "how do I organize my notes?" It's "why am I taking notes at all when I have a computer?"**
+
+### Lotus Was Never a Notes App
+
+Looking back - Lotus was always about **objects**:
+- Stopwatches (act, have state)
+- Timers with laps (act, have history)
+- Calendar events (trigger at times)
+- Saved webpages (retrieval)
+- Tagged images (searchable)
+
+None of those are "write stuff down to maybe read later." They're things that *exist* and *do things*.
+
+The "notes" framing was polluting the vision with expectations from a category that doesn't even fit.
+
+**Lotus thesis, clarified:**
+- Objects > Documents
+- Things that live > things that sit
+- Active > passive
+- Comes to you > you go to it
+
+Not a second brain. A living system.
