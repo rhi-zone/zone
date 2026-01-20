@@ -62,6 +62,10 @@
             sporePkg
             nursery.packages.${system}.default
             pkgs.bun
+            # Rust for lotus
+            pkgs.rustc
+            pkgs.cargo
+            pkgs.rust-analyzer
           ];
         };
       }
