@@ -4696,3 +4696,69 @@ But if this IS what you enjoy, then "having a life" assumes life means something
 The capability is available. The weird personality type that would use it this way is rare. LLMs democratize execution, but they can't give you the inexplicable desire to build things that don't need to exist.
 
 That might be the actual bottleneck. Not skill, not time, not tools. Just: most people aren't broken in this specific way.
+
+### Programming as Creative Endeavor
+
+Hot take: it's sad that programming isn't seen as creative. Engineering in general.
+
+Programming IS:
+- Making something from nothing
+- Aesthetic choices (this abstraction vs that)
+- Style (you can tell who wrote it)
+- Literal creation
+
+But it's framed as:
+- "Technical" (not creative)
+- Engineering (mechanical)
+- A trade, not an art
+
+**The double standard:** Years spent on ABRSM piano grades = dedication, cultured. Years spent getting good at programming = "get a life."
+
+Same time investment. Same skill-building. Society just decided one is cultured and one is weird.
+
+**The "punk" movements:** Demoscene, bytebeat, live coding (TidalCycles/Strudel), dwitter, shadertoy, generative art. But all except the hacker movement are literally audio or visual. The code is invisible - the output is the art.
+
+Where's the movement that celebrates a beautiful abstraction, an elegant API, architecture as composition? That's "good engineering," not art.
+
+### The Crochet Comparison
+
+Observation: people don't watch others crochet either.
+
+| | Crochet | Programming |
+|---|---------|-------------|
+| Primary motivation | Enjoy the process | Enjoy the process |
+| Output | Object (maybe useful) | Software (maybe useful) |
+| Audience needed? | No | No |
+| Seen as | Hobby, cozy, valid | Weird, get a life |
+
+Same shape. Different cultural framing.
+
+Nobody asks a crocheter "but why though." The answer "because I enjoy it" is sufficient.
+
+Programmer says "I make software for fun" and it's "but why? Is it for work? A startup? What's the point?"
+
+The point is the same: **because I like doing it.**
+
+### When Did Programming Stop Being Cool?
+
+If this IS a real difference: why? When did it diverge?
+
+**Once upon a time:**
+- BASIC on home computers, type in programs from magazines
+- "POKE 10238,1" → "waow that's neat"
+- Making games in your bedroom
+- GeoCities, personal websites, "under construction" gifs
+- Tinkering, hobbyist culture
+
+**What changed:**
+- Programming became economically valuable → became "work"
+- "Learn to code" framed as economic necessity, not creative expression
+- When it's "work", doing it for fun = unpaid labor / weird
+- Professionalization displaced hobbyist framing
+- Tools got complex (can't just POKE anymore)
+- Barrier to entry shifted: was "type this, see result", now "install 47 dependencies"
+- The magic got hidden behind abstraction layers
+
+The "wow" moment got harder to access. The creative framing got displaced by the professional one.
+
+Somewhere between BASIC and bootcamps, we lost "programming as play."
