@@ -4875,3 +4875,73 @@ Actually, you can. Systems that do it:
 Rust proved mainstream adoption of static state analysis is possible. Elm proved it for web. Signals are creeping in.
 
 The question isn't "can we?" It's **"why isn't this the default?"**
+
+---
+
+## Why Programming Lost Its Hobby Framing
+
+### The Namespace Pollution Problem
+
+Search "programming" → Primeagen, Low Level Learning, career content.
+Search "drawing" → pikat, samdoesarts, telepurte, creative content.
+
+Same activity shape (skill-building, creative, time-intensive). Different search results. Why?
+
+### The Inverted Economics
+
+**Most creative fields:**
+- Hobby = normal, expected, valid
+- Career = rare, difficult, often exploitative (art, music, writing, sewing/sweatshops)
+
+**Programming:**
+- Hobby = "weird", "why though"
+- Career = lucrative, prestigious, desirable
+
+It's inverted. The only creative-ish field where the professional path is *better* than the hobby path.
+
+**Except game dev:**
+- Hobby = cool, make games for fun
+- Career = crunch, underpaid, exploitation
+
+Game dev reverts to the normal pattern. Note: game dev is the *creative* subset of programming.
+
+### The Pattern
+
+| Field | Creative? | Professional track |
+|-------|-----------|-------------------|
+| Art | Yes | Struggle/exploitation |
+| Music | Yes | Exploitation unless famous |
+| Writing | Yes | Underpaid, gig work |
+| Sewing | Yes | Sweatshops |
+| Game dev | Yes | Crunch, exploitation |
+| "Programming" | Framed as NO | Lucrative |
+
+The more creative, the worse the professional path. Programming's prestige comes from the *non-creative* framing. "Engineering." "Technical." NOT art.
+
+### Why (Economics, Not Just Culture)
+
+Not just "society values engineers more." Actual economics:
+
+**Supply and demand:**
+- Programming: high demand, constrained supply (learning curve)
+- Art/game dev: high supply (dream job, everyone wants in), limited demand
+
+**Passion as exploitable resource:**
+- If people WANT to do it regardless of pay → employers can pay less
+- "Do what you love" = "we can underpay you"
+- Enterprise CRUD: nobody's passionate, so market rate required
+
+**Revenue proximity:**
+- Backend engineer at Stripe → enables billions in transactions
+- Artist at studio → "cost center"
+
+The creative framing makes supply explode (everyone wants in) while demand stays flat. Economics do the rest.
+
+### The Missing Word
+
+There's no "doodling" for programming. No word that means "I make little programs for fun, not for work, don't ask about my career."
+
+"I draw" → hobby until proven otherwise
+"I program" → "for work? a startup? why?"
+
+The vocabulary got colonized. No escape hatch to the hobbyist framing.
