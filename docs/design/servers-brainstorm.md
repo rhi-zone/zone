@@ -2105,6 +2105,105 @@ These are cognitive constraints that inform design but can't be reduced to a rul
 
 That said: not pointless to write down how mental models translate to design choices. The knowledge part matters. Documenting "subitizing means toolbar groups should be ~4 items" or "gestalt proximity means related actions should be visually close" is valuable - it's just not sufficient on its own.
 
+**The documentation problem:** It's sad that knowledge-sharing defaults to 3,000-word blog posts. Then another. Then another. Insights get buried in essays, scattered, unindexed, hard to find when you need them. This applies to basically all domains - not just software, not just design. Cooking, woodworking, music production, game design, parenting, whatever. The blog-post-ification of knowledge is everywhere.
+
+Good examples of concise knowledge:
+- Lu Wilson's "Just" - short, makes its point, done
+- motherfuckingwebsite.com - makes the point by being the point
+
+Examples that are good *despite* being long:
+- Crafting Interpreters - excellent, thorough, *a whole book*
+- fasterthanlime - famously deep and long
+- Learn You a Haskell - great intro, still a book
+
+The core insights could be extracted. The length is context, teaching-style, narrative - not essential. They succeed in spite of the format, not because of it. Where's the atomic version? "Here's how to write a parser in 2 paragraphs + code."
+
+To be fair: length helps pacing/digestion. Gives time to absorb. But it optimizes for people with buttloads of time to sit and learn properly. Not everyone has 20 hours for one topic. Long-form limits how many things people can learn, even if fast = less comprehensive. Trade-off: depth on one thing vs breadth across many. The format chooses for you.
+
+Video is even worse - same length problem, barely searchable. Can't ctrl+F a video. Can't skim. Have to sit through it linearly.
+
+Alternative paradigm: interactive learning.
+- [incredible.pm](https://incredible.pm/) - visual/interactive proofs
+- [Natural Number Game](https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/) - learn Lean by doing
+- [nandgame](https://nandgame.com/) - build a CPU from NAND gates
+- Zachtronics / zachlikes (TIS-100, Shenzhen I/O, Silicon Zeroes) - programming as puzzles
+
+Key value: doing forces you to think. You can't skim a puzzle. You have to solve it yourself. Can't passively consume - have to engage. Knowledge sticks because you constructed it, not absorbed it.
+
+Why aren't there more? Interactive tutorials are rare. Writing a blog post = explain what you know. Designing interactive learning requires:
+1. Deep domain understanding (what are the core concepts?)
+2. Pedagogical sequencing (what order to introduce them?)
+3. Interaction design (what puzzles/tasks force engagement?)
+4. Implementation (actually build the thing)
+
+Blog post: one skill. Interactive tutorial: four skills, and the fourth one is a whole project. Lack of domain expertise, lack of design expertise, lack of implementation capacity. Pick at least one.
+
+**Hot take: lower the barrier to entry.**
+
+If interactive tutorials require four skills, make tools that collapse them:
+- Templates for common interaction patterns (drag-and-drop, fill-in-the-blank, build-the-thing)
+- Visual puzzle designers (domain expert focuses on content, not implementation)
+- Embeddable components (drop into a blog post, not a separate app)
+- Shared infrastructure (evaluation, hints, progression)
+
+Don't require everyone to be Zachtronics. Let the domain expert be a domain expert; let the tool handle the rest.
+
+**Why doesn't this exist?** Game engines are everywhere. Things that come close:
+- Twine (interactive fiction - text-focused)
+- H5P (embeddable interactive content - limited/clunky)
+- Jupyter notebooks (interactive code - not puzzles)
+- Observable (reactive notebooks - requires JS)
+- Exercism (code exercises - programming-specific)
+- Scratch (visual programming - teaches programming itself)
+- Quizlet/Kahoot/Anki (quizzes/flashcards - shallow interaction)
+- Unity/Godot (full game engines - massive overkill)
+
+The gap: something between "quiz platform" and "game engine." Designed for interactive learning specifically. Why isn't it filled?
+- Fragmented market (each domain has different needs)
+- Wrong buyer (schools buy from vendors, not indie tools)
+- Vague category ("interactive learning" means many things)
+- Wrong abstraction (game engines give you frame loops and entities; you want puzzles, hints, progression)
+- Builder/user mismatch (educators want it; developers could build it; overlap is small)
+
+Maybe the right abstraction hasn't been found. What ARE the primitives of interactive learning?
+
+- **Challenge** - present a problem, evaluate a solution
+- **Progression** - track what's learned, unlock next
+- **Hints/scaffolding** - help when stuck without giving answer
+- **Feedback** - immediate response to actions
+- **Sandbox** - safe space to experiment
+- **Constraints** - what's allowed in a solution
+
+**Feedback is the hard part.** Programming puzzles: run it, check output. Easy. But:
+- Math: symbolic equivalence (hard)
+- Logic: proof verification (Lean does this, but specialized)
+- Language learning: evaluate a sentence? Subjective.
+- Design: even more subjective
+- Music/writing: ???
+
+Evaluation is domain-specific and often hard to automate. That's why programming puzzles are over-represented - feedback is tractable.
+
+If you can't automate eval, your options:
+- Human grading (doesn't scale)
+- Multiple choice (shallow interaction)
+- Constrained input that's checkable (limits expressiveness)
+- LLMs??? (fuzzy eval, whole can of worms)
+
+**But even programming guides don't have interactivity.** Eval is tractable for code. Still mostly blog posts. So eval difficulty isn't the only barrier - there's also:
+- Tooling friction (setting up a runnable environment is work)
+- Format expectations (people expect to write blog posts, not build apps)
+- Effort/reward mismatch (interactive takes 10x effort, gets same engagement)
+- "Good enough" syndrome (text tutorial works, why bother)
+
+What's missing: a format for "here's the insight, here's how it applies" without the essay wrapper. Not polished think-pieces. Just... notes that are findable.
+
+Obsidian is designed for exactly this - rough notes, atomic pages, cross-link. But knowing the tool exists doesn't mean you use it. Barriers:
+- Self-doubt ("am I even right about this?")
+- Bias ("this is just my opinion")
+- Scope creep (keep expanding instead of finishing)
+
+The thinking phase is fun. The extracting-and-organizing phase is tedious. Guess which one happens.
+
 (Partial implementation exists at $dayjob: categorization + curated category/entry order, no frecency. But - actions are modal based on registered keybinds, and component tree determines scope: deeper components add actions to the top. So there's implicit context-awareness from the hierarchy. Personal preference, unproven whether it actually helps. N=1.)
 
 **Anti-patterns in bad software:**
