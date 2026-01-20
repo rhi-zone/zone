@@ -3990,3 +3990,21 @@ Most projects fail at step 2 or 3, not step 1. The competition isn't as scary as
 2026 and we still can't copy-paste reliably between apps.
 
 So when building "silly projects" - the bar you're competing against is often shockingly low. The incumbent is a mass of tech debt held together by inertia and network effects.
+
+### Why It's Like This
+
+**Software advances in the directions that get funded.** Capability ceiling? Way up. Performance? Massive gains. User respect, simplicity, longevity? Not a KPI.
+
+Subscriptions, lock-in, engagement metrics, growth at all costs - these got optimized. "Does it respect the user?" didn't have a metric attached.
+
+We use 1000x the hardware for 10x the experience. That's not incompetence - it's rational given the incentives.
+
+### The Dripfeed of Good Software
+
+Good software *does* exist. It emerges from sheer talent + motivation - people who care enough to do it right, regardless of incentives.
+
+But it's a dripfeed. The intersection of "has the skill," "has the motivation," and "picked this problem" is tiny. Most domains simply don't have the volume of talent + motivation to get any attention.
+
+SQLite exists because D. Richard Hipp cared. ffmpeg exists because obsessives cared. Most problems don't get their Hipp or their obsessive. They get abandoned side projects and half-baked enterprise solutions.
+
+The existence of good software is almost accidental - the right person happened to care about the right problem at the right time. Scale that up and you get... exactly what we have. Pockets of excellence in a sea of mediocrity.
