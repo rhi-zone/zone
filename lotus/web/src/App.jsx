@@ -63,31 +63,26 @@ export default function App() {
   function handleWheel(e) {
     e.preventDefault();
 
-    if (e.ctrlKey || e.metaKey) {
-      const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
-      const newScale = Math.min(Math.max(scale() * zoomFactor, 0.1), 5);
+    // Scroll to zoom (toward cursor)
+    const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = Math.min(Math.max(scale() * zoomFactor, 0.1), 5);
 
-      const rect = e.currentTarget.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
 
-      setOffset({
-        x: mouseX - (mouseX - offset().x) * (newScale / scale()),
-        y: mouseY - (mouseY - offset().y) * (newScale / scale())
-      });
-      setScale(newScale);
-    } else {
-      setOffset({
-        x: offset().x - e.deltaX,
-        y: offset().y - e.deltaY
-      });
-    }
+    setOffset({
+      x: mouseX - (mouseX - offset().x) * (newScale / scale()),
+      y: mouseY - (mouseY - offset().y) * (newScale / scale())
+    });
+    setScale(newScale);
   }
 
   function handleMouseDown(e) {
     if (e.target.closest('.object')) return;
 
-    if (e.button === 1 || (e.button === 0 && e.shiftKey)) {
+    // Left click on empty space to pan
+    if (e.button === 0) {
       setIsPanning(true);
       setPanStart({ x: e.clientX - offset().x, y: e.clientY - offset().y });
     }
@@ -241,7 +236,7 @@ export default function App() {
       <div class="canvas__info">
         <span>Objects: {objects().length}</span>
         <span>Zoom: {Math.round(scale() * 100)}%</span>
-        <span>Double-click to create | Drag to move | Delete to remove</span>
+        <span>Double-click to create | Scroll to zoom | Drag to pan</span>
       </div>
     </div>
   );
