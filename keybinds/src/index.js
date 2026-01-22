@@ -29,13 +29,13 @@
  * @typedef {Object} Command
  * @property {string} id - Unique identifier
  * @property {string} label - Display name
- * @property {string} [category] - Group for command palette
- * @property {string[]} [keys] - Keyboard triggers
- * @property {string[]} [mouse] - Mouse triggers
- * @property {(ctx: Record<string, unknown>) => boolean} [when] - Activation condition
+ * @property {string | undefined} [category] - Group for command palette
+ * @property {string[] | undefined} [keys] - Keyboard triggers
+ * @property {string[] | undefined} [mouse] - Mouse triggers
+ * @property {((ctx: Record<string, unknown>) => boolean) | undefined} [when] - Activation condition
  * @property {(ctx: Record<string, unknown>, event?: Event) => unknown} execute - Action
- * @property {boolean} [hidden] - Hide from search
- * @property {boolean} [captureInput] - Fire even in input fields
+ * @property {boolean | undefined} [hidden] - Hide from search
+ * @property {boolean | undefined} [captureInput] - Fire even in input fields
  */
 
 /**
@@ -453,6 +453,97 @@ export function formatKey(key) {
     .replace(/escape/gi, 'Esc')
     .replace(/enter/gi, '↵')
     .toUpperCase()
+}
+
+/**
+ * @typedef {Object} BindingSchema
+ * @property {string} label - Display name
+ * @property {string | undefined} [category] - Group for command palette
+ * @property {string[] | undefined} [keys] - Default keyboard triggers
+ * @property {string[] | undefined} [mouse] - Default mouse triggers
+ * @property {boolean | undefined} [hidden] - Hide from search/settings
+ */
+
+/**
+ * @typedef {Record<string, BindingSchema>} Schema
+ */
+
+/**
+ * Define a binding schema (identity function for type inference/autocomplete)
+ * @template {Schema} T
+ * @param {T} schema
+ * @returns {T}
+ */
+export function defineSchema(schema) {
+  return schema
+}
+
+/**
+ * @typedef {Record<string, { keys?: string[], mouse?: string[] }>} BindingOverrides
+ */
+
+/**
+ * Merge schema with user overrides
+ * @param {Schema} schema - Default bindings
+ * @param {BindingOverrides} overrides - User customizations
+ * @returns {Schema} Merged bindings
+ */
+export function mergeBindings(schema, overrides) {
+  /** @type {Schema} */
+  const result = {}
+  for (const [id, binding] of Object.entries(schema)) {
+    const override = overrides[id]
+    result[id] = override
+      ? { ...binding, keys: override.keys ?? binding.keys, mouse: override.mouse ?? binding.mouse }
+      : binding
+  }
+  return result
+}
+
+/**
+ * Create commands from bindings + handlers
+ * Handlers only need to implement commands they care about
+ *
+ * @param {Schema} bindings - Binding definitions (from schema + overrides)
+ * @param {Record<string, (ctx: Record<string, unknown>, event?: Event) => unknown>} handlers - Handler implementations
+ * @param {Record<string, { when?: (ctx: Record<string, unknown>) => boolean, captureInput?: boolean }>} [options] - Per-command options
+ * @returns {Command[]}
+ */
+export function fromBindings(bindings, handlers, options = {}) {
+  /** @type {Command[]} */
+  const commands = []
+
+  for (const [id, handler] of Object.entries(handlers)) {
+    const binding = bindings[id]
+    if (!binding) {
+      console.warn(`keybinds: handler "${id}" has no matching binding`)
+      continue
+    }
+
+    commands.push({
+      id,
+      label: binding.label,
+      category: binding.category,
+      keys: binding.keys,
+      mouse: binding.mouse,
+      hidden: binding.hidden,
+      execute: handler,
+      ...options[id]
+    })
+  }
+
+  return commands
+}
+
+/**
+ * Get all bindings as a flat list (for settings UI)
+ * @param {Schema} schema
+ * @returns {Array<BindingSchema & { id: string }>}
+ */
+export function listBindings(schema) {
+  return Object.entries(schema)
+    .filter(([, b]) => !b.hidden)
+    .map(([id, binding]) => ({ id, ...binding }))
 }
 
 export default keybinds

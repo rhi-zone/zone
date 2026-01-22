@@ -1,5 +1,6 @@
 import { createSignal, onMount, onCleanup, For, Show } from 'solid-js';
-import { keybinds, validateCommands } from 'keybinds';
+import { keybinds, fromBindings, validateCommands } from 'keybinds';
+import { bindings } from './bindings';
 import './App.css';
 
 export default function App() {
@@ -139,49 +140,29 @@ export default function App() {
     setEditingId(null);
   }
 
-  // Commands as data
-  const commands = [
-    {
-      id: 'deselect',
-      label: 'Deselect',
-      category: 'Selection',
-      keys: ['Escape'],
-      execute: () => {
-        setEditingId(null);
-        setSelectedId(null);
-      }
+  // Handlers - closures over local state
+  const handlers = {
+    deselect: () => {
+      setEditingId(null);
+      setSelectedId(null);
     },
-    {
-      id: 'delete',
-      label: 'Delete selected',
-      category: 'Edit',
-      keys: ['Backspace', 'Delete'],
-      when: ctx => ctx.hasSelection && !ctx.isEditing,
-      execute: () => deleteObject(selectedId())
+    delete: () => deleteObject(selectedId()),
+    selectAll: () => {
+      // TODO: implement multi-select
     },
-    {
-      id: 'selectAll',
-      label: 'Select all',
-      category: 'Selection',
-      keys: ['$mod+a'],
-      when: ctx => !ctx.isEditing,
-      execute: () => {
-        // TODO: implement multi-select
-      }
-    },
-    {
-      id: 'pan',
-      label: 'Pan canvas',
-      category: 'Canvas',
-      mouse: ['MiddleClick'],
-      execute: (_ctx, event) => {
-        setIsPanning(true);
-        setPanStart({ x: event.clientX - offset().x, y: event.clientY - offset().y });
-      }
+    pan: (_ctx, event) => {
+      setIsPanning(true);
+      setPanStart({ x: event.clientX - offset().x, y: event.clientY - offset().y });
     }
-  ];
+  };
 
-  // Validate commands at module load (catches typos early)
+  // Build commands from global bindings + local handlers
+  const commands = fromBindings(bindings, handlers, {
+    delete: { when: ctx => ctx.hasSelection && !ctx.isEditing },
+    selectAll: { when: ctx => !ctx.isEditing }
+  });
+
+  // Validate (catches binding typos early)
   validateCommands(commands);
 
   onMount(() => {
