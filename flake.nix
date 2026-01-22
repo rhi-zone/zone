@@ -66,7 +66,12 @@
             pkgs.rustc
             pkgs.cargo
             pkgs.rust-analyzer
+            pkgs.pkg-config
+            pkgs.openssl
           ];
+          # C compiler and linker for native deps
+          nativeBuildInputs = [ pkgs.clang pkgs.mold ];
+          LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
         };
       }
     );

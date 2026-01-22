@@ -1,5 +1,5 @@
 use crate::{Error, Object, Result};
-use libsql::{Connection, Database};
+use libsql::{params, Connection, Database};
 use serde_json::Value;
 
 /// Query filters for finding objects
@@ -90,7 +90,7 @@ impl Store {
         self.conn
             .execute(
                 "INSERT INTO objects (id, data) VALUES (?, jsonb(?))",
-                (obj.id.as_str(), json.as_str()),
+                params![obj.id.as_str(), json.as_str()],
             )
             .await?;
 
@@ -101,7 +101,7 @@ impl Store {
     pub async fn get(&self, id: &str) -> Result<Option<Object>> {
         let mut rows = self
             .conn
-            .query("SELECT id, json(data) FROM objects WHERE id = ?", (id,))
+            .query("SELECT id, json(data) FROM objects WHERE id = ?", params![id])
             .await?;
 
         if let Some(row) = rows.next().await? {
@@ -165,7 +165,7 @@ impl Store {
             .conn
             .execute(
                 "UPDATE objects SET data = jsonb(?) WHERE id = ?",
-                (json.as_str(), id),
+                params![json.as_str(), id],
             )
             .await?;
 
@@ -180,7 +180,7 @@ impl Store {
     pub async fn delete(&self, id: &str) -> Result<()> {
         let rows_affected = self
             .conn
-            .execute("DELETE FROM objects WHERE id = ?", (id,))
+            .execute("DELETE FROM objects WHERE id = ?", params![id])
             .await?;
 
         if rows_affected == 0 {
@@ -201,7 +201,7 @@ impl Store {
                     SELECT 1 FROM json_each(data, '$.links') WHERE value = ?
                 )
                 "#,
-                (id,),
+                params![id],
             )
             .await?;
 

@@ -1,0 +1,103 @@
+:root {
+  --bg: #0a0a0f;
+  --fg: #e8e8ed;
+  --fg-muted: #888892;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-light: rgba(255, 255, 255, 0.12);
+  --glass-border-dark: rgba(0, 0, 0, 0.2);
+  --glass-hover: rgba(255, 255, 255, 0.08);
+  --primary: rgba(99, 102, 241, 0.7);
+  --primary-hover: rgba(99, 102, 241, 0.85);
+}
+
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  cursor: crosshair;
+  position: relative;
+}
+
+.canvas__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+.canvas__info {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 16px;
+  color: var(--fg-muted);
+  font-size: 12px;
+  pointer-events: none;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-light);
+  border-left-color: var(--glass-border-light);
+  border-bottom-color: var(--glass-border-dark);
+  border-right-color: var(--glass-border-dark);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.object {
+  position: absolute;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-light);
+  border-left-color: var(--glass-border-light);
+  border-bottom-color: var(--glass-border-dark);
+  border-right-color: var(--glass-border-dark);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: move;
+  user-select: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.object:hover {
+  background: var(--glass-hover);
+}
+
+.object--selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.object--editing {
+  cursor: text;
+}
+
+.object__content {
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.object__content--editable {
+  outline: none;
+  cursor: text;
+  user-select: text;
+}
+
+/* Placeholder text for empty objects */
+.object__content:empty::before,
+.object__content:not(:focus):empty::after {
+  content: 'Double-click to edit';
+  color: var(--fg-muted);
+  font-style: italic;
+}
