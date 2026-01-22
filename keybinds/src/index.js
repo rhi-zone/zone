@@ -648,4 +648,85 @@ export function listBindings(schema) {
     .map(([id, binding]) => ({ id, ...binding }))
 }
 
+/**
+ * @template {Schema} T
+ * @typedef {{ bindings: T, overrides: BindingOverrides }} BindingsChangeDetail
+ */
+
+/**
+ * @template {Schema} T
+ * @typedef {CustomEvent<BindingsChangeDetail<T>>} BindingsChangeEvent
+ */
+
+/**
+ * @template {Schema} T
+ * @typedef {Object} BindingsStore
+ * @property {() => T} get - Get current bindings
+ * @property {(overrides: BindingOverrides) => void} save - Save overrides and dispatch 'change' event
+ * @property {() => BindingOverrides} getOverrides - Get current overrides only
+ * @property {(type: 'change', listener: (ev: BindingsChangeEvent<T>) => void, options?: boolean | AddEventListenerOptions) => void} addEventListener
+ * @property {(type: 'change', listener: (ev: BindingsChangeEvent<T>) => void, options?: boolean | EventListenerOptions) => void} removeEventListener
+ * @property {(event: BindingsChangeEvent<T>) => boolean} dispatchEvent
+ */
+
+/**
+ * Create a reactive bindings store with localStorage persistence
+ *
+ * @template {Schema} T
+ * @param {T} schema - Default bindings schema
+ * @param {string} storageKey - localStorage key
+ * @returns {BindingsStore<T>}
+ *
+ * @example
+ * const store = createBindingsStore(schema, 'myapp:keybinds')
+ *
+ * // Get current bindings (merged schema + overrides)
+ * const bindings = store.get()
+ *
+ * // Subscribe to changes
+ * store.addEventListener('change', (ev) => {
+ *   console.log(ev.detail.bindings) // fully typed
+ * })
+ *
+ * // Save new overrides (dispatches 'change' event)
+ * store.save({ delete: { keys: ['$mod+d'] } })
+ */
+export function createBindingsStore(schema, storageKey) {
+  const target = new EventTarget()
+
+  /** @returns {BindingOverrides} */
+  function loadOverrides() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || '{}')
+    } catch {
+      return {}
+    }
+  }
+
+  /** @type {BindingOverrides} */
+  let overrides = loadOverrides()
+  /** @type {T} */
+  let bindings = /** @type {T} */ (mergeBindings(schema, overrides))
+
+  return {
+    get: () => bindings,
+    getOverrides: () => overrides,
+    addEventListener: /** @type {BindingsStore<T>['addEventListener']} */ (
+      (type, listener, options) => target.addEventListener(type, /** @type {EventListener} */ (listener), options)
+    ),
+    removeEventListener: /** @type {BindingsStore<T>['removeEventListener']} */ (
+      (type, listener, options) => target.removeEventListener(type, /** @type {EventListener} */ (listener), options)
+    ),
+    dispatchEvent: (event) => target.dispatchEvent(event),
+    save(newOverrides) {
+      overrides = newOverrides
+      localStorage.setItem(storageKey, JSON.stringify(overrides))
+      bindings = /** @type {T} */ (mergeBindings(schema, overrides))
+      target.dispatchEvent(new CustomEvent('change', {
+        detail: { bindings, overrides }
+      }))
+    }
+  }
+}
+
 export default keybinds

@@ -1,6 +1,6 @@
 import { createSignal, onMount, onCleanup, For, Show } from 'solid-js';
 import { keybinds, fromBindings, validateCommands } from 'keybinds';
-import { bindings } from './bindings';
+import { bindingsStore } from './bindings';
 import CommandPalette from './CommandPalette';
 import Settings from './Settings';
 import './App.css';
@@ -214,14 +214,19 @@ export default function App() {
     }
   };
 
-  // Build commands from global bindings + local handlers
-  const commands = fromBindings(bindings, handlers, {
-    delete: { when: ctx => Boolean(ctx['hasSelection']) && !ctx['isEditing'] },
-    selectAll: { when: ctx => !ctx['isEditing'] }
-  });
+  // Build commands from bindings + handlers
+  const commandOptions = {
+    delete: { when: (/** @type {Record<string, unknown>} */ ctx) => Boolean(ctx['hasSelection']) && !ctx['isEditing'] },
+    selectAll: { when: (/** @type {Record<string, unknown>} */ ctx) => !ctx['isEditing'] }
+  };
 
-  // Validate (catches binding typos early)
-  validateCommands(commands);
+  function buildCommands() {
+    const cmds = fromBindings(bindingsStore.get(), handlers, commandOptions);
+    validateCommands(cmds);
+    return cmds;
+  }
+
+  let commands = buildCommands();
 
   // Context getter for keybinds
   const getContext = () => ({
@@ -231,8 +236,21 @@ export default function App() {
 
   onMount(() => {
     fetchObjects();
-    const cleanup = keybinds(commands, getContext);
-    onCleanup(cleanup);
+
+    let cleanupKeybinds = keybinds(commands, getContext);
+
+    // Re-register keybinds when bindings change
+    const handleBindingsChange = () => {
+      cleanupKeybinds();
+      commands = buildCommands();
+      cleanupKeybinds = keybinds(commands, getContext);
+    };
+    bindingsStore.addEventListener('change', handleBindingsChange);
+
+    onCleanup(() => {
+      cleanupKeybinds();
+      bindingsStore.removeEventListener('change', handleBindingsChange);
+    });
   });
 
   return (
@@ -317,14 +335,7 @@ export default function App() {
       </Show>
 
       <Show when={settingsOpen()}>
-        <Settings
-          onClose={() => setSettingsOpen(false)}
-          onSave={() => {
-            // Reload page to pick up new bindings
-            // (bindings are evaluated at module load time)
-            window.location.reload();
-          }}
-        />
+        <Settings onClose={() => setSettingsOpen(false)} />
       </Show>
     </div>
   );

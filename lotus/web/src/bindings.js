@@ -2,7 +2,7 @@
  * Command bindings schema - source of truth for all commands
  * Settings UI reads this; components provide handlers
  */
-import { defineSchema, mergeBindings } from 'keybinds'
+import { defineSchema, createBindingsStore } from 'keybinds';
 
 export const schema = defineSchema({
   // Selection
@@ -42,22 +42,7 @@ export const schema = defineSchema({
     category: 'UI',
     keys: ['$mod+,']
   }
-})
+});
 
-// Load user overrides
-function loadUserBindings() {
-  try {
-    return JSON.parse(localStorage.getItem('lotus:keybinds') || '{}')
-  } catch {
-    return {}
-  }
-}
-
-// Save user overrides
-/** @param {Record<string, { keys?: string[], mouse?: string[] }>} overrides */
-export function saveUserBindings(overrides) {
-  localStorage.setItem('lotus:keybinds', JSON.stringify(overrides))
-}
-
-// Merged bindings (schema + user overrides)
-export const bindings = mergeBindings(schema, loadUserBindings())
+// Reactive bindings store
+export const bindingsStore = createBindingsStore(schema, 'lotus:keybinds');

@@ -1,6 +1,6 @@
 import { createSignal, For, Show } from 'solid-js';
 import { listBindings, formatKey } from 'keybinds';
-import { schema, saveUserBindings } from './bindings';
+import { schema, bindingsStore } from './bindings';
 
 /**
  * @typedef {{ keys?: string[], mouse?: string[] }} BindingOverride
@@ -10,14 +10,14 @@ import { schema, saveUserBindings } from './bindings';
 
 /**
  * Settings modal for rebinding keys
- * @param {{ onClose: () => void, onSave: () => void }} props
+ * @param {{ onClose: () => void }} props
  */
 export default function Settings(props) {
   const allBindings = listBindings(schema);
 
   // Track overrides (only modified bindings)
   const [overrides, setOverrides] = createSignal(
-    /** @type {Overrides} */ (JSON.parse(localStorage.getItem('lotus:keybinds') || '{}'))
+    /** @type {Overrides} */ (bindingsStore.getOverrides())
   );
   const [capturing, setCapturing] = createSignal(/** @type {CaptureState} */ (null));
 
@@ -95,8 +95,7 @@ export default function Settings(props) {
   }
 
   function handleSave() {
-    saveUserBindings(overrides());
-    props.onSave();
+    bindingsStore.save(overrides());
     props.onClose();
   }
 
