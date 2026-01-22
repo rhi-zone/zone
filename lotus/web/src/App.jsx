@@ -1,5 +1,5 @@
 import { createSignal, onMount, onCleanup, For, Show } from 'solid-js';
-import { keybinds } from 'keybinds';
+import { keybinds, validateCommands } from 'keybinds';
 import './App.css';
 
 export default function App() {
@@ -144,6 +144,7 @@ export default function App() {
     {
       id: 'deselect',
       label: 'Deselect',
+      category: 'Selection',
       keys: ['Escape'],
       execute: () => {
         setEditingId(null);
@@ -153,6 +154,7 @@ export default function App() {
     {
       id: 'delete',
       label: 'Delete selected',
+      category: 'Edit',
       keys: ['Backspace', 'Delete'],
       when: ctx => ctx.hasSelection && !ctx.isEditing,
       execute: () => deleteObject(selectedId())
@@ -160,13 +162,27 @@ export default function App() {
     {
       id: 'selectAll',
       label: 'Select all',
+      category: 'Selection',
       keys: ['$mod+a'],
       when: ctx => !ctx.isEditing,
       execute: () => {
         // TODO: implement multi-select
       }
+    },
+    {
+      id: 'pan',
+      label: 'Pan canvas',
+      category: 'Canvas',
+      mouse: ['MiddleClick'],
+      execute: (_ctx, event) => {
+        setIsPanning(true);
+        setPanStart({ x: event.clientX - offset().x, y: event.clientY - offset().y });
+      }
     }
   ];
+
+  // Validate commands at module load (catches typos early)
+  validateCommands(commands);
 
   onMount(() => {
     fetchObjects();
