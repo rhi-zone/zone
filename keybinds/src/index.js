@@ -160,27 +160,29 @@ function parseMouse(binding) {
   return { mods, button }
 }
 
+const BUTTON_NAMES = ['click', 'middle', 'right']
+
 /**
- * Normalize modifiers to canonical string
+ * Normalize modifiers to canonical prefix (e.g., "ctrl+alt+")
  * @param {Modifiers} mods
  * @returns {string}
  */
-function modsToString(mods) {
+function modsToPrefix(mods) {
   let s = ''
-  if (mods.ctrl) s += 'c'
-  if (mods.alt) s += 'a'
-  if (mods.shift) s += 's'
-  if (mods.meta) s += 'm'
+  if (mods.ctrl) s += 'ctrl+'
+  if (mods.alt) s += 'alt+'
+  if (mods.shift) s += 'shift+'
+  if (mods.meta) s += 'meta+'
   return s
 }
 
 /**
- * Convert parsed key to lookup key
+ * Convert parsed key to lookup key (e.g., "ctrl+shift+k")
  * @param {ParsedKey} parsed
  * @returns {string}
  */
 function keyToLookup(parsed) {
-  return `${modsToString(parsed.mods)}:${parsed.key}`
+  return `${modsToPrefix(parsed.mods)}${parsed.key}`
 }
 
 /**
@@ -189,7 +191,7 @@ function keyToLookup(parsed) {
  * @returns {string[]}
  */
 function eventToKeyLookups(event) {
-  const mods = modsToString({
+  const prefix = modsToPrefix({
     ctrl: event.ctrlKey,
     alt: event.altKey,
     shift: event.shiftKey,
@@ -199,19 +201,19 @@ function eventToKeyLookups(event) {
   const code = event.code.toLowerCase()
   const codeKey = code.startsWith('key') ? code.slice(3) : null
 
-  const lookups = [`${mods}:${key}`]
-  if (code !== key) lookups.push(`${mods}:${code}`)
-  if (codeKey && codeKey !== key) lookups.push(`${mods}:${codeKey}`)
+  const lookups = [`${prefix}${key}`]
+  if (code !== key) lookups.push(`${prefix}${code}`)
+  if (codeKey && codeKey !== key) lookups.push(`${prefix}${codeKey}`)
   return lookups
 }
 
 /**
- * Convert parsed mouse binding to lookup key
+ * Convert parsed mouse binding to lookup key (e.g., "ctrl+click", "middle")
  * @param {ParsedMouse} parsed
  * @returns {string}
  */
 function mouseToLookup(parsed) {
-  return `m${modsToString(parsed.mods)}:${parsed.button}`
+  return `${modsToPrefix(parsed.mods)}${BUTTON_NAMES[parsed.button] || 'click'}`
 }
 
 /**
@@ -220,13 +222,13 @@ function mouseToLookup(parsed) {
  * @returns {string}
  */
 function eventToMouseLookup(event) {
-  const mods = modsToString({
+  const prefix = modsToPrefix({
     ctrl: event.ctrlKey,
     alt: event.altKey,
     shift: event.shiftKey,
     meta: event.metaKey
   })
-  return `m${mods}:${event.button}`
+  return `${prefix}${BUTTON_NAMES[event.button] || 'click'}`
 }
 
 /**
