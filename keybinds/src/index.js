@@ -322,7 +322,33 @@ export function keybinds(commands, getContext = () => ({}), options = {}) {
 }
 
 /**
+ * Check if a command has any bindings
+ * @param {Command} cmd
+ * @returns {boolean}
+ */
+function hasBoundKeys(cmd) {
+  return Boolean((cmd.keys && cmd.keys.length > 0) || (cmd.mouse && cmd.mouse.length > 0))
+}
+
+/**
+ * Dedupe commands by ID (last wins - for registration order / inner scope)
+ * @param {Command[]} commands
+ * @returns {Command[]}
+ */
+function dedupeCommands(commands) {
+  /** @type {Map<string, Command>} */
+  const seen = new Map()
+  for (const cmd of commands) {
+    seen.set(cmd.id, cmd)  // last one wins
+  }
+  return Array.from(seen.values())
+}
+
+/**
  * Search commands for command palette
+ *
+ * - Dedupes by ID (last registration wins - inner scope shadows outer)
+ * - Hides commands with no bindings (no keys and no mouse)
  *
  * @param {Command[]} commands - Array of command definitions
  * @param {string} query - Search query
@@ -333,8 +359,9 @@ export function searchCommands(commands, query, context = {}) {
   const q = query.toLowerCase()
   const results = []
 
-  for (const cmd of commands) {
+  for (const cmd of dedupeCommands(commands)) {
     if (cmd.hidden) continue
+    if (!hasBoundKeys(cmd)) continue  // hide unbound
 
     const label = cmd.label.toLowerCase()
     const id = cmd.id.toLowerCase()
@@ -363,6 +390,9 @@ export function searchCommands(commands, query, context = {}) {
 /**
  * Group commands by category
  *
+ * - Dedupes by ID (last registration wins)
+ * - Hides commands with no bindings
+ *
  * @param {Command[]} commands - Array of command definitions
  * @param {Record<string, unknown>} [context] - Current context (for active state)
  * @returns {Record<string, (Command & { active: boolean })[]>} Commands grouped by category
@@ -371,8 +401,9 @@ export function groupByCategory(commands, context = {}) {
   /** @type {Record<string, (Command & { active: boolean })[]>} */
   const groups = {}
 
-  for (const cmd of commands) {
+  for (const cmd of dedupeCommands(commands)) {
     if (cmd.hidden) continue
+    if (!hasBoundKeys(cmd)) continue  // hide unbound
     const cat = cmd.category || 'Other'
     if (!groups[cat]) groups[cat] = []
     groups[cat].push({
