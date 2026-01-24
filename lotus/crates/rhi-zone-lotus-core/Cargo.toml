@@ -1,9 +1,10 @@
 [package]
-name = "lotus-core"
+name = "rhi-zone-lotus-core"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 description = "Core object store for Lotus - unified object graph"
+repository = "https://github.com/rhi-zone/zone"
 
 [dependencies]
 libsql = "0.6"

@@ -34,4 +34,4 @@ spore run .
 
 ## Source
 
-Located at `/wisteria` in the flora repository.
+Located at `/wisteria` in the zone repository.

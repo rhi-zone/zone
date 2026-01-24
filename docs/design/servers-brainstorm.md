@@ -1,6 +1,6 @@
 # Flora Servers: Brainstorm
 
-Backend services for the flora ecosystem. UI handled by canopy (~/git/canopy); these are headless servers.
+Backend services for the zone ecosystem. UI handled by canopy (~/git/canopy); these are headless servers.
 
 ## The Absurd Moonshot
 
@@ -222,7 +222,7 @@ Current decomposition:
 - **spore** - Lua runtime
 - **reed** - TS → IR → Lua
 - **moss** - code intelligence
-- **flora** - apps (this repo)
+- **zone** - apps (this repo)
 - etc.
 
 **What's good:**
@@ -233,7 +233,7 @@ Current decomposition:
 **What might need rethinking:**
 - Is the boundary between pith and spore right?
 - Does reed belong as separate, or should it be part of spore?
-- Where does MOO fit? Is it flora (app) or something more fundamental?
+- Where does MOO fit? Is it zone (app) or something more fundamental?
 
 ### Is MOO what we actually want?
 
@@ -406,7 +406,7 @@ The MOO versions aren't wrappers around standalone versions. They're different p
 
 **pith** = Stdlib. Stable interfaces, WASI foundation, seldom changes. "What are the primitives?"
 
-**flora** = Full-stack apps composing rhizome libraries. "What can we build with them?"
+**zone** = Full-stack apps composing rhizome libraries. "What can we build with them?"
 
 Flora already contains:
 - **iris** - Session analysis (uses spore + sessions + llm)
@@ -1658,7 +1658,7 @@ It's not a new primitive - it's a full-stack app that *composes* Rhizome primiti
 - Uses **spore** (Lua runtime)
 - Uses **pith** via spore-pith (capability interfaces)
 - Uses **reed** (if translation needed)
-- Lives in **flora** (apps that demonstrate the ecosystem)
+- Lives in **zone** (apps that demonstrate the ecosystem)
 
 This is the right framing. Flora is where apps go - things built *on* the ecosystem, not new fundamentals. The MOO-ish thing belongs there precisely because it's not a primitive.
 
@@ -2314,7 +2314,7 @@ So it's: N implementations of primitives + fallback + optional M×N polish. Trac
 - CLI/TUI: Rust (ratatui, clap, etc.)
 - Discord: Rust (serenity) or TS (discord.js)
 
-Rhizome already has Rust (moss, etc.) and Lua (spore, flora). Fits.
+Rhizome already has Rust (moss, etc.) and Lua (spore, zone). Fits.
 
 But also: stack matters less than architecture. Get the object graph right, frontends can be rewritten. Don't overthink it.
 
@@ -3253,7 +3253,7 @@ Roblox is maybe the closest to "programmable shared worlds for everyone" - and i
 
 **What's missing**: Open, general-purpose, low-barrier programmable object system. MOO philosophy + modern accessibility + not corporate-owned.
 
-Is that what lotus/MOO-in-flora should be?
+Is that what lotus/MOO-in-zone should be?
 
 **Can LLMs be the accessibility bridge?**
 
@@ -3459,7 +3459,7 @@ Value proposition by bucket:
 | Worlds/persistence | lotus, hypha | Persistent state, programmable | Context injection, not chat logs |
 | UI/control | canopy | Universal client for anything | Could be controlled structurally |
 | Preservation | siphon | Save dying software | Extract structure from legacy |
-| Scaffolding | nursery, flora | Bootstrap projects fast | Consistent project structure |
+| Scaffolding | nursery, zone | Bootstrap projects fast | Consistent project structure |
 
 **What haven't we thought of?**
 

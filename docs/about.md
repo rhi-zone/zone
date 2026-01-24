@@ -32,6 +32,6 @@ Flora is part of the Rhizome ecosystem:
 - **spore** - Lua runtime (spores spread and germinate)
 - **moss** - Code intelligence (moss grows on and understands its substrate)
 - **nursery** - Project scaffolding (where seeds are planted)
-- **flora** - Flowering applications (iris, wisteria)
+- **zone** - Flowering applications (iris, wisteria)
 
 All botanical. All connected underground.

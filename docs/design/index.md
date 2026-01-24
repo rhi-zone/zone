@@ -1,6 +1,6 @@
 # Design Documents
 
-Design docs for flora projects.
+Design docs for zone projects.
 
 ## Active
 

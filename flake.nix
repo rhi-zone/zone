@@ -1,11 +1,11 @@
 {
-  description = "flora - Rhizome ecosystem monorepo";
+  description = "zone - Rhi ecosystem monorepo";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    spore.url = "github:rhizome-lab/spore";
-    nursery.url = "github:rhizome-lab/nursery";
+    spore.url = "github:rhi-zone/spore";
+    nursery.url = "github:rhi-zone/nursery";
   };
 
   outputs = { self, nixpkgs, flake-utils, spore, nursery }:

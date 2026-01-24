@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-Behavioral rules for Claude Code in the flora repository.
+Behavioral rules for Claude Code in the zone repository.
 
 ## Project Overview
 
-Flora is a Rhizome ecosystem monorepo containing:
+Zone is a Rhi ecosystem monorepo containing:
 - **Lua projects**: Standalone tools (wisteria, file browser, etc.)
 - **Seeds**: Project templates for nursery scaffolding
 - **Docs**: VitePress documentation
@@ -12,7 +12,7 @@ Flora is a Rhizome ecosystem monorepo containing:
 ## Structure
 
 ```
-flora/
+zone/
 ├── wisteria/        # Autonomous task execution
 │   ├── init.lua     # Entry point (require("wisteria"))
 │   └── wisteria/    # Submodules (wisteria.risk, wisteria.session, etc.)
@@ -25,7 +25,7 @@ flora/
 
 ## Key Relationships
 
-- **nursery** reads seeds from flora for project scaffolding
+- **nursery** reads seeds from zone for project scaffolding
 - **spore** runs Lua projects with LLM integration
 - **moss** provides code intelligence via spore-moss integration
 

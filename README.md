@@ -1,11 +1,11 @@
-# Flora
+# Zone
 
-Rhizome ecosystem monorepo: Lua-based tools, scaffolds, and orchestration.
+Rhi ecosystem monorepo: Lua-based tools, scaffolds, and orchestration.
 
 ## Structure
 
 ```
-flora/
+zone/
 ├── wisteria/        # Autonomous task execution
 │   ├── init.lua     # Entry point
 │   └── wisteria/    # Submodules
@@ -37,8 +37,8 @@ spore run .
 ### Scaffolding new projects
 
 ```bash
-# Use nursery with flora seeds
-nursery new my-project --seed flora:creation
+# Use nursery with zone seeds
+nursery new my-project --seed zone:creation
 ```
 
 ## Development

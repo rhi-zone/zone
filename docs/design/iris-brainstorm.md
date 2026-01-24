@@ -1,6 +1,6 @@
 # Iris: Agent-Authored Insights
 
-Iris is a flora project for extracting and sharing insights from agentic coding sessions. Named for the Greek messenger goddess who bridges worlds - fitting for a tool that communicates insights between agents and humans.
+Iris is a zone project for extracting and sharing insights from agentic coding sessions. Named for the Greek messenger goddess who bridges worlds - fitting for a tool that communicates insights between agents and humans.
 
 ## Naming
 
@@ -244,7 +244,7 @@ TypeScript/Bun prototype exploring:
 
 ## Publishing
 
-The rhizome docs site (rhizome-lab.github.io) has no blog section yet. VitePress supports blogs trivially. A blog seed could scaffold:
+The rhizome docs site (rhi-zone.github.io) has no blog section yet. VitePress supports blogs trivially. A blog seed could scaffold:
 
 - `/blog` section with proper config
 - RSS feed
@@ -254,7 +254,7 @@ The rhizome docs site (rhizome-lab.github.io) has no blog section yet. VitePress
 ## Current Status
 
 **Implemented:**
-- Iris project scaffolded in flora (`iris/init.lua`, submodules in `iris/iris/`)
+- Iris project scaffolded in zone (`iris/init.lua`, submodules in `iris/iris/`)
 - Session parsing via `spore-sessions` plugin
 - LLM insight generation via `spore-llm` plugin
 - Voice profiles (default, technical, reflective) in `iris/iris/prompts.lua`

@@ -1,17 +1,18 @@
 [package]
-name = "lotus-server"
+name = "rhi-zone-lotus-server"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 description = "HTTP + WebSocket server for Lotus object store"
+repository = "https://github.com/rhi-zone/zone"
 
 [[bin]]
 name = "lotus"
 path = "src/main.rs"
 
 [dependencies]
-lotus-core = { path = "../lotus-core" }
-trellis = { git = "https://github.com/rhizome-lab/trellis", features = ["http", "ws"] }
+rhi-zone-lotus-core = { path = "../rhi-zone-lotus-core" }
+trellis = { git = "https://github.com/rhi-zone/trellis", features = ["http", "ws"] }
 axum = "0.8"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }

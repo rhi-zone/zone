@@ -16,7 +16,7 @@
 
 ## Future Projects
 
-Flora is a monorepo for Lua-based tools. Planned additions:
+Zone is a monorepo for Lua-based tools. Planned additions:
 - **File browser** - File system navigation
 - **Note editor** - Note taking/editing
 
