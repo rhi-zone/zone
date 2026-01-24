@@ -1,6 +1,6 @@
 # Projects
 
-Flora contains full-stack Lua applications for the Rhizome ecosystem.
+Zone contains full-stack Lua applications for the rhi.zone ecosystem.
 
 ## Wisteria
 

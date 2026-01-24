@@ -12,7 +12,7 @@ path = "src/main.rs"
 
 [dependencies]
 rhi-zone-lotus-core = { path = "../rhi-zone-lotus-core" }
-trellis = { git = "https://github.com/rhi-zone/trellis", features = ["http", "ws"] }
+trellis = { git = "https://github.com/rhi-zone/server-less", features = ["http", "ws"] }
 axum = "0.8"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }

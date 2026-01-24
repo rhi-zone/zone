@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "Flora"
+  name: "Zone"
   text: "Full-stack Lua applications"
-  tagline: "Autonomous agents, insight extraction, and orchestration for the Rhizome ecosystem."
+  tagline: "Autonomous agents, insight extraction, and orchestration for the rhi.zone ecosystem."
   actions:
     - theme: brand
       text: Projects

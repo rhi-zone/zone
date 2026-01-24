@@ -1,10 +1,10 @@
-# About Flora
+# About Zone
 
-Flora is a Rhizome ecosystem monorepo containing Lua projects, seeds, and documentation.
+Zone is a rhi.zone ecosystem monorepo containing Lua projects, seeds, and documentation.
 
 ## Naming
 
-The Rhizome ecosystem uses botanical naming. Flora (this repo) contains flowering projects:
+The rhi.zone ecosystem uses botanical naming. Zone (this repo) contains flowering projects:
 
 ### Iris
 
@@ -26,7 +26,7 @@ Seeds grow into new projects, naturally.
 
 ## Ecosystem
 
-Flora is part of the Rhizome ecosystem:
+Zone is part of the rhi.zone ecosystem:
 
 - **rhizome** - The root system connecting everything
 - **spore** - Lua runtime (spores spread and germinate)

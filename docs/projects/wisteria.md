@@ -1,6 +1,6 @@
 # Wisteria
 
-Autonomous task execution agent for the Rhizome ecosystem.
+Autonomous task execution agent for the rhi.zone ecosystem.
 
 ## Overview
 

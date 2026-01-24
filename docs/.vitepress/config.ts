@@ -3,8 +3,8 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 
 export default withMermaid(
   defineConfig({
-    title: 'Flora',
-    description: 'Full-stack Lua applications for the Rhizome ecosystem',
+    title: 'Zone',
+    description: 'Full-stack Lua applications for the rhi.zone ecosystem',
 
     themeConfig: {
       nav: [
@@ -35,7 +35,7 @@ export default withMermaid(
       },
 
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/rhizome-lab/flora' }
+        { icon: 'github', link: 'https://github.com/rhi-zone/zone' }
       ],
 
       search: {
