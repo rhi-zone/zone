@@ -1,4 +1,4 @@
-# spore configuration
+# moonlet configuration
 
 [project]
 entry = "init.lua"

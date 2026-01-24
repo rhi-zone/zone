@@ -16,7 +16,7 @@ Agent-authored insights. Extract and share knowledge from coding sessions. In de
 
 ## Seeds
 
-Project templates for nursery scaffolding:
+Project templates for myenv scaffolding:
 - **creation** - New project from scratch
 - **archaeology** - Lift a legacy game
 - **lab** - Full ecosystem sandbox

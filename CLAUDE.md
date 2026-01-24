@@ -6,7 +6,7 @@ Behavioral rules for Claude Code in the zone repository.
 
 Zone is a Rhi ecosystem monorepo containing:
 - **Lua projects**: Standalone tools (wisteria, file browser, etc.)
-- **Seeds**: Project templates for nursery scaffolding
+- **Seeds**: Project templates for myenv scaffolding
 - **Docs**: VitePress documentation
 
 ## Structure
@@ -25,9 +25,9 @@ zone/
 
 ## Key Relationships
 
-- **nursery** reads seeds from zone for project scaffolding
-- **spore** runs Lua projects with LLM integration
-- **moss** provides code intelligence via spore-moss integration
+- **myenv** reads seeds from zone for project scaffolding
+- **moonlet** runs Lua projects with LLM integration
+- **moss** provides code intelligence via moonlet-moss integration
 
 ## Conventions
 
@@ -61,8 +61,8 @@ Each project is self-contained. Run from within the project directory:
 
 ```bash
 cd wisteria
-spore init          # First time only - creates .spore/config.toml
-spore run .
+moonlet init          # First time only - creates .moonlet/config.toml
+moonlet run .
 ```
 
 ## Commit Convention
@@ -86,7 +86,7 @@ Scope is optional but recommended for multi-crate repos.
 - Design decisions -> docs/ or code comments
 - Future work -> TODO.md
 
-**Do the work properly.** When editing Lua projects, test them with spore.
+**Do the work properly.** When editing Lua projects, test them with moonlet.
 
 ## Behavioral Patterns
 
@@ -104,8 +104,8 @@ From ecosystem-wide session analysis:
 Do not:
 - Announce actions ("I will now...") - just do them
 - Leave work uncommitted
-- Modify seeds without testing with nursery
-- Modify Lua projects without testing with spore
+- Modify seeds without testing with myenv
+- Modify Lua projects without testing with moonlet
 - Use path dependencies in Cargo.toml - causes clippy to stash changes across repos
 - Use `--no-verify` - fix the issue or fix the hook
 - Assume tools are missing - check if `nix develop` is available for the right environment

@@ -219,7 +219,7 @@ Given everything above (structure, tags, hyper-modularity, fractal decomposition
 
 Current decomposition:
 - **pith** - interfaces/stdlib
-- **spore** - Lua runtime
+- **moonlet** - Lua runtime
 - **reed** - TS → IR → Lua
 - **moss** - code intelligence
 - **zone** - apps (this repo)
@@ -231,8 +231,8 @@ Current decomposition:
 - Fractal structure (same pattern inside each)
 
 **What might need rethinking:**
-- Is the boundary between pith and spore right?
-- Does reed belong as separate, or should it be part of spore?
+- Is the boundary between pith and moonlet right?
+- Does reed belong as separate, or should it be part of moonlet?
 - Where does MOO fit? Is it zone (app) or something more fundamental?
 
 ### Is MOO what we actually want?
@@ -409,12 +409,12 @@ The MOO versions aren't wrappers around standalone versions. They're different p
 **zone** = Full-stack apps composing rhizome libraries. "What can we build with them?"
 
 Flora already contains:
-- **iris** - Session analysis (uses spore + sessions + llm)
-- **wisteria** - Autonomous tasks (uses spore + moss)
+- **iris** - Session analysis (uses moonlet + sessions + llm)
+- **wisteria** - Autonomous tasks (uses moonlet + moss)
 
 Flora could contain:
-- **MOO** - Programmable objects (uses pith-sql, pith-fs, spore, reed) - *future rebuild of lotus*
-- **Notes** - Knowledge base (uses pith-sql, maybe spore)
+- **MOO** - Programmable objects (uses pith-sql, pith-fs, moonlet, reed) - *future rebuild of lotus*
+- **Notes** - Knowledge base (uses pith-sql, maybe moonlet)
 - **FS service** - File operations (uses pith-fs, pith-sql)
 
 ## Architecture (Common)
@@ -436,7 +436,7 @@ Options to consider:
 
 ### Language Choice
 
-**Prior art**: lotus (MOO-style system), reed (language→IR→language), spore (Lua runtime)
+**Prior art**: lotus (MOO-style system), reed (language→IR→language), moonlet (Lua runtime)
 
 The stack:
 ```
@@ -444,18 +444,18 @@ TypeScript (author verbs here - great DX, types, LLM-familiar)
     ↓ reed (compile)
 Restricted IR (safe, serializable, no dangerous primitives)
     ↓ reed (emit)
-Lua (executes on spore with native plugin capabilities)
+Lua (executes on moonlet with native plugin capabilities)
 ```
 
 | Layer | Language | Rationale |
 |-------|----------|-----------|
 | Verb authoring | TypeScript | Type safety, IDE support, LLMs know it |
 | IR | S-expressions | Universal, serializable, inspectable |
-| Execution | Lua on spore | Fast (LuaJIT), sandboxed, plugin ecosystem |
+| Execution | Lua on moonlet | Fast (LuaJIT), sandboxed, plugin ecosystem |
 | Plugins | Rust | Performance, safety, native capabilities |
 | Core DB | Rust | Persistence needs perf |
 
-**Extensibility**: MOO core is minimal (entities + verbs + capabilities). Domain features (notes, fs, AI) are spore plugins that expose capabilities. TypeScript SDKs wrap those capabilities with types.
+**Extensibility**: MOO core is minimal (entities + verbs + capabilities). Domain features (notes, fs, AI) are moonlet plugins that expose capabilities. TypeScript SDKs wrap those capabilities with types.
 
 ---
 
@@ -622,7 +622,7 @@ Was a MOO-style monolith. Removed from ecosystem and decomposed into parts.
 
 Decomposed into:
 - **pith** - Capability-based interface libraries (fs, sql, http, etc.)
-- **spore** - Lua runtime with plugin system
+- **moonlet** - Lua runtime with plugin system
 - **reed** - TS → IR → Lua compiler
 
 #### Lotus Vision (4 Pillars)
@@ -684,7 +684,7 @@ The "built up functionality" layer exists independently. Hosts are thin wrappers
 ### Reed (~/git/reed)
 Language→IR→language compiler. Key insights:
 - **Intentionally restricted IR**: No classes, async, metaprogramming
-- **Domain ops are function calls**: Runtime (spore) resolves them
+- **Domain ops are function calls**: Runtime (moonlet) resolves them
 - **TypeScript reader, Lua writer**: Best of both worlds
 - **S-expr serialization**: Same format as lotus verbs
 
@@ -1406,7 +1406,7 @@ We've been on tangents about platforms, feeds, agency, creativity. But practical
 
 | Approach | What it means | Examples |
 |----------|--------------|----------|
-| **Build substrates** | Tools others build on, not destinations | Rhizome projects - moss, spore, resin |
+| **Build substrates** | Tools others build on, not destinations | Rhizome projects - moss, moonlet, resin |
 | **Make things** | Lead by example, create artifacts | Character cards, worlds, tools |
 | **Document ideas** | Write it down, let others find it | This brainstorm doc |
 | **Open source everything** | Others can build on it | GitHub, permissive licenses |
@@ -1428,7 +1428,7 @@ If you build good substrate, others build the communities. You don't have to do 
 | Project | Substrate for what? |
 |---------|-------------------|
 | moss | Code understanding |
-| spore | Lua runtime with integrations |
+| moonlet | Lua runtime with integrations |
 | MOO/lotus | Programmable persistent worlds |
 | resin | Procedural media generation |
 | cambium | Format conversion pipelines |
@@ -1459,7 +1459,7 @@ You need to build high enough that:
 
 **Reference implementations matter.** Not "the" community - but "a" demo that shows what the tools can do. Example worlds, example apps, example integrations. Enough to understand, not enough to be the destination.
 
-**The hope:** someone uses spore + MOO to build a community. Someone uses resin to make procedural art. Someone uses moss to understand their codebase. You enabled it without running it.
+**The hope:** someone uses moonlet + MOO to build a community. Someone uses resin to make procedural art. Someone uses moss to understand their codebase. You enabled it without running it.
 
 **The realistic version:** we build the reference implementations ourselves, use them ourselves, and if others find them useful, great. If not, we still have tools we use.
 
@@ -1596,7 +1596,7 @@ Lotus was one project that got grandfathered in, then discarded - because it's e
 
 Rhizome is a diverse ecosystem:
 - **moss** - code intelligence
-- **spore** - Lua runtime with plugins
+- **moonlet** - Lua runtime with plugins
 - **resin** - procedural media (textures, audio, meshes)
 - **cambium** - type-driven conversion pipelines
 - **liana** - API binding generation
@@ -1612,7 +1612,7 @@ None of these are MOO. MOO was explored, mostly discarded.
 **So what actually gets built?**
 
 The honest answer: whatever's interesting and useful. Current active things:
-- **spore** - Lua runtime, actively used
+- **moonlet** - Lua runtime, actively used
 - **wisteria** - task execution
 - **iris** - session analysis
 - **moss** - code intelligence
@@ -1629,7 +1629,7 @@ Some possibilities from this conversation:
 - Better creative tools (low floor, high ceiling)
 - Connection-surfacing tools (creativity as connection-making)
 
-But also just: the existing projects need work. moss needs polish. spore needs features. resin needs... everything.
+But also just: the existing projects need work. moss needs polish. moonlet needs features. resin needs... everything.
 
 **Yes, I do want to build a MOO.** But let's be honest: MOOs are one paradigm. They're not the *only* thing missing from 2026.
 
@@ -1655,8 +1655,8 @@ MOO is *one* of these. Not the only one. Each is a rabbit hole.
 **On the MOO-ish thing specifically:**
 
 It's not a new primitive - it's a full-stack app that *composes* Rhizome primitives:
-- Uses **spore** (Lua runtime)
-- Uses **pith** via spore-pith (capability interfaces)
+- Uses **moonlet** (Lua runtime)
+- Uses **pith** via moonlet-pith (capability interfaces)
 - Uses **reed** (if translation needed)
 - Lives in **zone** (apps that demonstrate the ecosystem)
 
@@ -2314,7 +2314,7 @@ So it's: N implementations of primitives + fallback + optional M×N polish. Trac
 - CLI/TUI: Rust (ratatui, clap, etc.)
 - Discord: Rust (serenity) or TS (discord.js)
 
-Rhizome already has Rust (moss, etc.) and Lua (spore, zone). Fits.
+Rhizome already has Rust (moss, etc.) and Lua (moonlet, zone). Fits.
 
 But also: stack matters less than architecture. Get the object graph right, frontends can be rewritten. Don't overthink it.
 
@@ -3321,11 +3321,11 @@ Counter-arguments:
 - ECS as composable substrate
 - "Bring your own" for most features
 - Pick the pieces you need, leave the rest
-- Rhizome's decomposition (pith, spore, reed, etc.) aims for this too
+- Rhizome's decomposition (pith, moonlet, reed, etc.) aims for this too
 - MOO's "substrate only, user-space everything else" is the same idea
 
 **Fractal modularity: the pattern repeats at every level**
-- Rhizome ecosystem: pith, spore, reed, moss, etc. - pick what you need
+- Rhizome ecosystem: pith, moonlet, reed, moss, etc. - pick what you need
 - Each monorepo: same structure internally (core + modules)
 - Each module: small, focused, composable
 - It's turtles all the way down
@@ -3455,15 +3455,15 @@ Value proposition by bucket:
 | Code understanding | moss, reed, liana | Don't read everything, query structure | Same, but with token limits |
 | Format/data wrangling | cambium, reed | Don't hunt for converters | Reliable transformations |
 | Creative/procedural | resin, dew, frond | Composable media generation | Could generate assets |
-| Runtime/execution | spore, pith | Unified runtime, universal interfaces | Stable execution environment |
+| Runtime/execution | moonlet, pith | Unified runtime, universal interfaces | Stable execution environment |
 | Worlds/persistence | lotus, hypha | Persistent state, programmable | Context injection, not chat logs |
 | UI/control | canopy | Universal client for anything | Could be controlled structurally |
 | Preservation | siphon | Save dying software | Extract structure from legacy |
-| Scaffolding | nursery, zone | Bootstrap projects fast | Consistent project structure |
+| Scaffolding | myenv, zone | Bootstrap projects fast | Consistent project structure |
 
 **What haven't we thought of?**
 
-1. **Composition effects** - What happens when moss + spore + canopy combine? Or liana + cambium + reed?
+1. **Composition effects** - What happens when moss + moonlet + canopy combine? Or liana + cambium + reed?
 
 2. **Template for LLM-era development** - The ecosystem itself demonstrates "how to build ambitious things with AI assistance"
 
@@ -3704,7 +3704,7 @@ Don't marry MOO. It's *one* approach to making interaction explicit.
 | moss | No | Tree-sitter based code intelligence still works |
 | pith | No | Universal interfaces, useful regardless |
 | reed | No | Transpiler, works without LLMs |
-| spore | Partially | Lua runtime works; LLM plugin less useful |
+| moonlet | Partially | Lua runtime works; LLM plugin less useful |
 | lotus/MOO | No | Programmable objects, still works |
 | liana | No | API codegen, useful regardless |
 | cambium | No | Format conversion, still works |
@@ -3730,7 +3730,7 @@ Which project first? Think in terms of ROI and dependencies.
        ┌──────────────┴──────┐      │
        ▼                     ▼      ▼
    ┌───────┐            ┌───────┐ ┌───────┐
-   │ spore │◄───────────│  MOO  │ │ other │
+   │ moonlet │◄───────────│  MOO  │ │ other │
    └───┬───┘            └───┬───┘ └───────┘
        │                    │
        ▼                    ▼
@@ -3740,8 +3740,8 @@ Which project first? Think in terms of ROI and dependencies.
 ```
 
 - **canopy** needs something to connect to
-- **MOO** needs spore (Lua runtime) + libsql (storage)
-- **spore** needs pith primitives
+- **MOO** needs moonlet (Lua runtime) + libsql (storage)
+- **moonlet** needs pith primitives
 - **pith** is foundational
 
 ### Project ROI Estimates
@@ -3766,9 +3766,9 @@ canopy ←→ pith-fs
 ```
 - A file browser. Useful but not novel.
 
-**Option B: spore + pith + canopy**
+**Option B: moonlet + pith + canopy**
 ```
-canopy ←→ spore ←→ pith-{fs,sql}
+canopy ←→ moonlet ←→ pith-{fs,sql}
          ↑
       Lua apps
 ```
@@ -3886,13 +3886,13 @@ This is the core insight: **structured world state becomes LLM context**.
 
 ### Immediate (pick one)
 
-1. **MOO prototype**: Minimal entity system in Lua/spore
+1. **MOO prototype**: Minimal entity system in Lua/moonlet
    - Storage: libsql
    - No verbs yet, just entities + props
    - Test: Can canopy display entity tree?
 
 2. **pith-fs**: File watching primitive
-   - Rust, exposes via spore plugin
+   - Rust, exposes via moonlet plugin
    - Test: Can Lua script react to file changes?
 
 3. **Context injection POC**: Skip MOO, test the core hypothesis

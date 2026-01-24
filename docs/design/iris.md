@@ -31,7 +31,7 @@ iris session.jsonl           # Analyze specific session
 ```
 
 Core flow:
-1. Parse session(s) via spore-sessions
+1. Parse session(s) via moonlet-sessions
 2. Format for LLM context
 3. One LLM call with voice profile prompt
 4. Output markdown
@@ -56,7 +56,7 @@ These are documented in the brainstorm for future consideration.
 ```
 Session logs → Parse → Format → LLM → Markdown
      ↑           ↑        ↑       ↑
-  .jsonl    spore-    truncate/  voice
+  .jsonl    moonlet-    truncate/  voice
   files     sessions  structure  profile
 ```
 
@@ -76,7 +76,7 @@ When/if we need more:
 - **Temporal coherence**: Add `--track-progress` with `.iris/history.json`
 - **Session splitting**: Add `--split-sessions` for multi-day sessions
 - **Domain clustering**: Add `--cluster-domains` for thematic grouping
-- **Embeddings**: Add spore-embed when retrieval becomes necessary
+- **Embeddings**: Add moonlet-embed when retrieval becomes necessary
 
 Each extension is opt-in, independent.
 
@@ -116,7 +116,7 @@ Conversational, first-person, practitioner tone:
 - For small session counts, context window is sufficient
 - Complexity should be opt-in, not required
 
-**Note**: This doesn't mean "no embeddings ever" - if spore-embed exists and user wants it, clustering/retrieval can be an optional enhancement. The point is: basic iris should work out of the box.
+**Note**: This doesn't mean "no embeddings ever" - if moonlet-embed exists and user wants it, clustering/retrieval can be an optional enhancement. The point is: basic iris should work out of the box.
 
 ### Decision: State Tracking Available
 
@@ -193,13 +193,13 @@ Decisions deferred until we have real usage data:
 ## Implementation Status
 
 - [x] Project structure (`iris/init.lua`)
-- [x] Session parsing via spore-sessions capability
-- [x] LLM generation via spore-llm capability
+- [x] Session parsing via moonlet-sessions capability
+- [x] LLM generation via moonlet-llm capability
 - [x] Voice profiles in `iris/iris/prompts.lua`
 - [x] Session formatting in `iris/iris/format.lua`
 - [x] CLI with `--list`, `--recent`, `--multi`
 - [x] Temporal modules (history, split, cluster, temporal) - ready but not tested
-- [ ] **Testing with actual sessions** ← blocked on spore build
+- [ ] **Testing with actual sessions** ← blocked on moonlet build
 - [ ] Iterate on prompts based on output quality
 - [ ] Decide on publishing workflow
 

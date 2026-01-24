@@ -2,9 +2,9 @@
 name = "wisteria"
 description = "Autonomous task execution agent"
 
-[spore]
+[moonlet]
 entry = "init.lua"
 integrations = ["llm", "moss"]
 
-[spore.llm]
+[moonlet.llm]
 default_provider = "anthropic"

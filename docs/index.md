@@ -21,6 +21,6 @@ features:
     details: Agent-authored insights. Extract and share knowledge from coding sessions.
     link: /design/iris
   - title: Seeds
-    details: Project templates for nursery scaffolding. Creation, archaeology, and lab presets.
+    details: Project templates for myenv scaffolding. Creation, archaeology, and lab presets.
     link: /projects/seeds
 ---

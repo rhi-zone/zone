@@ -1,6 +1,6 @@
 # Seeds
 
-Project templates for nursery scaffolding.
+Project templates for myenv scaffolding.
 
 ## Available Seeds
 
@@ -28,7 +28,7 @@ Full ecosystem sandbox with directory structure for pipelines and assets:
 
 ```
 template/
-├── nursery.toml
+├── myenv.toml
 ├── .gitignore
 ├── dump/
 ├── assets/
@@ -41,10 +41,10 @@ template/
 
 ## Usage
 
-Seeds are used by nursery for project scaffolding:
+Seeds are used by myenv for project scaffolding:
 
 ```bash
-nursery new --seed creation my-project
+myenv new --seed creation my-project
 ```
 
 ## Template Variables

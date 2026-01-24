@@ -74,7 +74,7 @@ function M.should_auto_approve(edit_risk, auto_approve_level)
 end
 
 -- Auto-detect validation command based on project files
--- Uses _moss_root global for project root (provided by spore-moss)
+-- Uses _moss_root global for project root (provided by moonlet-moss)
 function M.detect_validator()
     -- Check for project markers in priority order
     local checks = {

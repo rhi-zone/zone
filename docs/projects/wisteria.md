@@ -28,8 +28,8 @@ Wisteria is a multi-role agent system with:
 
 ```bash
 cd wisteria
-spore init          # First time only
-spore run .
+moonlet init          # First time only
+moonlet run .
 ```
 
 ## Source

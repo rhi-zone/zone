@@ -8,7 +8,7 @@ Iris reads agentic session logs (Claude Code, Gemini CLI, etc.) and generates hu
 
 ```bash
 cd your-project
-spore run /path/to/iris -- --recent 5
+moonlet run /path/to/iris -- --recent 5
 ```
 
 ## Usage
@@ -85,7 +85,7 @@ iris --recent 10 --format claude-code
 
 ## Configuration
 
-Iris runs via spore. Configure in `.spore/config.toml`:
+Iris runs via moonlet. Configure in `.moonlet/config.toml`:
 
 ```toml
 [project]
@@ -140,5 +140,5 @@ Iris is composed of several modules:
 
 - [Design Document](../design/iris.md) - Architecture and decisions
 - [Brainstorm](../design/iris-brainstorm.md) - Raw ideas and exploration
-- [spore](https://github.com/rhi-zone/spore) - Lua runtime for iris
+- [moonlet](https://github.com/rhi-zone/moonlet) - Lua runtime for iris
 - [moss-sessions](https://github.com/rhi-zone/moss) - Session parsing

@@ -1,9 +1,9 @@
 -- Iris: Agent-authored insights from coding sessions
--- Usage: spore run . -- <session-path>
---        spore run . -- --list
---        spore run . -- --recent [N]
+-- Usage: moonlet run . -- <session-path>
+--        moonlet run . -- --list
+--        moonlet run . -- --recent [N]
 
--- Capabilities are injected by spore based on config
+-- Capabilities are injected by moonlet based on config
 -- caps.sessions.project - session parsing
 -- caps.llm.default - LLM completion
 
@@ -14,20 +14,20 @@ local split = require("iris.split")
 local cluster = require("iris.cluster")
 local temporal = require("iris.temporal")
 
--- Get sessions capability (injected by spore)
+-- Get sessions capability (injected by moonlet)
 local function get_sessions()
     if caps and caps.sessions and caps.sessions.project then
         return caps.sessions.project
     end
-    error("sessions capability not configured - add [caps.sessions] to .spore/config.toml")
+    error("sessions capability not configured - add [caps.sessions] to .moonlet/config.toml")
 end
 
--- Get LLM capability (injected by spore)
+-- Get LLM capability (injected by moonlet)
 local function get_llm()
     if caps and caps.llm and caps.llm.default then
         return caps.llm.default
     end
-    error("llm capability not configured - add [caps.llm] to .spore/config.toml")
+    error("llm capability not configured - add [caps.llm] to .moonlet/config.toml")
 end
 
 local M = {}
@@ -413,8 +413,8 @@ local function parse_args(argv)
 end
 
 -- Main entry point
--- CLI entry point (spore.args is set when run via `spore run . -- arg1 arg2`)
-local cli_args = spore and spore.args
+-- CLI entry point (moonlet.args is set when run via `moonlet run . -- arg1 arg2`)
+local cli_args = moonlet and moonlet.args
 if cli_args then
     local opts = parse_args(cli_args)
 

@@ -9,7 +9,7 @@ zone/
 ├── wisteria/        # Autonomous task execution
 │   ├── init.lua     # Entry point
 │   └── wisteria/    # Submodules
-├── seeds/           # Project templates for nursery
+├── seeds/           # Project templates for myenv
 │   ├── creation/    # New project from scratch
 │   ├── archaeology/ # Lift a legacy game
 │   └── lab/         # Full ecosystem sandbox
@@ -24,21 +24,21 @@ zone/
 
 ## Usage
 
-### Running projects via spore
+### Running projects via moonlet
 
 Each Lua project is self-contained in its own directory. To run a project:
 
 ```bash
 cd wisteria
-spore init          # First time only - creates .spore/config.toml
-spore run .
+moonlet init          # First time only - creates .moonlet/config.toml
+moonlet run .
 ```
 
 ### Scaffolding new projects
 
 ```bash
-# Use nursery with zone seeds
-nursery new my-project --seed zone:creation
+# Use myenv with zone seeds
+myenv new my-project --seed zone:creation
 ```
 
 ## Development

@@ -15,10 +15,10 @@ docs/.vitepress/dist/
 .vscode/
 *.swp
 
-# Spore - ignore runtime/cache but keep config
-.spore/plugins/
-.spore/cache/
-.spore/*.log
+# Moonlet - ignore runtime/cache but keep config
+.moonlet/plugins/
+.moonlet/cache/
+.moonlet/*.log
 
 # Iris - user-local state
 .iris/

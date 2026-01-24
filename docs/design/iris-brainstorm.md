@@ -11,8 +11,8 @@ Flora uses botanical naming - apps are flowers:
 ## Why Flora
 
 Flora is explicitly designed for "full-stack" Lua applications using the whole Rhizome ecosystem. Iris fits because:
-- Composes existing pieces (moss-sessions for parsing, spore for LLM)
-- Fast iteration via Lua + spore (no recompiling to experiment with prompts)
+- Composes existing pieces (moss-sessions for parsing, moonlet for LLM)
+- Fast iteration via Lua + moonlet (no recompiling to experiment with prompts)
 - Follows the wisteria/agent pattern
 - Easy to extract primitives later if they prove valuable
 
@@ -108,7 +108,7 @@ Different agents have different styles - Claude Code has a "more careful approac
 | Component | Status | Where |
 |-----------|--------|-------|
 | Session parsing | Done | moss-sessions (Claude Code, Gemini CLI, Codex, Spore agent formats) |
-| LLM calls | Done | spore |
+| LLM calls | Done | moonlet |
 | Embedding generation | Missing | External integration (Gemini, OpenAI, or local via ollama) |
 | Vector storage | Missing | External integration (sqlite-vec or in-memory) |
 | Clustering logic | Missing | LLM-based or algorithmic |
@@ -168,15 +168,15 @@ For embeddings/vectors/clustering - if ecosystem support exists externally and w
 - OpenAI `text-embedding-3-small/large` (cheap)
 - Local models via ollama
 
-These would live as dedicated spore crates for external integrations.
+These would live as dedicated moonlet crates for external integrations.
 
 ### Spore Integration Decisions
 
-**`spore-embed`** - Separate crate from spore-llm. Embedding use cases (semantic search, clustering, RAG retrieval) are often distinct from chat/completion. Users wanting embeddings don't necessarily want LLM inference support, and vice versa.
+**`moonlet-embed`** - Separate crate from moonlet-llm. Embedding use cases (semantic search, clustering, RAG retrieval) are often distinct from chat/completion. Users wanting embeddings don't necessarily want LLM inference support, and vice versa.
 
-**`spore-sessions`** - Wraps moss-sessions for Lua access. API: `sessions.parse(path)` for raw data, `sessions.analyze(path)` for SessionAnalysis with tool stats, error patterns, etc.
+**`moonlet-sessions`** - Wraps moss-sessions for Lua access. API: `sessions.parse(path)` for raw data, `sessions.analyze(path)` for SessionAnalysis with tool stats, error patterns, etc.
 
-**Vector storage** - Options: extend spore-core memory store, or new `spore-vec` crate with sqlite-vec. Decision deferred until we know if embeddings are worth the complexity.
+**Vector storage** - Options: extend moonlet-core memory store, or new `moonlet-vec` crate with sqlite-vec. Decision deferred until we know if embeddings are worth the complexity.
 
 ## Prior Art
 
@@ -255,16 +255,16 @@ The rhizome docs site (rhi-zone.github.io) has no blog section yet. VitePress su
 
 **Implemented:**
 - Iris project scaffolded in zone (`iris/init.lua`, submodules in `iris/iris/`)
-- Session parsing via `spore-sessions` plugin
-- LLM insight generation via `spore-llm` plugin
+- Session parsing via `moonlet-sessions` plugin
+- LLM insight generation via `moonlet-llm` plugin
 - Voice profiles (default, technical, reflective) in `iris/iris/prompts.lua`
 - Session formatting for LLM context in `iris/iris/format.lua`
 - CLI interface with `--list`, `--recent`, `--multi` modes
 
 **Spore blockers resolved:**
-- Module plugins now accessible via `require("spore.sessions")` with `[sandbox] require_plugins = true`
-- CLI args now available via `spore.args` table with `spore run . -- arg1 arg2`
-- Plugin naming fixed to match nix build output (`librhizome_spore_*.so`)
+- Module plugins now accessible via `require("moonlet.sessions")` with `[sandbox] require_plugins = true`
+- CLI args now available via `moonlet.args` table with `moonlet run . -- arg1 arg2`
+- Plugin naming fixed to match nix build output (`librhizome_moonlet_*.so`)
 
 ## Next Steps
 
@@ -426,7 +426,7 @@ Could feed into:
     insights/*.md     # flat, named by slug/hash
     index.db          # embeddings for discovery
   ```
-- spore-embed + spore-libsql for vector search
+- moonlet-embed + moonlet-libsql for vector search
 
 ### Meta-Analysis
 - How has the agent's understanding evolved over time?
@@ -452,7 +452,7 @@ Could feed into:
 ### Connection to Rhizome Tools
 - wisteria sessions → iris insights
 - moss code intelligence → richer context
-- nursery templates → iris config templates
+- myenv templates → iris config templates
 
 ### Insight Lifecycle
 - Generate → Store → Index → Query → Update
@@ -1080,5 +1080,5 @@ What else exists in this space?
 ### Iris's positioning
 - Open source, self-hosted
 - Part of broader Rhizome ecosystem
-- Focuses on the Lua/spore workflow
+- Focuses on the Lua/moonlet workflow
 - Prioritizes voice/narrative over metrics

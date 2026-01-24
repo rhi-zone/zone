@@ -54,13 +54,51 @@
         "type": "github"
       }
     },
+    "moonlet": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1769250490,
+        "narHash": "sha256-yzNj1EHMqy/K1r4fNSSGDCGYTIy9eJRYYeX8OSyj9+8=",
+        "owner": "rhi-zone",
+        "repo": "moonlet",
+        "rev": "bd9df69bf5506245ed8a45612371128a4a048da0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rhi-zone",
+        "repo": "moonlet",
+        "type": "github"
+      }
+    },
+    "myenv": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1769258219,
+        "narHash": "sha256-rB/foTcjV3cP127EB3Wq7qkwkXgsF4Wx/gV6Ts6OCdw=",
+        "owner": "rhi-zone",
+        "repo": "myenv",
+        "rev": "80ea7dde9ff4addba565db0a0c0efe0a2b6ace3e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rhi-zone",
+        "repo": "myenv",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769018530,
-        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "lastModified": 1767892417,
+        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
         "type": "github"
       },
       "original": {
@@ -88,11 +126,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
         "type": "github"
       },
       "original": {
@@ -102,50 +140,12 @@
         "type": "github"
       }
     },
-    "nursery": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1769258219,
-        "narHash": "sha256-rB/foTcjV3cP127EB3Wq7qkwkXgsF4Wx/gV6Ts6OCdw=",
-        "owner": "rhi-zone",
-        "repo": "nursery",
-        "rev": "80ea7dde9ff4addba565db0a0c0efe0a2b6ace3e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rhi-zone",
-        "repo": "nursery",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
-        "nursery": "nursery",
-        "spore": "spore"
-      }
-    },
-    "spore": {
-      "inputs": {
-        "flake-utils": "flake-utils_3",
+        "moonlet": "moonlet",
+        "myenv": "myenv",
         "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1769250490,
-        "narHash": "sha256-yzNj1EHMqy/K1r4fNSSGDCGYTIy9eJRYYeX8OSyj9+8=",
-        "owner": "rhi-zone",
-        "repo": "spore",
-        "rev": "bd9df69bf5506245ed8a45612371128a4a048da0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rhi-zone",
-        "repo": "spore",
-        "type": "github"
       }
     },
     "systems": {

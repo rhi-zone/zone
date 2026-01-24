@@ -20,7 +20,7 @@ Named for the climbing vine that grows persistently and finds its way around obs
 
 ### Seeds
 
-Project templates for nursery scaffolding.
+Project templates for myenv scaffolding.
 
 Seeds grow into new projects, naturally.
 
@@ -29,9 +29,9 @@ Seeds grow into new projects, naturally.
 Zone is part of the rhi.zone ecosystem:
 
 - **rhizome** - The root system connecting everything
-- **spore** - Lua runtime (spores spread and germinate)
+- **moonlet** - Lua runtime (moonlets spread and germinate)
 - **moss** - Code intelligence (moss grows on and understands its substrate)
-- **nursery** - Project scaffolding (where seeds are planted)
+- **myenv** - Project scaffolding (where seeds are planted)
 - **zone** - Flowering applications (iris, wisteria)
 
 All botanical. All connected underground.
