@@ -99,6 +99,16 @@ From ecosystem-wide session analysis:
 - **Verify before stating:** Don't assert API behavior or codebase facts without checking
 - **Prefer simplicity:** Regular properties over private fields, unless encapsulation is truly needed. Simpler code is easier to debug
 
+## Design Principles
+
+**Unify, don't multiply.** One interface for multiple cases > separate interfaces. Plugin systems > hardcoded switches.
+
+**Simplicity over cleverness.** Functions > abstractions until you need the abstraction. Use ecosystem tooling over hand-rolling.
+
+**Explicit over implicit.** Log when skipping. Show what's at stake before refusing.
+
+**Separate niche from shared.** Don't bloat shared config with feature-specific data. Use separate files for specialized data.
+
 ## Negative Constraints
 
 Do not:
