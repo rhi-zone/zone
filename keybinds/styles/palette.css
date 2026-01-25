@@ -101,13 +101,18 @@ command-palette::part(item-category) {
   color: #666;
 }
 
+command-palette::part(item-keys) {
+  display: flex;
+  gap: 2px;
+}
+
 command-palette::part(item-key) {
   font-family: monospace;
-  font-size: 12px;
-  padding: 2px 6px;
+  font-size: 11px;
+  padding: 2px 5px;
   background: #222;
   border: 1px solid #444;
-  border-radius: 4px;
+  border-radius: 3px;
   color: #888;
 }
 
@@ -188,7 +193,12 @@ keybind-cheatsheet::part(item-label) {
 
 keybind-cheatsheet::part(item-keys) {
   display: flex;
-  gap: 4px;
+  gap: 6px;
+}
+
+keybind-cheatsheet::part(item-binding) {
+  display: flex;
+  gap: 2px;
 }
 
 keybind-cheatsheet::part(item-key) {

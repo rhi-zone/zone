@@ -556,23 +556,46 @@ export function executeCommand(commands, id, context = {}) {
 }
 
 /**
+ * Format a single key part for display
+ * @param {string} part
+ * @returns {string}
+ */
+function formatKeyPart(part) {
+  const p = part.trim().toLowerCase()
+  if (p === '$mod') return isMac ? '⌘' : 'Ctrl'
+  if (p === 'ctrl' || p === 'control') return isMac ? '⌃' : 'Ctrl'
+  if (p === 'alt' || p === 'option') return isMac ? '⌥' : 'Alt'
+  if (p === 'shift') return isMac ? '⇧' : 'Shift'
+  if (p === 'meta' || p === 'cmd' || p === 'command') return '⌘'
+  if (p === 'backspace') return '⌫'
+  if (p === 'delete') return '⌦'
+  if (p === 'escape' || p === 'esc') return 'Esc'
+  if (p === 'enter') return '↵'
+  if (p === 'space') return 'Space'
+  if (p === 'tab') return 'Tab'
+  if (p === 'arrowup' || p === 'up') return '↑'
+  if (p === 'arrowdown' || p === 'down') return '↓'
+  if (p === 'arrowleft' || p === 'left') return '←'
+  if (p === 'arrowright' || p === 'right') return '→'
+  return part.toUpperCase()
+}
+
+/**
+ * Format key binding into array of display parts (e.g., "$mod+k" -> ["⌘", "K"] on Mac)
+ * @param {string} key
+ * @returns {string[]}
+ */
+export function formatKeyParts(key) {
+  return key.split('+').map(formatKeyPart)
+}
+
+/**
  * Format key for display (e.g., "$mod+k" -> "⌘K" on Mac)
  * @param {string} key
  * @returns {string}
  */
 export function formatKey(key) {
-  return key
-    .replace(/\$mod/gi, isMac ? '⌘' : 'Ctrl')
-    .replace(/ctrl/gi, isMac ? '⌃' : 'Ctrl')
-    .replace(/alt/gi, isMac ? '⌥' : 'Alt')
-    .replace(/shift/gi, isMac ? '⇧' : 'Shift')
-    .replace(/meta|cmd|command/gi, '⌘')
-    .replace(/\+/g, '')
-    .replace(/backspace/gi, '⌫')
-    .replace(/delete/gi, '⌦')
-    .replace(/escape/gi, 'Esc')
-    .replace(/enter/gi, '↵')
-    .toUpperCase()
+  return formatKeyParts(key).join('')
 }
 
 /**
@@ -841,6 +864,7 @@ export function fuzzyMatcher(query, text) {
  *   .palette__item-label
  *   .palette__item-label-match (highlight)
  *   .palette__item-category
+ *   .palette__item-keys
  *   .palette__item-key
  *   .palette__empty
  */
@@ -1052,11 +1076,17 @@ export class CommandPalette extends HTMLElement {
       }
 
       if (cmd.keys && cmd.keys[0]) {
-        const key = document.createElement('kbd')
-        key.className = 'palette__item-key'
-        key.setAttribute('part', 'item-key')
-        key.textContent = formatKey(cmd.keys[0])
-        li.appendChild(key)
+        const keyContainer = document.createElement('span')
+        keyContainer.className = 'palette__item-keys'
+        keyContainer.setAttribute('part', 'item-keys')
+        for (const part of formatKeyParts(cmd.keys[0])) {
+          const kbd = document.createElement('kbd')
+          kbd.className = 'palette__item-key'
+          kbd.setAttribute('part', 'item-key')
+          kbd.textContent = part
+          keyContainer.appendChild(kbd)
+        }
+        li.appendChild(keyContainer)
       }
 
       li.addEventListener('click', () => this._execute(i))
@@ -1136,6 +1166,8 @@ export class CommandPalette extends HTMLElement {
  *   .cheatsheet__item
  *   .cheatsheet__item--disabled
  *   .cheatsheet__item-label
+ *   .cheatsheet__item-keys
+ *   .cheatsheet__item-binding
  *   .cheatsheet__item-key
  */
 export class KeybindCheatsheet extends HTMLElement {
@@ -1263,21 +1295,33 @@ export class KeybindCheatsheet extends HTMLElement {
         // Show all key bindings
         if (cmd.keys) {
           for (const k of cmd.keys) {
-            const kbd = document.createElement('kbd')
-            kbd.className = 'cheatsheet__item-key'
-            kbd.setAttribute('part', 'item-key')
-            kbd.textContent = formatKey(k)
-            keys.appendChild(kbd)
+            const binding = document.createElement('span')
+            binding.className = 'cheatsheet__item-binding'
+            binding.setAttribute('part', 'item-binding')
+            for (const part of formatKeyParts(k)) {
+              const kbd = document.createElement('kbd')
+              kbd.className = 'cheatsheet__item-key'
+              kbd.setAttribute('part', 'item-key')
+              kbd.textContent = part
+              binding.appendChild(kbd)
+            }
+            keys.appendChild(binding)
           }
         }
         // Show mouse bindings
         if (cmd.mouse) {
           for (const m of cmd.mouse) {
-            const kbd = document.createElement('kbd')
-            kbd.className = 'cheatsheet__item-key'
-            kbd.setAttribute('part', 'item-key')
-            kbd.textContent = formatMouse(m)
-            keys.appendChild(kbd)
+            const binding = document.createElement('span')
+            binding.className = 'cheatsheet__item-binding'
+            binding.setAttribute('part', 'item-binding')
+            for (const part of formatMouseParts(m)) {
+              const kbd = document.createElement('kbd')
+              kbd.className = 'cheatsheet__item-key'
+              kbd.setAttribute('part', 'item-key')
+              kbd.textContent = part
+              binding.appendChild(kbd)
+            }
+            keys.appendChild(binding)
           }
         }
 
@@ -1296,17 +1340,40 @@ export class KeybindCheatsheet extends HTMLElement {
  * @param {string} binding
  * @returns {string}
  */
+/**
+ * Format a single mouse binding part for display
+ * @param {string} part
+ * @returns {string}
+ */
+function formatMousePart(part) {
+  const p = part.trim().toLowerCase()
+  if (p === '$mod') return isMac ? '⌘' : 'Ctrl'
+  if (p === 'ctrl' || p === 'control') return isMac ? '⌃' : 'Ctrl'
+  if (p === 'alt' || p === 'option') return isMac ? '⌥' : 'Alt'
+  if (p === 'shift') return isMac ? '⇧' : 'Shift'
+  if (p === 'meta' || p === 'cmd' || p === 'command') return '⌘'
+  if (p === 'click' || p === 'leftclick' || p === 'left') return 'Click'
+  if (p === 'middleclick' || p === 'middle') return 'Middle'
+  if (p === 'rightclick' || p === 'right') return 'Right'
+  return part
+}
+
+/**
+ * Format mouse binding into array of display parts
+ * @param {string} binding
+ * @returns {string[]}
+ */
+function formatMouseParts(binding) {
+  return binding.split('+').map(formatMousePart)
+}
+
+/**
+ * Format mouse binding for display (legacy, returns string)
+ * @param {string} binding
+ * @returns {string}
+ */
 function formatMouse(binding) {
-  const mac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform)
-  return binding
-    .replace(/\$mod/gi, mac ? '⌘' : 'Ctrl')
-    .replace(/ctrl/gi, mac ? '⌃' : 'Ctrl')
-    .replace(/alt/gi, mac ? '⌥' : 'Alt')
-    .replace(/shift/gi, mac ? '⇧' : 'Shift')
-    .replace(/\+/g, ' ')
-    .replace(/click/gi, 'Click')
-    .replace(/middle/gi, 'Middle Click')
-    .replace(/right/gi, 'Right Click')
+  return formatMouseParts(binding).join(' ')
 }
 
 /**
