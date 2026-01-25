@@ -726,4 +726,12 @@ export class BindingsStore extends EventTarget {
   }
 }
 
+// Re-export components
+export {
+  CommandPalette,
+  KeybindCheatsheet,
+  onModifierHold,
+  registerComponents
+} from './components.js'
+
 export default keybinds

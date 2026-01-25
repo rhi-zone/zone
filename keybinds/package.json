@@ -4,8 +4,10 @@
   "type": "module",
   "main": "src/index.js",
   "exports": {
-    ".": "./src/index.js"
+    ".": "./src/index.js",
+    "./components": "./src/components.js",
+    "./styles/palette.css": "./styles/palette.css"
   },
-  "files": ["src"],
-  "sideEffects": false
+  "files": ["src", "styles"],
+  "sideEffects": ["./styles/*.css"]
 }
