@@ -5,7 +5,7 @@ use std::sync::Arc;
 use axum::Router;
 use rhi_zone_habitat_core::{Object, Query, Store};
 use serde_json::Value;
-use trellis::prelude::*;
+use server_less::prelude::*;
 use tower_http::cors::{Any, CorsLayer};
 
 /// Service wrapping the habitat store
