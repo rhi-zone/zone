@@ -22,3 +22,12 @@ docs/.vitepress/dist/
 
 # Iris - user-local state
 .iris/
+
+# Normalize
+.normalize/*
+!.normalize/config.toml
+!.normalize/duplicate-functions-allow
+!.normalize/duplicate-types-allow
+!.normalize/hotspots-allow
+!.normalize/large-files-allow
+!.normalize/memory/
